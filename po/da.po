@@ -1,8 +1,8 @@
 # Danish translations of the minicom message strings
-# Copyright (C) 2015 Free Software Foundation, Inc.
+# Copyright (C) 2019 Free Software Foundation, Inc.
 # This file is distributed under the same license as the minicom package.
 # Morten Bo Johansen <mbj@spamcop.net>, 2005-2011.
-# Joe Hansen <joedalton2@yahoo.dk>, 2015.
+# Joe Hansen <joedalton2@yahoo.dk>, 2015, 2019.
 #
 # **** Bemærkninger til oversættelsen ****
 #
@@ -13,16 +13,17 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: minicom 2.6.1.90\n"
+"Project-Id-Version: minicom 2.7.1\n"
 "Report-Msgid-Bugs-To: minicom-devel@lists.alioth.debian.org\n"
 "POT-Creation-Date: 2013-12-31 16:15+0100\n"
-"PO-Revision-Date: 2015-06-28 16:13+0100\n"
+"PO-Revision-Date: 2019-01-12 16:13+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/config.c:75
@@ -346,7 +347,6 @@ msgid "History Buffer Size"
 msgstr "Størrelse på historikbuffer"
 
 #: src/config.c:936
-#, fuzzy
 msgid ""
 "\n"
 "                You have changed the history buffer size.\n"
@@ -603,26 +603,19 @@ msgstr "Makroer knyttet til F1-F10"
 
 #: src/config.c:1626
 msgid " (LEGEND: ^M = C-M, ^L = C-L, ^G = C-G, ^R = C-R, ^~ = pause 1 second,"
-msgstr ""
-" (UDLÆGNING: ^M = C-M, ^L = C-L, ^G = C-G, ^R = C-R, ^~ = 1 sekunds pause,"
+msgstr " (UDLÆGNING: ^M = C-M, ^L = C-L, ^G = C-G, ^R = C-R, ^~ = 1 sekunds pause,"
 
 #: src/config.c:1628
 msgid "  \\u = username, \\p = password, \\\\ = \\, \\e = toggle echo, "
-msgstr ""
-"  \\u = brugernavn, \\p = adgangskode, \\\\ = \\, \\e = slå ekko til/fra, "
+msgstr "  \\u = brugernavn, \\p = adgangskode, \\\\ = \\, \\e = slå ekko til/fra, "
 
 #: src/config.c:1630
-msgid ""
-"  \\l = toggle LF, \\bX1..Xn<sp> = change baud rate. Example: \"\\beq \""
-msgstr ""
-"  \\l = LF til/fra, \\bX1..Xn<sp> = skift baud-hastighed. Eks.: \"\\beq \""
+msgid "  \\l = toggle LF, \\bX1..Xn<sp> = change baud rate. Example: \"\\beq \""
+msgstr "  \\l = LF til/fra, \\bX1..Xn<sp> = skift baud-hastighed. Eks.: \"\\beq \""
 
 #: src/config.c:1632
-msgid ""
-"  = 115200 8N1. (See the \"Comm Parameters\" menu for valid values of X.))"
-msgstr ""
-"  = 115200 8N1. (Se menuen \"Kommunikationsparam.\" for gyldige værdier af "
-"X.))"
+msgid "  = 115200 8N1. (See the \"Comm Parameters\" menu for valid values of X.))"
+msgstr "  = 115200 8N1. (Se menuen \"Kommunikationsparam.\" for gyldige værdier af X.))"
 
 #: src/config.c:1647
 msgid "CHANGED"
@@ -634,8 +627,7 @@ msgstr "Tegnkonvertering"
 
 #: src/config.c:1739
 msgid " char    in out    char    in out    char    in out    char    in out\n"
-msgstr ""
-" tegn    ind ud    tegn    ind ud    tegn    ind ud    tegn    ind ud\n"
+msgstr " tegn    ind ud    tegn    ind ud    tegn    ind ud    tegn    ind ud\n"
 
 #: src/config.c:1761
 msgid ""
@@ -697,9 +689,9 @@ msgid "Cannot open conversion table %s"
 msgstr "Kan ikke åbne konverteringstabel %s"
 
 #: src/config.c:1873
-#, fuzzy, c-format
+#, c-format
 msgid "Cannot read conversion table %s"
-msgstr "Kan ikke skrive konverteringstabel %s"
+msgstr "Kan ikke læse konverteringstabel %s"
 
 #: src/config.c:1885
 #, c-format
@@ -810,9 +802,8 @@ msgid "Cannot open ~/.dialdir: permission denied"
 msgstr "Kan ikke åbne ~/.dialdir: tilladelse nægtet"
 
 #: src/dial.c:911
-#, fuzzy
 msgid "Failed to read dialing directory\n"
-msgstr "Hukommelse opbrugt ved læsning af telefonbog"
+msgstr "Kunne ikke læse opkaldsmappe\n"
 
 #: src/dial.c:945
 msgid "Phonelist garbled (unknown version?)"
@@ -1299,11 +1290,8 @@ msgid "Search Wrapping Around to Start!"
 msgstr "Fortsætter søgning fra start!"
 
 #: src/minicom.c:462
-msgid ""
-"HISTORY: U=Up D=Down F=PgDn B=PgUp s=Srch S=CaseLess N=Next C=Cite ESC=Exit "
-msgstr ""
-"HIST: U=Op D=Ned F=PgDn B=PgUp s=Søg S=Versalufølsom N=Næste C=Citér "
-"ESC=Afslut"
+msgid "HISTORY: U=Up D=Down F=PgDn B=PgUp s=Srch S=CaseLess N=Next C=Cite ESC=Exit "
+msgstr "HIST: U=Op D=Ned F=PgDn B=PgUp s=Søg S=Versalufølsom N=Næste C=Citér ESC=Afslut"
 
 #: src/minicom.c:501
 msgid "History buffer Disabled!"
@@ -1322,16 +1310,12 @@ msgstr ""
 "  Tast 's' eller 'S' først!"
 
 #: src/minicom.c:721 src/minicom.c:764
-msgid ""
-"  CITATION: ENTER=select start line ESC=exit                               "
-msgstr ""
-"  CITERING: RETUR=vælg startlinje ESC=afslut                               "
+msgid "  CITATION: ENTER=select start line ESC=exit                               "
+msgstr "  CITERING: RETUR=vælg startlinje ESC=afslut                               "
 
 #: src/minicom.c:738
-msgid ""
-"  CITATION: ENTER=select end line ESC=exit                                 "
-msgstr ""
-"  CITERING: RETUR=vælg slutlinje ESC=afslut                               "
+msgid "  CITATION: ENTER=select end line ESC=exit                                 "
+msgstr "  CITERING: RETUR=vælg slutlinje ESC=afslut                               "
 
 #: src/minicom.c:798
 #, c-format
@@ -1344,7 +1328,7 @@ msgid "Type \"minicom %s\" for help.\n"
 msgstr "Tast \"minicom %s\" for hjælp.\n"
 
 #: src/minicom.c:809
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: %s [OPTION]... [configuration]\n"
 "A terminal program for Linux and other unix-like systems.\n"
@@ -1355,8 +1339,7 @@ msgid ""
 "  -o, --noinit           : do not initialize modem & lockfiles at startup\n"
 "  -m, --metakey          : use meta or alt key for commands\n"
 "  -M, --metakey8         : use 8bit meta key for commands\n"
-"  -l, --ansi             : literal; assume screen uses non IBM-PC character "
-"set\n"
+"  -l, --ansi             : literal; assume screen uses non IBM-PC character set\n"
 "  -L, --iso              : don't assume screen uses ISO8859\n"
 "  -w, --wrap             : Linewrap on\n"
 "  -H, --displayhex       : display output in hex\n"
@@ -1384,12 +1367,10 @@ msgstr ""
 "  -b, --baudrate         : angiv baudhastighed (ignorer værdien fra konfig)\n"
 "  -D, --device           : angiv enhedsnavn (ignorer værdien fra konfig)\n"
 "  -s, --setup            : opsætningstilstand (kun som root)\n"
-"  -o, --noinit           : undlad at initialisere modem og låsefiler ved "
-"opstart\n"
+"  -o, --noinit           : undlad at initialisere modem og låsefiler ved opstart\n"
 "  -m, --metakey          : brug meta- eller alt-tasten til kommandoer\n"
 "  -M, --metakey8         : brug 8-bit meta-tasten til kommandoer\n"
-"  -l, --ansi             : bogstavelig; antag at skærm bruger ikke-IBM-pc-"
-"tegnsæt\n"
+"  -l, --ansi             : bogstavelig; antag at skærm bruger ikke-IBM-pc-tegnsæt\n"
 "  -L, --iso              : antag ikke at skærm bruger ISO8859\n"
 "  -w, --wrap             : Linjeombrydning slået til\n"
 "  -H, --displayhex       : vis resultat i hex\n"
@@ -1397,14 +1378,13 @@ msgstr ""
 "  -7, --7bit             : gennemtving 7 bit-tilstand\n"
 "  -8, --8bit             : gennemtving 8 bit-tilstand\n"
 "  -c, --color=on/off     : ANSI-farver til eller fra\n"
-"  -a, --attrib=on/off    : slå omvend- eller fremmæv-attributter til eller "
-"fra\n"
+"  -a, --attrib=on/off    : slå omvend- eller fremmæv-attributter til eller fra\n"
 "  -t, --term=TERM        : tilsidesæt TERM-miljøvariablen\n"
 "  -S, --script=SKRIPT    : kør SKRIPT ved opstart\n"
 "  -d, --dial=NAVN        : ring til kontaktperson fra telefonbog\n"
 "  -p, --ptty=TTYP        : tilslut pseudoterminal\n"
 "  -C, --capturefile=FIL  : begynd opfangning til FIL\n"
-"  -T, --disabletime      : undlad at vise opkaldstid\n"
+"  -F, --statlinefmt      : format for statuslinje\n"
 "  -R, --remotecharset    : tegnsæt for kommunikationspartner\n"
 "  -v, --version          : udskriv versionsinformation og afslut\n"
 "  configuration          : opsætningsfil der bruges\n"
@@ -1589,11 +1569,8 @@ msgstr "# Maskin-genereret fil - brug \"minicom -s\" for at ændre parametre.\n"
 
 #: src/rwconf.c:228
 #, c-format
-msgid ""
-"# Machine-generated file - use setup menu in minicom to change parameters.\n"
-msgstr ""
-"# Maskin-genereret fil - brug opsætningsmenu i minicom for at ændre "
-"parametre.\n"
+msgid "# Machine-generated file - use setup menu in minicom to change parameters.\n"
+msgstr "# Maskin-genereret fil - brug opsætningsmenu i minicom for at ændre parametre.\n"
 
 #: src/rwconf.c:253
 #, c-format
@@ -1778,9 +1755,9 @@ msgid "Cannot create lockfile!"
 msgstr "Kan ikke oprette låsefil!"
 
 #: src/updown.c:486
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to write lockfile %s\n"
-msgstr "Kan ikke skrive makrofil %s"
+msgstr "Kunne ikke skrive låsefil %s\n"
 
 #: src/updown.c:496
 #, c-format
@@ -1840,10 +1817,6 @@ msgstr "Antal linjer i terminal ukendt\n"
 #, c-format
 msgid "Number of terminal columns unknown\n"
 msgstr "Antal kolonner i terminal ukendt\n"
-
-#, fuzzy
-#~ msgid "Timestamp delta between lines"
-#~ msgstr "Tidsstempel hver linje (simpel)"
 
 #~ msgid " %7.7sZ for help |           |     | Minicom %-6.6s |       | "
 #~ msgstr " %7.7sZ for hjælp |          |     | Minicom %-6.6s |       | "
