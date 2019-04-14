@@ -1561,10 +1561,10 @@ int main(int argc, char **argv)
         struct tm tm;
         if (   st.st_mtime + 20 * 60 * 60 > t
             && localtime_r(&st.st_mtime, &tm))
-            {
-              strftime(port_date, sizeof(port_date), ", %T", &tm);
-              port_date[sizeof(port_date) - 1] = 0;
-            }
+          {
+            strftime(port_date, sizeof(port_date), ", %T", &tm);
+            port_date[sizeof(port_date) - 1] = 0;
+          }
       }
     mc_wprintf(us, "%s %s%s\r\n", _("Port"), P_PORT, port_date);
   }
