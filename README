@@ -3,7 +3,7 @@
                                  *   README   *
                                  **************
 
-Quick instructions for installation:
+Quick instructions for an installation of a release package:
 
 1. Change to the minicom-$VERSION directory.
 2. ./configure (see ./configure --help for options)
@@ -28,8 +28,12 @@ is one available), look at https://salsa.debian.org/minicom-team/minicom.
 Current development version of minicom can be found here:
 https://salsa.debian.org/minicom-team/minicom
 
-If you want to use minicom with network-modem software, have a look at
-sunsite.unc.edu:/pub/Linux/apps/serialcomm/modem/modem-*.tar.gz by
-Merijn de Jonge <mdejonge@wins.uva.nl>.
+To compile and install a development version:
+1. git clone https://salsa.debian.org/minicom-team/minicom.git
+2. cd minicom
+3. ./autogen.sh
+4. ./configure (see ./configure --help for options)
+5. make
+6. make install
 
 adam@lackorzynski.de
