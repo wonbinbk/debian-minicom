@@ -1016,7 +1016,7 @@ static void close_iconv(void)
 #endif
 /* -------------------------------------------- */
 
-static void test_mbswidth(void)
+static bool test_mbswidth(void)
 {
   struct entry {
     size_t _mbswidth, _mbswidth_kaputt;
@@ -1033,13 +1033,19 @@ static void test_mbswidth(void)
     { 10, 10, "1234567890" },
   };
 
+  bool hit = false;
   for (unsigned i = 0; i < sizeof(e) / sizeof(e[0]); ++i)
     {
-      if (0)
-        printf("%d: mbswidth=%zd\n", i, mbswidth(e[i].s));
-      assert(mbswidth(e[i].s) == e[i]._mbswidth
-	     || mbswidth(e[i].s) == e[i]._mbswidth_kaputt);
+      if (   mbswidth(e[i].s) != e[i]._mbswidth
+          && mbswidth(e[i].s) != e[i]._mbswidth_kaputt)
+        {
+	  if (0)
+            printf("%d: mbswidth=%zd\n", i, mbswidth(e[i].s));
+          hit = true;
+        }
     }
+
+  return hit;
 }
 
 static void usage_and_exit_if(bool expr, const char *fmt, ...)
@@ -1195,8 +1201,6 @@ int main(int argc, char **argv)
 	(!e2 || !strcmp("C", e2) || !strcmp("POSIX", e2)))
       screen_ibmpc = screen_iso = 0;
   }
-
-  test_mbswidth();
 
   /* MARK updated 02/17/95 default history buffer size */
   num_hist_lines = 256;
@@ -1568,8 +1572,10 @@ int main(int argc, char **argv)
       }
     mc_wprintf(us, "%s %s%s\r\n", _("Port"), P_PORT, port_date);
   }
+
   if (using_iconv())
-    mc_wprintf(us, "%s\r\n", _("Using character set conversion"));
+    mc_wprintf(us, "%s%s\r\n", _("Using character set conversion"),
+                               test_mbswidth() ? _(" (failed test)") : "");
   mc_wprintf(us, _("\nPress %sZ for help on special keys%c\n\n"),esc_key(),'\r');
 
   readdialdir();
