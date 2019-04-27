@@ -599,7 +599,7 @@ void m_set485parms(int fd, int en, int rts_on_snd, int rts_aft_snd,
                    int rx_dur_tx, int term_bus, char *del_rts_bef_snd,
                    char *del_rts_aft_snd)
 {
-#ifdef SER_RS485_ENABLED
+#if defined (SER_RS485_ENABLED) && defined (TIOCGRS485) && defined (TIOCSRS485)
   struct serial_rs485 rs485conf;
 
   if (ioctl(fd, TIOCGRS485, &rs485conf))
