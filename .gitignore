@@ -38,14 +38,23 @@ src/ascii-xfr
 .*.swp
 INSTALL
 depcomp
+ar-lib
+compile
 
 lib/libport.a
 
+m4/
+
 po/*.gmo
 po/*.mo
+po/*.sed
+po/*.header
 po/Makefile.in.in
+po/Makevars.template
 po/POTFILES
+po/Rules-quot
 po/cat-id-tbl.c
+po/insert-header.sin
 po/stamp-cat-id
 po/stamp-po
 po/remove-potcdate.sed
