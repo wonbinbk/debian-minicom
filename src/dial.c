@@ -578,11 +578,13 @@ MainLoop:
             do_log("%s %s, %s",modbuf, d->name, d->number);
 
           ptime = localtime(&now);
-          sprintf(d->lastdate,"%4.4d%2.2d%2.2d",
-                  (ptime->tm_year)+1900,(ptime->tm_mon)+1,
-                  ptime->tm_mday);
-          sprintf(d->lasttime,"%02d:%02d",
-                  ptime->tm_hour,ptime->tm_min);
+          snprintf(d->lastdate, sizeof(d->lastdate),
+	           "%4.4d%2.2d%2.2d",
+                   ptime->tm_year + 1900, ptime->tm_mon + 1,
+                   ptime->tm_mday);
+          snprintf(d->lasttime, sizeof(d->lasttime),
+	           "%02d:%02d",
+                   ptime->tm_hour, ptime->tm_min);
           d->count++;
 
           if (d->convfile[0]) {
