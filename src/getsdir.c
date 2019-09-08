@@ -233,7 +233,7 @@ int getsdir(const char *dirpath, const char *pattern, int sortflags,
             }
 
           /* copy the filename */
-          strncpy((*datptr)[cnt].fname, dp->d_name, NAME_MAX);
+          strncpy((*datptr)[cnt].fname, dp->d_name, NAME_MAX + 1);
 
           /* get information about the directory entry */
           snprintf(fpath, sizeof(fpath), "%s/%s", dirpath, dp->d_name);

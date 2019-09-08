@@ -769,7 +769,7 @@ again:
         {
           char buf[128];
           char *s;
-          strncpy(buf, down_loading? P_DOWNDIR : P_UPDIR, sizeof(buf) -1);
+          strncpy(buf, down_loading? P_DOWNDIR : P_UPDIR, sizeof(buf));
           s = input(_("Goto directory:"), buf, sizeof(buf));
           /* if(s == NULL || *s == (char) 0) */
           if (s == NULL)
