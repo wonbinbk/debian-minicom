@@ -305,7 +305,7 @@ int  paste_file(void);
 WIN *mc_tell(const char *, ...);
 void werror(const char *, ...);
 int ask(const char *what, const char *s[]);
-char *input(char *s, char *buf);
+char *input(char *s, char *buf, size_t bufsize);
 
 /* Prototypes from file: wildmat.c */
 int wildmat(const char *, const char *);

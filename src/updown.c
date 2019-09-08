@@ -278,7 +278,7 @@ void updown(int what, int nr)
         return;
     }
     else if (P_PNN(g) == 'Y') {
-      s = input(_("Please enter file names"), buf);
+      s = input(_("Please enter file names"), buf, sizeof(buf));
       if (s == NULL)
         return;
     }

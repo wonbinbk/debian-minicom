@@ -1770,7 +1770,7 @@ again:
   }
   /* Find an entry */
   if (subm == 1) {
-    s = input(_("Find an entry"), dname);
+    s = input(_("Find an entry"), dname, sizeof(dname));
     if (s == NULL || s[0] == 0)
       goto again;
     x1 = 0;
@@ -1875,7 +1875,7 @@ again:
 
   /* Dial a number manually. */
   if (subm == 6) {
-    s = input(_("Enter number"), manual);
+    s = input(_("Enter number"), manual, sizeof(manual));
     if (s && *s) {
       if (changed)
         writedialdir();

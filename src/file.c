@@ -770,7 +770,7 @@ again:
           char buf[128];
           char *s;
           strncpy(buf, down_loading? P_DOWNDIR : P_UPDIR, sizeof(buf) -1);
-          s = input(_("Goto directory:"), buf);
+          s = input(_("Goto directory:"), buf, sizeof(buf));
           /* if(s == NULL || *s == (char) 0) */
           if (s == NULL)
             break;
@@ -784,7 +784,7 @@ again:
       case 2:
         /* File (wildcard) spec */
         {
-          char *s = input(_("Filename pattern:"), wc_mem);
+          char *s = input(_("Filename pattern:"), wc_mem, sizeof(wc_mem));
           if (s == NULL || *s == (char) 0)
             break;
           strcpy(wc_str, wc_mem);
@@ -801,7 +801,7 @@ again:
           char *s;
           strncpy(tag_buf, wc_mem, 128);
 
-          s = input(_("Tag pattern:"), tag_buf);
+          s = input(_("Tag pattern:"), tag_buf, sizeof(tag_buf));
           if (s != NULL && *s != (char)0) {
             int newly_tagged;
             if ((newly_tagged = tag_untag(tag_buf, 1)) == 0) {
@@ -822,7 +822,7 @@ tag_end:
           int untagged;
           strncpy(tag_buf, wc_mem, 128);
 
-          s = input(_("Untag pattern:"), tag_buf);
+          s = input(_("Untag pattern:"), tag_buf, sizeof(tag_buf));
           if (s == NULL || *s == (char)0)
             goto untag_end;
           if ((untagged = tag_untag(tag_buf, 0)) == 0) {
@@ -843,7 +843,7 @@ untag_end:
 
             while (1) {
               s = input(_("No file selected - enter filename:"),
-                        ret_buf);
+                        ret_buf, sizeof(ret_buf));
               if (s != NULL && *s != (char) 0) {
                 int f_exist = access(ret_buf, F_OK);
                 if (down_loading) {

@@ -1666,7 +1666,7 @@ dirty_goto:
         break;
       case 'l': /* Capture file */
         if (capfp == (FILE *)0 && !docap) {
-          s = input(_("Capture to which file? "), capname);
+          s = input(_("Capture to which file? "), capname, sizeof(capname));
           if (s == NULL || *s == 0)
             break;
           if ((capfp = fopen(s, "a")) == (FILE *)NULL) {

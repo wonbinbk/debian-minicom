@@ -1424,7 +1424,7 @@ static void donamsave(void)
   const char *s;
 
   ifile[0] = 0;
-  s = input(_("Give name to save this configuration?"), ifile);
+  s = input(_("Give name to save this configuration?"), ifile, sizeof(ifile));
   if (s != (char *)0 && *s != 0) {
     if (dosetup) {
       snprintf(parfile, sizeof(parfile), "%s/minirc.%s", CONFDIR, s);
