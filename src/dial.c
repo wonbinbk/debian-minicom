@@ -1571,7 +1571,7 @@ void dialdir(void)
   int first = 1;
   int x1, x2;
   char *s, dname[128];
-  static char manual[128];
+  static char manual[32];
   int changed = 0;
   static const char *tag_exit  = N_("( Escape to exit, Space to tag )"),
                     *move_exit = N_(" Move entry up/down, Escape to exit");
