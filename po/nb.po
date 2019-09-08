@@ -3,22 +3,23 @@
 # This file is distributed under the same license as the minicom package.
 #
 # Pål Drange <po@drange.net>, 2005
-# Johnny A. Solbu <johnny@solbu.net>, 2012-2015
+# Johnny A. Solbu <johnny@solbu.net>, 2012-2019
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: minicom 2.6.1.90\n"
+"Project-Id-Version: minicom 2.7.1\n"
 "Report-Msgid-Bugs-To: minicom-devel@lists.alioth.debian.org\n"
 "POT-Creation-Date: 2013-12-31 16:15+0100\n"
-"PO-Revision-Date: 2015-11-01 01:46+0100\n"
+"PO-Revision-Date: 2019-08-20 03:38+0200\n"
 "Last-Translator: Johnny A. Solbu <johnny@solbu.net>\n"
 "Language-Team: Norwegian Bokmaal <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: src/config.c:75
 #, c-format
@@ -234,8 +235,7 @@ msgstr "Still inn parametre for modem og oppringing"
 
 #: src/config.c:694
 msgid "    Return or Esc to exit. Edit A+B to get defaults."
-msgstr ""
-"    Retur eller Esc for å avslutte. Rediger A+B for å få standardverdier."
+msgstr "    Retur eller Esc for å avslutte. Rediger A+B for å få standardverdier."
 
 #: src/config.c:832
 msgid " A - Command key is         :"
@@ -598,24 +598,19 @@ msgstr "F1- til F10-makroer"
 
 #: src/config.c:1626
 msgid " (LEGEND: ^M = C-M, ^L = C-L, ^G = C-G, ^R = C-R, ^~ = pause 1 second,"
-msgstr ""
-" (FORKLAR: ^M = C-M, ^L = C-L, ^G = C-G, ^R = C-R, ^~ = pause i 1 sekund,"
+msgstr " (FORKLAR: ^M = C-M, ^L = C-L, ^G = C-G, ^R = C-R, ^~ = pause i 1 sekund,"
 
 #: src/config.c:1628
 msgid "  \\u = username, \\p = password, \\\\ = \\, \\e = toggle echo, "
 msgstr "  \\u = brukernavn, \\p = passord, \\\\ = \\, \\e = echo av/på, "
 
 #: src/config.c:1630
-msgid ""
-"  \\l = toggle LF, \\bX1..Xn<sp> = change baud rate. Example: \"\\beq \""
+msgid "  \\l = toggle LF, \\bX1..Xn<sp> = change baud rate. Example: \"\\beq \""
 msgstr "  \\l = bytt LF, \\bX1..Xn<sp> = endre baud-rate. eksempel: «\\bfq »"
 
 #: src/config.c:1632
-msgid ""
-"  = 115200 8N1. (See the \"Comm Parameters\" menu for valid values of X.))"
-msgstr ""
-"  = 115200 8N1. (Se «Kommunikasjonsparametre»-menyen for gyldige verdier av "
-"X.))"
+msgid "  = 115200 8N1. (See the \"Comm Parameters\" menu for valid values of X.))"
+msgstr "  = 115200 8N1. (Se «Kommunikasjonsparametre»-menyen for gyldige verdier av X.))"
 
 #: src/config.c:1647
 msgid "CHANGED"
@@ -689,9 +684,9 @@ msgid "Cannot open conversion table %s"
 msgstr "Kan ikke åpne konverteringstabell %s"
 
 #: src/config.c:1873
-#, fuzzy, c-format
+#, c-format
 msgid "Cannot read conversion table %s"
-msgstr "Kan ikke skrive konverteringstabell %s"
+msgstr "Kan ikke lese konverteringstabell %s"
 
 #: src/config.c:1885
 #, c-format
@@ -802,9 +797,8 @@ msgid "Cannot open ~/.dialdir: permission denied"
 msgstr "Kan ikke åpne ~/.dialdir: ingen tilgang"
 
 #: src/dial.c:911
-#, fuzzy
 msgid "Failed to read dialing directory\n"
-msgstr "Tomt for minne ved innlasting av telefonkatalog"
+msgstr "Klarte ikke å lese telefonkatalog\n"
 
 #: src/dial.c:945
 msgid "Phonelist garbled (unknown version?)"
@@ -1291,11 +1285,8 @@ msgid "Search Wrapping Around to Start!"
 msgstr "Søking gikk tilbake til start!"
 
 #: src/minicom.c:462
-msgid ""
-"HISTORY: U=Up D=Down F=PgDn B=PgUp s=Srch S=CaseLess N=Next C=Cite ESC=Exit "
-msgstr ""
-"HISTORIE: U=Opp D=Ned F=PgDn B=PgUp s=Søk S=CaseLess N=Neste C=Sitat "
-"ESC=Avslutt "
+msgid "HISTORY: U=Up D=Down F=PgDn B=PgUp s=Srch S=CaseLess N=Next C=Cite ESC=Exit "
+msgstr "HISTORIE: U=Opp D=Ned F=PgDn B=PgUp s=Søk S=CaseLess N=Neste C=Sitat ESC=Avslutt "
 
 #: src/minicom.c:501
 msgid "History buffer Disabled!"
@@ -1314,17 +1305,12 @@ msgstr ""
 "  Angi \"s\" eller \"S\" først!"
 
 #: src/minicom.c:721 src/minicom.c:764
-msgid ""
-"  CITATION: ENTER=select start line ESC=exit                               "
-msgstr ""
-"  SITERING: ENTER=velg startlinje ESC=avslutt                               "
+msgid "  CITATION: ENTER=select start line ESC=exit                               "
+msgstr "  SITERING: ENTER=velg startlinje ESC=avslutt                               "
 
 #: src/minicom.c:738
-msgid ""
-"  CITATION: ENTER=select end line ESC=exit                                 "
-msgstr ""
-"  SITERING: ENTER=velg sluttlinje "
-"ESC=avslutt                                  "
+msgid "  CITATION: ENTER=select end line ESC=exit                                 "
+msgstr "  SITERING: ENTER=velg sluttlinje ESC=avslutt                                  "
 
 #: src/minicom.c:798
 #, c-format
@@ -1337,7 +1323,7 @@ msgid "Type \"minicom %s\" for help.\n"
 msgstr "Skriv \"minicom %s\" for hjelp.\n"
 
 #: src/minicom.c:809
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: %s [OPTION]... [configuration]\n"
 "A terminal program for Linux and other unix-like systems.\n"
@@ -1348,8 +1334,7 @@ msgid ""
 "  -o, --noinit           : do not initialize modem & lockfiles at startup\n"
 "  -m, --metakey          : use meta or alt key for commands\n"
 "  -M, --metakey8         : use 8bit meta key for commands\n"
-"  -l, --ansi             : literal; assume screen uses non IBM-PC character "
-"set\n"
+"  -l, --ansi             : literal; assume screen uses non IBM-PC character set\n"
 "  -L, --iso              : don't assume screen uses ISO8859\n"
 "  -w, --wrap             : Linewrap on\n"
 "  -H, --displayhex       : display output in hex\n"
@@ -1380,21 +1365,22 @@ msgstr ""
 "  -o, --noinit           : ikke initialisere modem & låsefiler ved oppstart\n"
 "  -m, --metakey          : bruk meta- eller ALT-tasten for kommandoer\n"
 "  -M, --metakey8         : bruk 8bit meta-tasten for kommandoer\n"
-"  -l, --ansi             : bokstavelig; anta at skjermen ikke bruker IBM-PC "
-"tegnsett\n"
+"  -l, --ansi             : bokstavelig; anta at skjermen ikke bruker IBM-PC tegnsett\n"
 "  -L, --iso              : ikke anta at skjermen bruker ISO8859\n"
 "  -w, --wrap             : linjebryting på\n"
+"  -H, --displayhex       : vis utdata i hex\n"
 "  -z, --statline         : prøv å bruke terminalens statuslinje\n"
 "  -7, --7bit             : tving 7bit modus\n"
 "  -8, --8bit             : tving 8bit modus\n"
 "  -c, --color=on/off     : ANSI-stil fargebruk på eller av\n"
-"  -a, --attrib=on/off    : Bruk omvendt eller markerte attributter på eller "
-"av\n"
+"  -a, --attrib=on/off    : Bruk omvendt eller markerte attributter på eller av\n"
 "  -t, --term=TERM        : overstyr TERM-miljøvariabelen\n"
 "  -S, --script=SCRIPT    : kjør SCRIPT ved oppstart\n"
 "  -d, --dial=ENTRY       : ring ENTRY fra oppringingskatalogen\n"
 "  -p, --ptty=TTYP        : koble til pseudo terminal\n"
 "  -C, --capturefile=FIL :  starte \"capturing\" til FIL\n"
+"  -F, --statlinefmt      : format av statuslinje\n"
+"  -R, --remotecharset    : tegnsett for kommunikasjonspartner\n"
 "  -T, --disabletime      : deaktiverer visning av online-tid\n"
 "  -v, --version          : vis programversjon og avslutt\n"
 "  configuration          : konfigurasjonsfilen som skal brukes\n"
@@ -1579,11 +1565,8 @@ msgstr "# Maskingenerert fil - bruk \"minicom -s\" for å endre parametre.\n"
 
 #: src/rwconf.c:228
 #, c-format
-msgid ""
-"# Machine-generated file - use setup menu in minicom to change parameters.\n"
-msgstr ""
-"# Maskingenerert fil - bruk innstillingsmeny i minicom for å endre "
-"parametre.\n"
+msgid "# Machine-generated file - use setup menu in minicom to change parameters.\n"
+msgstr "# Maskingenerert fil - bruk innstillingsmeny i minicom for å endre parametre.\n"
 
 #: src/rwconf.c:253
 #, c-format
@@ -1769,9 +1752,9 @@ msgid "Cannot create lockfile!"
 msgstr "Kan ikke gjenopprette låsfil!"
 
 #: src/updown.c:486
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to write lockfile %s\n"
-msgstr "Kan ikke lagre makrofil %s"
+msgstr "Kan ikke skrive låsefil %s\n"
 
 #: src/updown.c:496
 #, c-format
@@ -1837,9 +1820,7 @@ msgstr "Antall terminalkolonner er ukjent\n"
 #~ msgstr " %7.7sZ for hjelp |           |     | Minicom %-6.6s |       | "
 
 #~ msgid "minicom: WARNING: configuration file not found, using defaults\n"
-#~ msgstr ""
-#~ "minicom: ADVARSEL: konfigurasjonsfil eksisterer ikke, bruker forvalgte "
-#~ "verdier\n"
+#~ msgstr "minicom: ADVARSEL: konfigurasjonsfil eksisterer ikke, bruker forvalgte verdier\n"
 
 #~ msgid "minicom: there is no global configuration file %s\n"
 #~ msgstr "minicom: der eksisterer ingen global konfigurasjonsfil %s\n"
@@ -1887,8 +1868,7 @@ msgstr "Antall terminalkolonner er ukjent\n"
 #~ "                  konfigurasjonen kommer til å være GLOBALE !.\n"
 
 #~ msgid "Sorry %s. You are not allowed to use configuration %s.\n"
-#~ msgstr ""
-#~ "Beklager %s. Du har ikke tillatelse til å bruke konfigurasjonen %s.\n"
+#~ msgstr "Beklager %s. Du har ikke tillatelse til å bruke konfigurasjonen %s.\n"
 
 #~ msgid "Ask your sysadmin to add your name to %s\n"
 #~ msgstr "Be din systemadministrator om å legge navnet ditt til %s\n"
