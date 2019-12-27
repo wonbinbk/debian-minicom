@@ -837,6 +837,7 @@ static void helpthem(void)
     "  -d, --dial=ENTRY       : dial ENTRY from the dialing directory\n"
     "  -p, --ptty=TTYP        : connect to pseudo terminal\n"
     "  -C, --capturefile=FILE : start capturing to FILE\n"
+    "  --capturefile-buffer-mode=MODE : set buffering mode of capture file\n"
     "  -F, --statlinefmt      : format of status line\n"
     "  -R, --remotecharset    : character set of communication partner\n"
     "  -v, --version          : output version information and exit\n"
@@ -1107,6 +1108,10 @@ int main(int argc, char **argv)
   char pseudo[64];
   /* char* console_encoding = getenv ("LC_CTYPE"); */
 
+  enum {
+    OPT_CAP_BUF_MODE = 256,
+  };
+
   static struct option long_options[] =
   {
     { "setup",         no_argument,       NULL, 's' },
@@ -1135,6 +1140,7 @@ int main(int argc, char **argv)
     { "remotecharset", required_argument, NULL, 'R' },
     { "option",        required_argument, NULL, 'O' },
     { "statlinefmt",   required_argument, NULL, 'F' },
+    { "capturefile-buffer-mode", required_argument, NULL, OPT_CAP_BUF_MODE },
     { NULL, 0, NULL, 0 }
   };
 
@@ -1147,6 +1153,7 @@ int main(int argc, char **argv)
   portfd =  -1;
   capfp = NULL;
   docap = 0;
+  capbuf = _IONBF;
   online = -1;
   linespd = 0;
   stdattr = XA_NORMAL;
@@ -1339,6 +1346,23 @@ int main(int argc, char **argv)
           docap = 1;
           vt_set(addlf, -1, docap, -1, -1, -1, -1, -1, addcr);
           break;
+        case OPT_CAP_BUF_MODE:
+          switch (optarg[0]) {
+            case 'N':
+              capbuf = _IONBF;
+              break;
+            case 'L':
+              capbuf = _IOLBF;
+              break;
+            case 'F':
+              capbuf = _IOFBF;
+              break;
+            default:
+              fprintf(stderr, _("Invalid buffering mode '%s'\n"), optarg);
+              exit(1);
+              break;
+          }
+          break;
         case 'S': /* start Script */
           strncpy(scr_name, optarg, sizeof(scr_name) - 1);
           scr_name[sizeof(scr_name) - 1] = 0;
@@ -1384,6 +1408,9 @@ int main(int argc, char **argv)
 
     /* Loop again if more options */
   } while (optind < argk);
+
+  if (capfp)
+    setvbuf(capfp, NULL, capbuf, BUFSIZ);
 
   init_iconv(remote_charset);
 
@@ -1673,6 +1700,7 @@ dirty_goto:
             werror(_("Cannot open capture file"));
             break;
           }
+          setvbuf(capfp, NULL, capbuf, BUFSIZ);
           docap = 1;
         } else if (capfp != (FILE *)0 && !docap) {
           c = ask(_("Capture file"), c3);

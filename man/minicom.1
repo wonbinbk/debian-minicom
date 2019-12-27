@@ -126,6 +126,12 @@ the form (/dev/)tty[p-z/][0-f], (/dev/)pts[p-z/][0-f] or
 .BR filename .
 Open capture file at startup.
 .TP 0.5i
+.B \-\-capturefile-buffer-mode=MODE
+Buffering mode of capture file. MODE can be one of:
+   N  Unbuffered (the default).
+   L  Line buffered.
+   F  Fully buffered.
+.TP 0.5i
 .B \-F, \-\-statlinefmt
 Format for the status line. The following format specifier are available:
    %H  Escape key for help screen.

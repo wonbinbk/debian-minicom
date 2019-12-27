@@ -1109,11 +1109,6 @@ void vt_out(int ch, wchar_t wc)
       state7(c);
       break;
   }
-
-  /* Flush output to capture file so that all output is visible there
-   * immediately. Causes a write syscall for every call though. */
-  if (capfp)
-    fflush(capfp);
 }
 
 /* Translate keycode to escape sequence. */
