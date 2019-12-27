@@ -418,7 +418,7 @@ static void do_cite(WIN *w, int start, int end)
 
       len = one_wctomb(buf, tmp_line[x]);
       for (i = 0; i < len; i++)
-	vt_send(buf[i]);
+        vt_send(buf[i]);
     }
     vt_send(13);
   }
@@ -1040,7 +1040,7 @@ static bool test_mbswidth(void)
       if (   mbswidth(e[i].s) != e[i]._mbswidth
           && mbswidth(e[i].s) != e[i]._mbswidth_kaputt)
         {
-	  if (0)
+          if (0)
             printf("%d: mbswidth=%zd\n", i, mbswidth(e[i].s));
           hit = true;
         }
@@ -1088,20 +1088,20 @@ static void parse_options(char *option)
 
 int main(int argc, char **argv)
 {
-  int c;			/* Command character */
-  int quit = 0;			/* 'q' or 'x' pressed */
-  char *s, *bufp;		/* Scratch pointers */
-  int doinit = 1;		/* -o option */
-  char capname[128];		/* Name of capture file */
-  struct passwd *pwd;		/* To look up user name */
-  char *use_port;		/* Name of initialization file */
-  char *args[20];		/* New argv pointer */
+  int c;                        /* Command character */
+  int quit = 0;                 /* 'q' or 'x' pressed */
+  char *s, *bufp;               /* Scratch pointers */
+  int doinit = 1;               /* -o option */
+  char capname[128];            /* Name of capture file */
+  struct passwd *pwd;           /* To look up user name */
+  char *use_port;               /* Name of initialization file */
+  char *args[20];               /* New argv pointer */
   char *args_buffer = NULL;
-  int argk = 1;			/* New argc */
-  char *mc;			/* For 'MINICOM' env. variable */
-  int env_args;			/* Number of args in env. variable */
-  char *cmd_dial;		/* Entry from the command line. */
-  int alt_code = 0;		/* Type of alt key */
+  int argk = 1;                 /* New argc */
+  char *mc;                     /* For 'MINICOM' env. variable */
+  int env_args;                 /* Number of args in env. variable */
+  char *cmd_dial;               /* Entry from the command line. */
+  int alt_code = 0;             /* Type of alt key */
   char *cmdline_baudrate = NULL;/* Baudrate given on the command line via -b */
   char *cmdline_device = NULL;  /* Device/Port given on the command line via -D */
   char *remote_charset = NULL;  /* Remote charset given on the command line via -R */
@@ -1205,7 +1205,7 @@ int main(int argc, char **argv)
   {
     char *e1 = getenv("LANG"), *e2 = getenv("LC_ALL");
     if ((!e1 || !strcmp("C", e1) || !strcmp("POSIX", e1)) &&
-	(!e2 || !strcmp("C", e2) || !strcmp("POSIX", e2)))
+        (!e2 || !strcmp("C", e2) || !strcmp("POSIX", e2)))
       screen_ibmpc = screen_iso = 0;
   }
 
@@ -1226,10 +1226,10 @@ int main(int argc, char **argv)
       bufp++;
     while (*bufp && argk < (int)sizeof(args) - 1) {
       for (s = bufp; !isspace(*bufp) && *bufp; bufp++)
-	;
+        ;
       args[argk++] = s;
       while (isspace(*bufp))
-	*bufp++ = 0;
+        *bufp++ = 0;
     }
   }
   env_args = argk;
@@ -1246,15 +1246,15 @@ int main(int argc, char **argv)
     while ((c = getopt_long(argk, args, "v78zhlLsomMHb:wTc:a:t:d:p:C:S:D:R:F:O:",
                             long_options, NULL)) != EOF)
       switch(c) {
-	case 'v':
-	  printf(_("%s version %s"), PACKAGE, VERSION);
+        case 'v':
+          printf(_("%s version %s"), PACKAGE, VERSION);
 #ifdef __DATE__
-	  printf(_(" (compiled %s)"), __DATE__);
+          printf(_(" (compiled %s)"), __DATE__);
 #endif
-	  printf("\n");
-	  printf(_("Copyright (C) Miquel van Smoorenburg.\n\n"));
-	  printf(_("This program is free software; you can redistribute it and/or\n"
-	         "modify it under the terms of the GNU General Public License\n"
+          printf("\n");
+          printf(_("Copyright (C) Miquel van Smoorenburg.\n\n"));
+          printf(_("This program is free software; you can redistribute it and/or\n"
+                 "modify it under the terms of the GNU General Public License\n"
                  "as published by the Free Software Foundation; either version\n"
                  "2 of the License, or (at your option) any later version.\n\n"));
           exit(1);
@@ -1368,11 +1368,11 @@ int main(int argc, char **argv)
           scr_name[sizeof(scr_name) - 1] = 0;
           break;
         case '7': /* 7bit fallback mode */
-	  screen_ibmpc = screen_iso = 0;
+          screen_ibmpc = screen_iso = 0;
           break;
-	case '8': /* force 8bit mode */
-	  screen_ibmpc = screen_iso = 1;
-	  break;
+        case '8': /* force 8bit mode */
+          screen_ibmpc = screen_iso = 1;
+          break;
         case 'w': /* Linewrap on */
           wrapln = 1;
           break;
@@ -1385,18 +1385,18 @@ int main(int argc, char **argv)
         case 'F': /* format of status line */
           set_status_line_format(optarg);
           break;
-	case 'b':
-	  cmdline_baudrate = optarg;
-	  break;
-	case 'D':
-	  cmdline_device = optarg;
-	  break;
-	case 'R':
-	  remote_charset = optarg;
-	  break;
-	case 'O':
-	  parse_options(optarg);
-	  break;
+        case 'b':
+          cmdline_baudrate = optarg;
+          break;
+        case 'D':
+          cmdline_device = optarg;
+          break;
+        case 'R':
+          remote_charset = optarg;
+          break;
+        case 'O':
+          parse_options(optarg);
+          break;
         default:
           usage(env_args, optind, mc);
           break;
@@ -1588,7 +1588,7 @@ int main(int argc, char **argv)
     char port_date[20] = "";
     if (stat(P_PORT, &st) == 0)
       {
-	time_t t = time(NULL);
+        time_t t = time(NULL);
         struct tm tm;
         if (   st.st_mtime + 20 * 60 * 60 > t
             && localtime_r(&st.st_mtime, &tm))
@@ -1747,10 +1747,10 @@ dirty_goto:
         c = !us->wrap;
         vt_set(addlf, c, docap, -1, -1, -1, -1, -1, addcr);
         s = c ? _("Linewrap ON") : _("Linewrap OFF");
-	status_set_display(s, 0);
+        status_set_display(s, 0);
         break;
       case 'n': /* Line timestamp */
-	toggle_line_timestamp();
+        toggle_line_timestamp();
         switch (line_timestamp)
           {
           default:
@@ -1766,9 +1766,9 @@ dirty_goto:
           case TIMESTAMP_LINE_PER_SECOND:
             s = _("Timestamp lines every second");
             break;
-	  case TIMESTAMP_LINE_DELTA:
-	    s = _("Timestamp delta between lines");
-	    break;
+          case TIMESTAMP_LINE_DELTA:
+            s = _("Timestamp delta between lines");
+            break;
           }
         status_set_display(s, 0);
         break;
@@ -1793,8 +1793,8 @@ dirty_goto:
         show_status();
         break;
       case 'y': /* Paste file */
-	paste_file();
-	break;
+        paste_file();
+        break;
       case EOF: /* Cannot read from stdin anymore, exit silently */
         quit = NORESET;
         break;
