@@ -154,7 +154,7 @@ EXTERN int sbcolor;     /* Status Bar Background Color */
 EXTERN int st_attr;	/* Status Bar attributes. */
 
 /* jl 04.09.97 conversion tables */
-EXTERN unsigned char vt_outmap[256], vt_inmap[256];
+extern unsigned char vt_outmap[256], vt_inmap[256];
 
 /* MARK updated 02/17/95 - history buffer */
 EXTERN int num_hist_lines;  /* History buffer size */
