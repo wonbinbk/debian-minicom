@@ -843,7 +843,7 @@ untag_end:
 
             while (1) {
               s = input(_("No file selected - enter filename:"),
-                        ret_buf, sizeof(ret_buf));
+                        ret_buf, BUFSIZ);
               if (s != NULL && *s != (char) 0) {
                 int f_exist = access(ret_buf, F_OK);
                 if (down_loading) {
