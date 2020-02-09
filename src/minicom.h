@@ -122,8 +122,8 @@ enum Socket_type {
   Socket_type_unix = 1,
   Socket_type_tcp = 2,
 };
-EXTERN enum Socket_type portfd_is_socket;	/* File descriptor is a unix socket */
-EXTERN int portfd_is_connected;	/* 1 if the socket is connected */
+extern enum Socket_type portfd_is_socket;	/* File descriptor is a unix socket */
+extern int portfd_is_connected;	/* 1 if the socket is connected */
 static inline int portfd_connected(void)
 {
   return (portfd_is_socket && !portfd_is_connected) ? -1 : portfd;
