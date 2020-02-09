@@ -263,9 +263,11 @@ int open_term(int doinit, int show_win_on_error, int no_msgs)
   } buf;
   int fd, n = 0;
   int pid;
+#ifdef USE_SOCKET
 #ifdef HAVE_ERRNO_H
   int s_errno;
 #endif
+#endif /* USE_SOCKET */
 
 #ifdef USE_SOCKET
   portfd_is_socket = portfd_is_connected = 0;
@@ -277,7 +279,7 @@ int open_term(int doinit, int show_win_on_error, int no_msgs)
     portfd_is_socket = Socket_type_unix;
   else if (!strncmp(dial_tty, SOCKET_PREFIX_TCP, strlen(SOCKET_PREFIX_TCP)))
     portfd_is_socket = Socket_type_tcp;
-#endif
+#endif /* USE_SOCKET */
 
   if (portfd_is_socket)
     goto nolock;
@@ -377,11 +379,14 @@ nolock:
       port_init();
     }
   }
+#ifdef USE_SOCKET
 #ifdef HAVE_ERRNO_H
   s_errno = errno;
 #endif
+#endif /* USE_SOCKET */
   alarm(0);
   signal(SIGALRM, SIG_IGN);
+#ifdef USE_SOCKET
   if (portfd < 0 && portfd_is_socket == Socket_type_no_socket) {
     if (!no_msgs) {
       if (doinit > 0) {
@@ -404,6 +409,9 @@ nolock:
     lockfile_remove();
     return -1;
   }
+#else
+  (void)show_win_on_error;
+#endif /* USE_SOCKET */
 
   /* Set CLOCAL mode */
   m_nohang(portfd);
@@ -597,11 +605,13 @@ static void show_status_fmt(const char *fmt)
               bufi += snprintf(buf + bufi, COLS - bufi, "%s", VERSION);
               break;
             case 'b':
+#ifdef USE_SOCKET
               if (portfd_is_socket == Socket_type_unix)
                 bufi += snprintf(buf + bufi, COLS - bufi, "unix-socket");
 	      else if (portfd_is_socket == Socket_type_tcp)
                 bufi += snprintf(buf + bufi, COLS - bufi, "TCP");
               else
+#endif /* USE_SOCKET */
                 {
                   if (P_SHOWSPD[0] == 'l')
                     bufi += snprintf(buf + bufi, COLS - bufi, "%6ld", linespd);
