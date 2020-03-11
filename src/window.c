@@ -104,7 +104,6 @@ static int sflag = 0;
 
 int useattr = 1;
 int dirflush = 1;
-int LINES, COLS;
 int usecolor = 0;
 WIN *stdwin;
 /*
