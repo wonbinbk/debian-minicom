@@ -63,7 +63,7 @@ struct macs mmacs[] = {
   { "",       0,        NULL },
 };
 
-struct pars mpars[] = {
+struct pars mpars[MPARS_MAX + 1] = {
   /* Protocols */
   /* Warning: minicom assumes the first 12 entries are these proto's ! */
   { "YUNYYzmodem",	0,   "pname1" },

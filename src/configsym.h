@@ -44,7 +44,6 @@ struct pars {
   int flags;
   const char *desc;
 };
-extern struct pars mpars[];
 
 /* fmg 2/20/94 macros - Length of Macros */
 
@@ -175,6 +174,10 @@ enum config_type {
 #define P_RS485_TERMINATE_BUS   mpars[97].value  /* RS485 Terminate bus */
 #define P_RS485_DEL_RTS_BEF_SND mpars[98].value  /* RS485 Delay rts before send */
 #define P_RS485_DEL_RTS_AFT_SND mpars[99].value  /* RS485 Delay rts after send */
+
+#define MPARS_MAX 100
+
+extern struct pars mpars[MPARS_MAX + 1]; // + 1 is for end-marker
 
 /* fmg - macros struct */
 
