@@ -689,7 +689,7 @@ static void show_status_fmt(const char *fmt)
 
 void show_status()
 {
-  show_status_fmt(gettext(statusline_format));
+  show_status_fmt(_(statusline_format));
 }
 
 time_t old_online = -2;
