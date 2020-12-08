@@ -60,7 +60,8 @@ static void signore(int sig)
 }
 #endif /*DEBUG*/
 
-static int line_timestamp;
+int line_timestamp;
+static int line_timestamp_set_via_cmdline_option;
 
 /*
  * Sub - menu's.
@@ -898,11 +899,12 @@ static void set_line_timestamp(int val)
 }
 
 /* Toggle host timestamping on/off */
-static void toggle_line_timestamp(void)
+int toggle_line_timestamp(void)
 {
   ++line_timestamp;
   line_timestamp %= TIMESTAMP_LINE_NR_OF_OPTIONS;
   set_line_timestamp(line_timestamp);
+  return line_timestamp;
 }
 
 /* -------------------------------------------- */
@@ -1061,6 +1063,24 @@ static void usage_and_exit_if(bool expr, const char *fmt, ...)
   usage(0, 0, NULL);
 }
 
+static int parse_timestamp_option(const char *option)
+{
+  int ret = 0;
+  if (!strcmp(option, "off"))
+    line_timestamp = TIMESTAMP_LINE_OFF;
+  else if (!strcmp(option, "simple"))
+    line_timestamp = TIMESTAMP_LINE_SIMPLE;
+  else if (!strcmp(option, "delta"))
+    line_timestamp = TIMESTAMP_LINE_DELTA;
+  else if (!strcmp(option, "persecond"))
+    line_timestamp = TIMESTAMP_LINE_PER_SECOND;
+  else if (!strcmp(option, "extended"))
+    line_timestamp = TIMESTAMP_LINE_EXTENDED;
+  else
+    ret = -1;
+  return ret;
+}
+
 static void parse_options(char *option)
 {
   char *o;
@@ -1070,20 +1090,41 @@ static void parse_options(char *option)
 
       if (!strcmp(key, "timestamp"))
         {
-          if (o == NULL || !strcmp(o, "simple"))
+          if (o == NULL)
             line_timestamp = TIMESTAMP_LINE_SIMPLE;
-          else if (!strcmp(o, "delta"))
-            line_timestamp = TIMESTAMP_LINE_DELTA;
-          else if (!strcmp(o, "persecond"))
-            line_timestamp = TIMESTAMP_LINE_PER_SECOND;
-          else if (!strcmp(o, "extended"))
-            line_timestamp = TIMESTAMP_LINE_EXTENDED;
+          else if (!parse_timestamp_option(o))
+            line_timestamp_set_via_cmdline_option = 1;
           else
             usage_and_exit_if(true, "Unknown timestamp variant '%s'.\n", o);
         }
       else
         usage_and_exit_if(true, "Unknown option '%s'.\n", key);
     }
+}
+
+const char *line_timestamp_description(void)
+{
+  const char *s;
+  switch (line_timestamp)
+    {
+    default:
+    case TIMESTAMP_LINE_OFF:
+      s = _("Timestamp OFF");
+      break;
+    case TIMESTAMP_LINE_SIMPLE:
+      s = _("Timestamp every line (simple)");
+      break;
+    case TIMESTAMP_LINE_EXTENDED:
+      s = _("Timestamp every line (extended)");
+      break;
+    case TIMESTAMP_LINE_PER_SECOND:
+      s = _("Timestamp lines every second");
+      break;
+    case TIMESTAMP_LINE_DELTA:
+      s = _("Timestamp delta between lines");
+      break;
+    }
+  return s;
 }
 
 int main(int argc, char **argv)
@@ -1451,6 +1492,10 @@ int main(int argc, char **argv)
   local_echo = strcasecmp(P_LOCALECHO,   "yes") == 0;
   addcr      = strcasecmp(P_ADDCARRIAGERETURN, "yes") == 0;
 
+  /* -Otimestamp= overrides config file */
+  if (!line_timestamp_set_via_cmdline_option)
+    parse_timestamp_option(P_LINE_TIMESTAMP);
+
   /* -w overrides config file */
   if (!wrapln)
     wrapln = strcasecmp(P_LINEWRAP, "yes") == 0;
@@ -1751,26 +1796,7 @@ dirty_goto:
         break;
       case 'n': /* Line timestamp */
         toggle_line_timestamp();
-        switch (line_timestamp)
-          {
-          default:
-          case TIMESTAMP_LINE_OFF:
-            s = _("Timestamp OFF");
-            break;
-          case TIMESTAMP_LINE_SIMPLE:
-            s = _("Timestamp every line (simple)");
-            break;
-          case TIMESTAMP_LINE_EXTENDED:
-            s = _("Timestamp every line (extended)");
-            break;
-          case TIMESTAMP_LINE_PER_SECOND:
-            s = _("Timestamp lines every second");
-            break;
-          case TIMESTAMP_LINE_DELTA:
-            s = _("Timestamp delta between lines");
-            break;
-          }
-        status_set_display(s, 0);
+        status_set_display(line_timestamp_description(), 0);
         break;
       case 'o': /* Configure Minicom */
         (void) config(0);

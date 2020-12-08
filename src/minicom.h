@@ -345,3 +345,6 @@ enum {
   TIMESTAMP_LINE_DELTA,
   TIMESTAMP_LINE_NR_OF_OPTIONS, // must be last
 };
+
+int toggle_line_timestamp(void);
+const char *line_timestamp_description(void);

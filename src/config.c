@@ -908,7 +908,7 @@ static void doscrkeyb(void)
   int once = 0;
   int clr = 1;
   char buf[16];
-  int miny = 2, maxy = 22;
+  int miny = 1, maxy = 23;
   int old_stat = P_STATLINE[0];
   FILE *fp;
   char *command_key           = _(" A - Command key is         :");
@@ -930,9 +930,10 @@ static void doscrkeyb(void)
   char *line_wrap             = _(" R - Line Wrap              :");
   char *display_hex_str       = _(" S - Hex Display            :");
   char *add_carriagereturn    = _(" T - Add carriage return    :");
+  char *use_line_timestamp    = _(" U - Line Timestamp         :");
   char *question              = _("Change which setting?  (Esc to exit)");
 
-  w = mc_wopen(15, miny, 69, maxy, BDOUBLE, stdattr, mfcolor, mbcolor, 0, 0, 1);
+  w = mc_wopen(5, miny, 70, maxy, BDOUBLE, stdattr, mfcolor, mbcolor, 0, 0, 1);
 
   mc_wtitle(w, TMID, _("Screen and keyboard"));
 
@@ -962,6 +963,7 @@ static void doscrkeyb(void)
   mc_wprintf(w, "%s %s\n", line_wrap, _(P_LINEWRAP));
   mc_wprintf(w, "%s %s\n", display_hex_str, _(P_DISPLAYHEX));
   mc_wprintf(w, "%s %s\n", add_carriagereturn, _(P_ADDCARRIAGERETURN));
+  mc_wprintf(w, "%s %s\n", use_line_timestamp, line_timestamp_description());
 
   mc_wredraw(w, 1);
 
@@ -1245,6 +1247,15 @@ static void doscrkeyb(void)
         psets(P_ADDCARRIAGERETURN, yesno(P_ADDCARRIAGERETURN[0] == 'N'));
         mc_wlocate(w, mbswidth(add_carriagereturn) + 1, 19);
         mc_wprintf(w, "%s", _(P_ADDCARRIAGERETURN));
+        break;
+      case 'U':
+	{
+	  int l = toggle_line_timestamp();
+	  sprintf(buf, "%d", l);
+	  psets(P_LINE_TIMESTAMP, buf);
+	  mc_wlocate(w, mbswidth(use_line_timestamp) + 1, 20);
+	  mc_wprintf(w, "%-35s", line_timestamp_description());
+	}
         break;
      }
   }

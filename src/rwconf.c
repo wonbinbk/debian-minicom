@@ -197,6 +197,8 @@ struct pars mpars[MPARS_MAX + 1] = {
   { "0",		0,    "rs485delbefsnd" },
   { "0",		0,    "rs485delaftsnd" },
 
+  { "0",		0,    "line_timestamp" },
+
   /* That's all folks */
   { "",                 0,         NULL },
 };

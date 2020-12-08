@@ -175,7 +175,9 @@ enum config_type {
 #define P_RS485_DEL_RTS_BEF_SND mpars[98].value  /* RS485 Delay rts before send */
 #define P_RS485_DEL_RTS_AFT_SND mpars[99].value  /* RS485 Delay rts after send */
 
-#define MPARS_MAX 100
+#define P_LINE_TIMESTAMP        mpars[100].value /* line_timestamp */
+
+#define MPARS_MAX 101
 
 extern struct pars mpars[MPARS_MAX + 1]; // + 1 is for end-marker
 
