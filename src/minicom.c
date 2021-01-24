@@ -1459,7 +1459,7 @@ int main(int argc, char **argv)
     /* init VT */
     vt_set(-1, -1, -1, -1, -1, -1, 1, -1, -1);
 
-  /* Avoid fraud ! */	
+  /* Avoid fraud! */
   for (s = use_port; *s; s++)
     if (*s == '/')
       *s = '_';
@@ -1588,7 +1588,7 @@ int main(int argc, char **argv)
   }
 #endif
 
-  /* On some Linux systems SIGALRM is masked by default. Unmask it */  
+  /* On some Linux systems SIGALRM is masked by default. Unmask it */
   sigrelse(SIGALRM);
 
   keyboard(KINSTALL, 0);
@@ -1648,7 +1648,7 @@ int main(int argc, char **argv)
   if (using_iconv())
     mc_wprintf(us, "%s%s\r\n", _("Using character set conversion"),
                                test_mbswidth() ? _(" (failed test)") : "");
-  mc_wprintf(us, _("\nPress %sZ for help on special keys%c\n\n"),esc_key(),'\r');
+  mc_wprintf(us, _("\nPress %sZ for help on special keys%c\n\n"), esc_key(), '\r');
 
   readdialdir();
 

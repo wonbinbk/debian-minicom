@@ -8,7 +8,7 @@
  *		modify it under the terms of the GNU General Public License
  *		as published by the Free Software Foundation; either version
  *		2 of the License, or (at your option) any later version.
- 
+ *
  *  You should have received a copy of the GNU General Public License along
  *  with this program; if not, write to the Free Software Foundation, Inc.,
  *  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
@@ -40,7 +40,7 @@
 #include "minicom.h"
 #include "intl.h"
 
-void doconv(void);   /* jl 04.09.97 */
+static void doconv(void);   /* jl 04.09.97 */
 
 /* Read in parameters. */
 void read_parms(void)
@@ -125,7 +125,7 @@ int Jcolor(char *s)
   }
   return -1; /* fmg - should never get here */
 }
- 
+
 /*
  * See if we have write access to a file.
  * If it is not there, see if the directory is writable.
@@ -243,10 +243,10 @@ static void dologopt(void)
 {
   WIN *w;
   int c;
-  char *logfnstr = _(" A - File name (empty=disable) :");
-  char *logconn  = _(" B - Log connects and hangups  :");
-  char *logxfer  = _(" C - Log file transfers        :");
-  char *question = _("Change which setting?");
+  const char *logfnstr = _(" A - File name (empty=disable) :");
+  const char *logconn  = _(" B - Log connects and hangups  :");
+  const char *logxfer  = _(" C - Log file transfers        :");
+  const char *question = _("Change which setting?");
 
   w = mc_wopen(5, 4, 75, 8, BDOUBLE, stdattr, mfcolor, mbcolor, 0, 0, 1);
 
@@ -292,15 +292,15 @@ static void dopath(void)
 {
   WIN *w;
   int c;
-  char *download_directory = _(" A - Download directory :");
-  char *upload_directory   = _(" B - Upload directory   :");
-  char *script_directory   = _(" C - Script directory   :");
-  char *script_program     = _(" D - Script program     :");
-  char *kermit_program     = _(" E - Kermit program     :");
+  const char *download_directory = _(" A - Download directory :");
+  const char *upload_directory   = _(" B - Upload directory   :");
+  const char *script_directory   = _(" C - Script directory   :");
+  const char *script_program     = _(" D - Script program     :");
+  const char *kermit_program     = _(" E - Kermit program     :");
 #ifdef LOGFILE
-  char *log_settings       = _(" F - Logging options");
+  const char *log_settings       = _(" F - Logging options");
 #endif
-  char *question           = _("Change which setting?");
+  const char *question           = _("Change which setting?");
 
   w = mc_wopen(5, 5, 75, 12, BDOUBLE, stdattr, mfcolor, mbcolor, 0, 0, 1);
   mc_wprintf(w, "%s %.44s\n", download_directory, P_DOWNDIR);
@@ -428,10 +428,10 @@ static void doproto(void)
 {
   WIN *w;
   int f, c;
-  char *zmodem_download        = _("M  Zmodem download string activates...");
-  char *use_filename_selection = _("N  Use filename selection window......");
-  char *prompt_downdir         = _("O  Prompt for download directory......");
-  char *question               = _("Change which setting? (SPACE to delete)");
+  const char *zmodem_download        = _("M  Zmodem download string activates...");
+  const char *use_filename_selection = _("N  Use filename selection window......");
+  const char *prompt_downdir         = _("O  Prompt for download directory......");
+  const char *question               = _("Change which setting? (SPACE to delete)");
 
   w = mc_wopen(1, 3, 78, 20, BDOUBLE, stdattr, mfcolor, mbcolor, 0, 0, 1);
   mc_wputs(w, _("     Name             Program"));
@@ -535,23 +535,23 @@ static void doproto(void)
 static void doserial(void)
 {
   WIN *w;
-  char *serial_device         = _(" A -    Serial Device      :");
+  const char *serial_device         = _(" A -    Serial Device      :");
 #if !HAVE_LOCKDEV
-  char *lockfile_location     = _(" B - Lockfile Location     :");
+  const char *lockfile_location     = _(" B - Lockfile Location     :");
 #endif
-  char *callin_program        = _(" C -   Callin Program      :");
-  char *callout_program       = _(" D -  Callout Program      :");
-  char *bps_par_bits          = _(" E -    Bps/Par/Bits       :");
-  char *hardware_flow_control = _(" F - Hardware Flow Control :");
-  char *software_flow_control = _(" G - Software Flow Control :");
-  char *rs485_enable          = _(" H -     RS485 Enable      :");
-  char *rs485_rts_on_send     = _(" I -   RS485 Rts On Send   :");
-  char *rs485_rts_after_send  = _(" J -  RS485 Rts After Send :");
-  char *rs485_rx_during_tx    = _(" K -  RS485 Rx During Tx   :");
-  char *rs485_terminate_bus   = _(" L -  RS485 Terminate Bus  :");
-  char *rs485_del_rts_bef_snd = _(" M - RS485 Delay Rts Before:");
-  char *rs485_del_rts_aft_snd = _(" N - RS485 Delay Rts After :");
-  char *question              = _("Change which setting?");
+  const char *callin_program        = _(" C -   Callin Program      :");
+  const char *callout_program       = _(" D -  Callout Program      :");
+  const char *bps_par_bits          = _(" E -    Bps/Par/Bits       :");
+  const char *hardware_flow_control = _(" F - Hardware Flow Control :");
+  const char *software_flow_control = _(" G - Software Flow Control :");
+  const char *rs485_enable          = _(" H -     RS485 Enable      :");
+  const char *rs485_rts_on_send     = _(" I -   RS485 Rts On Send   :");
+  const char *rs485_rts_after_send  = _(" J -  RS485 Rts After Send :");
+  const char *rs485_rx_during_tx    = _(" K -  RS485 Rx During Tx   :");
+  const char *rs485_terminate_bus   = _(" L -  RS485 Terminate Bus  :");
+  const char *rs485_del_rts_bef_snd = _(" M - RS485 Delay Rts Before:");
+  const char *rs485_del_rts_aft_snd = _(" N - RS485 Delay Rts After :");
+  const char *question              = _("Change which setting?");
 
   w = mc_wopen(5, 4, 75, 19, BDOUBLE, stdattr, mfcolor, mbcolor, 0, 0, 1);
   mc_wprintf(w, "%s %.41s\n", serial_device, P_PORT);
@@ -906,20 +906,20 @@ static void do_menu_screen(void)
   int clr = 1;
   int old_stat = P_STATLINE[0];
 
-  char *status_line           = _(" C - Status line is         :");
-  char *foreground_color_menu = _(" E - Foreground Color (menu):");
-  char *background_color_menu = _(" F - Background Color (menu):");
-  char *foreground_color_term = _(" G - Foreground Color (term):");
-  char *background_color_term = _(" H - Background Color (term):");
-  char *foreground_color_stat = _(" I - Foreground Color (stat):");
-  char *background_color_stat = _(" J - Background Color (stat):");
-  char *add_linefeed          = _(" P - Add linefeed           :");
-  char *local_echo_str        = _(" Q - Local echo             :");
-  char *line_wrap             = _(" R - Line Wrap              :");
-  char *display_hex_str       = _(" S - Hex Display            :");
-  char *add_carriagereturn    = _(" T - Add carriage return    :");
-  char *use_line_timestamp    = _(" U - Line Timestamp         :");
-  char *question              = _("Change which setting?  (Esc to exit)");
+  const char *status_line           = _(" C - Status line is         :");
+  const char *foreground_color_menu = _(" E - Foreground Color (menu):");
+  const char *background_color_menu = _(" F - Background Color (menu):");
+  const char *foreground_color_term = _(" G - Foreground Color (term):");
+  const char *background_color_term = _(" H - Background Color (term):");
+  const char *foreground_color_stat = _(" I - Foreground Color (stat):");
+  const char *background_color_stat = _(" J - Background Color (stat):");
+  const char *add_linefeed          = _(" P - Add linefeed           :");
+  const char *local_echo_str        = _(" Q - Local echo             :");
+  const char *line_wrap             = _(" R - Line Wrap              :");
+  const char *display_hex_str       = _(" S - Hex Display            :");
+  const char *add_carriagereturn    = _(" T - Add carriage return    :");
+  const char *use_line_timestamp    = _(" U - Line Timestamp         :");
+  const char *question              = _("Change which setting?  (Esc to exit)");
 
   w = mc_wopen(6, miny, 70, maxy, BDOUBLE, stdattr, mfcolor, mbcolor, 0, 0, 1);
 
@@ -1123,14 +1123,14 @@ static void do_menu_keyboard_and_misc(void)
   int miny = 8, maxy = 17;
   int old_stat = P_STATLINE[0];
   FILE *fp;
-  char *command_key           = _(" A - Command key is         :");
-  char *backspace_key         = _(" B - Backspace key sends    :");
-  char *alarm_sound           = _(" D - Alarm sound            :");
-  char *history_buffer_size   = _(" K - History Buffer Size    :");
-  char *macros_file           = _(" L - Macros file            :");
-  char *macros_enabled        = _(" N - Macros enabled         :");
-  char *character_conversion  = _(" O - Character conversion   :");
-  char *question              = _("Change which setting?  (Esc to exit)");
+  const char *command_key           = _(" A - Command key is         :");
+  const char *backspace_key         = _(" B - Backspace key sends    :");
+  const char *alarm_sound           = _(" D - Alarm sound            :");
+  const char *history_buffer_size   = _(" K - History Buffer Size    :");
+  const char *macros_file           = _(" L - Macros file            :");
+  const char *macros_enabled        = _(" N - Macros enabled         :");
+  const char *character_conversion  = _(" O - Character conversion   :");
+  const char *question              = _("Change which setting?  (Esc to exit)");
 
   w = mc_wopen(6, miny, 70, maxy, BDOUBLE, stdattr, mfcolor, mbcolor, 0, 0, 1);
 
@@ -1308,13 +1308,13 @@ int dotermmenu(void)
   int new_term = -1;
   int old_stat = P_STATLINE[0];
   char buf[8];
-  char *terminal_emulation  = _(" A -      Terminal emulation :");
-  char *backspace_key_sends = _(" B -     Backspace key sends :");
-  char *status_line         = _(" C -          Status line is :");
-  char *msg_nl_delay        = _(" D -   Newline tx delay (ms) :");
-  char *msg_answerback      = _(" E -          ENQ answerback :");
-  char *msg_ch_delay        = _(" F - Character tx delay (ms) :");
-  char *question            = _("Change which setting?");
+  const char *terminal_emulation  = _(" A -      Terminal emulation :");
+  const char *backspace_key_sends = _(" B -     Backspace key sends :");
+  const char *status_line         = _(" C -          Status line is :");
+  const char *msg_nl_delay        = _(" D -   Newline tx delay (ms) :");
+  const char *msg_answerback      = _(" E -          ENQ answerback :");
+  const char *msg_ch_delay        = _(" F - Character tx delay (ms) :");
+  const char *question            = _("Change which setting?");
 
   w = mc_wopen(15, 7, 64, 15, BDOUBLE, stdattr, mfcolor, mbcolor, 0, 0, 1);
   mc_wtitle(w, TMID, _("Terminal settings"));
@@ -1869,7 +1869,7 @@ int prch(int c)
 }
 
 /* Edit the character conversion tables. jl 04.09.97 */
-void doconv(void)
+static void doconv(void)
 {
   WIN *w;
   int i, j, k, l, h,
