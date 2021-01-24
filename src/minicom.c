@@ -1388,7 +1388,7 @@ int main(int argc, char **argv)
           vt_set(addlf, -1, docap, -1, -1, -1, -1, -1, addcr);
           break;
         case OPT_CAP_BUF_MODE:
-          switch (optarg[0]) {
+          switch (toupper(optarg[0])) {
             case 'N':
               capbuf = _IONBF;
               break;
