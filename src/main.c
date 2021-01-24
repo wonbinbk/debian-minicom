@@ -33,6 +33,7 @@
 
 #include <stdbool.h>
 #include <assert.h>
+#include <sys/stat.h>
 
 #ifdef SVR4_LOCKS
 #include <sys/types.h>
@@ -261,8 +262,6 @@ int open_term(int doinit, int show_win_on_error, int no_msgs)
 	char bytes[128];
 	int kermit;
   } buf;
-  int fd, n = 0;
-  int pid;
 #ifdef USE_SOCKET
 #ifdef HAVE_ERRNO_H
   int s_errno;
@@ -271,7 +270,7 @@ int open_term(int doinit, int show_win_on_error, int no_msgs)
 
 #ifdef USE_SOCKET
   portfd_is_socket = portfd_is_connected = 0;
-  int ulen = strlen(SOCKET_PREFIX_UNIX);
+  size_t ulen = strlen(SOCKET_PREFIX_UNIX);
   assert(ulen == strlen(SOCKET_PREFIX_UNIX_LEGACY));
   if (!strncmp(dial_tty, SOCKET_PREFIX_UNIX, ulen))
     portfd_is_socket = Socket_type_unix;
@@ -305,38 +304,67 @@ int open_term(int doinit, int show_win_on_error, int no_msgs)
   else
     lockfile[0] = 0;
 
-  if (doinit > 0 && lockfile[0] && (fd = open(lockfile, O_RDONLY)) >= 0) {
-    n = read(fd, buf.bytes, 127);
-    close(fd);
-    if (n > 0) {
-      pid = -1;
-      if (n == 4)
-        /* Kermit-style lockfile. */
-        pid = buf.kermit;
-      else {
-        /* Ascii lockfile. */
-        buf.bytes[n] = 0;
-        sscanf(buf.bytes, "%d", &pid);
-      }
-      if (pid > 0 && kill((pid_t)pid, 0) < 0 &&
-          errno == ESRCH) {
-        fprintf(stderr, _("Lockfile is stale. Overriding it..\n"));
-        sleep(1);
-        unlink(lockfile);
-      } else
-        n = 0;
-    }
-    if (n == 0) {
+  if (doinit > 0 && lockfile[0]) {
+    struct stat statbuf;
+    int r = stat(lockfile, &statbuf);
+    if (r < 0 && errno != ENOENT) {
       if (stdwin)
         mc_wclose(stdwin, 1);
-      fprintf(stderr, _("Device %s is locked.\n"), dial_tty);
+      fprintf(stderr, _("Lockfile %s cannot be queried (%d).\n"),
+              lockfile, errno);
       return -1;
+    }
+
+    if (r == 0 && statbuf.st_uid != getuid()) {
+      if (stdwin)
+        mc_wclose(stdwin, 1);
+      fprintf(stderr, _("Lockfile %s owned by someone else (uid=%d).\n"),
+              lockfile, statbuf.st_uid);
+      return -1;
+    }
+
+    int fd = open(lockfile, O_RDONLY);
+    if (fd < 0) {
+      if (errno == EACCES) { // Lockfile not accessible/readable
+        if (stdwin)
+          mc_wclose(stdwin, 1);
+        fprintf(stderr, _("Device %s is locked by someone else.\n"),
+                dial_tty);
+        return -1;
+      }
+    } else {
+      int n = read(fd, buf.bytes, 127);
+      close(fd);
+      if (n > 0) {
+        int pid = -1;
+        if (n == 4)
+          /* Kermit-style lockfile. */
+          pid = buf.kermit;
+        else {
+          /* Ascii lockfile. */
+          buf.bytes[n] = 0;
+          sscanf(buf.bytes, "%d", &pid);
+        }
+        if (pid > 0 && kill((pid_t)pid, 0) < 0 &&
+            errno == ESRCH) {
+          fprintf(stderr, _("Lockfile is stale. Overriding it..\n"));
+          sleep(1);
+          unlink(lockfile);
+        } else
+          n = 0;
+      }
+      if (n == 0) {
+        if (stdwin)
+          mc_wclose(stdwin, 1);
+        fprintf(stderr, _("Device %s is locked.\n"), dial_tty);
+        return -1;
+      }
     }
   }
 #endif
 
   if (doinit > 0 && lockfile_create(no_msgs) != 0)
-	  return -1;
+    return -1;
 
 nolock:
   /* Run a special program to disable callin if needed. */
@@ -365,7 +393,7 @@ nolock:
       portfd = open(dial_tty, O_RDWR|O_NDELAY|O_NOCTTY);
       if (portfd >= 0) {
         /* Cancel the O_NDELAY flag. */
-        n = fcntl(portfd, F_GETFL, 0);
+        int n = fcntl(portfd, F_GETFL, 0);
         fcntl(portfd, F_SETFL, n & ~O_NDELAY);
       }
 #else
