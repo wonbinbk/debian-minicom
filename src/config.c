@@ -288,7 +288,7 @@ static void dologopt(void)
 }
 #endif
 
-static void dopath(void)
+static void do_menu_path(void)
 {
   WIN *w;
   int c;
@@ -424,7 +424,7 @@ static void inputproto(WIN *w, int n)
   } while (c != '\r' && c != '\n');
 }
 
-static void doproto(void)
+static void do_menu_proto(void)
 {
   WIN *w;
   int f, c;
@@ -532,7 +532,7 @@ static void doproto(void)
   mc_wclose(w, 1);
 }
 
-static void doserial(void)
+static void do_menu_serial(void)
 {
   WIN *w;
   const char *serial_device         = _(" A -    Serial Device      :");
@@ -691,7 +691,7 @@ char * sspd(char *sptyp)
     return (_("line speed"));
 }
 
-static void domodem(void)
+static void do_menu_modem(void)
 {
   WIN *w;
   char *str;
@@ -1407,7 +1407,7 @@ int dotermmenu(void)
 /*
  * Save the configuration.
  */
-void vdodflsave(void)
+void vdo_dflsave(void)
 {
   dodflsave();
 }
@@ -1464,7 +1464,7 @@ int domacsave(void)
 /*
  * Save the configuration, ask a name for it.
  */
-static void donamsave(void)
+static void do_namsave(void)
 {
   char ifile[128];
   const char *s;
@@ -1482,14 +1482,14 @@ static void donamsave(void)
 }
 
 static void (*funcs1[])(void) = {
-  dopath,
-  doproto,
-  doserial,
-  domodem,
+  do_menu_path,
+  do_menu_proto,
+  do_menu_serial,
+  do_menu_modem,
   do_menu_screen,
   do_menu_keyboard_and_misc,
-  vdodflsave,
-  donamsave,
+  vdo_dflsave,
+  do_namsave,
   NULL,
   NULL
 };
