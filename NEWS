@@ -5,6 +5,7 @@ please refer to the ChangeLog file.
 
 New for version x.y:
  - Timestamping mode is now saved and restored
+ - Split "Screen and Keyboard" menu into to menus.
 
 New for version 2.8:
  - Moved project to https://salsa.debian.org/minicom-team/minicom
