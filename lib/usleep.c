@@ -2,6 +2,7 @@
 # include <config.h>
 #endif
 
+#include <stddef.h>
 #include <sys/time.h>
 #include <sys/select.h>
 
