@@ -1492,6 +1492,10 @@ void mc_winclr(WIN *w)
 
 void mc_clear_window_simple(WIN *w)
 {
+    if (w == NULL) {
+        return;
+    }
+
   int x = 0, y = 0;
   _colson(us->color);
   _gotoxy(0, 0);
