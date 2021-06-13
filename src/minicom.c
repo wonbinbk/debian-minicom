@@ -384,12 +384,13 @@ const wchar_t *upcase(wchar_t *dest, wchar_t *src)
  */
 wchar_t *StrStr(wchar_t *str1, wchar_t *str2, int case_matters)
 {
-  wchar_t tmpstr1[MAXCOLS], tmpstr2[MAXCOLS];
-
   if (case_matters)
     return wcsstr(str1, str2);
-  else
-    return wcsstr(upcase(tmpstr1, str1), upcase(tmpstr2, str2));
+
+  size_t len1 = wcslen(str1) + 1;
+  size_t len2 = wcslen(str2) + 1;
+  wchar_t tmpstr1[len1], tmpstr2[len2];
+  return wcsstr(upcase(tmpstr1, str1), upcase(tmpstr2, str2));
 }
 
 static void drawcite(WIN *w, int y, int citey, int start, int end)
