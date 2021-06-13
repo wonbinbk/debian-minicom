@@ -226,15 +226,15 @@ void drawhist_look(WIN *w, int y, int r, wchar_t *look, int case_matters)
 {
   int f;
   ELM *tmp_e;
-  wchar_t tmp_line[MAXCOLS];
 
-  tmp_line[0]='\0';
   w->direct = 0;
   for (f = 0; f < w->ys; f++) {
     tmp_e = mc_getline(w, y++);
 
+    wchar_t *tmp_line;
+
     /* First we "accumulate" the line into a variable */
-    mc_wdrawelm_var(w, tmp_e, tmp_line);
+    mc_wdrawelm_var(w, tmp_e, &tmp_line);
 
     /* Does it have what we want? */
     if (wcslen(look) > 1 && wcslen(tmp_line) > 1) {
@@ -243,6 +243,8 @@ void drawhist_look(WIN *w, int y, int r, wchar_t *look, int case_matters)
       else
         mc_wdrawelm(w, f, tmp_e); /* 'normal' output */
     }
+
+    free(tmp_line);
   }
 
   if (r)
@@ -310,13 +312,10 @@ int find_next(WIN *w, WIN *w_hist,
 {
   int next_line;
   ELM *tmp_e;
-  wchar_t tmp_line[MAXCOLS];
   int all_lines;
 
   if (!look)
     return(++hit_line); /* next line */
-
-  tmp_line[0] = '\0';	/* Personal phobia, I need to do this.. */
 
   hit_line++;           /* we NEED this so we don't search only same line! */
   all_lines = w->histlines + w_hist->ys;
@@ -330,16 +329,23 @@ int find_next(WIN *w, WIN *w_hist,
     /* we do 'something' here... :-) */
     tmp_e = mc_getline(w_hist, next_line);
 
+    wchar_t *tmp_line;
+
     /*
      * First we "accumulate" the line into a variable.
      * To see 'why', see what an 'ELM' structure looks like!
      */
-    mc_wdrawelm_var(w, tmp_e, tmp_line);
+    mc_wdrawelm_var(w, tmp_e, &tmp_line);
 
     /* Does it have what we want? */
     if (wcslen(tmp_line) > 1 && wcslen(look) > 1)
       if (StrStr(tmp_line, look, case_matters))
-        return next_line;
+        {
+          free(tmp_line);
+          return next_line;
+        }
+
+    free(tmp_line);
   }
 
   if (hit_line >= all_lines) {	/* Make sure we've got a valid line! */
@@ -397,7 +403,6 @@ static void drawcite_whole(WIN *w, int y, int start, int end)
 
 static void do_cite(WIN *w, int start, int end)
 {
-  wchar_t tmp_line[MAXCOLS];
   ELM *tmp_e;
   int x, y;
 
@@ -405,7 +410,8 @@ static void do_cite(WIN *w, int start, int end)
     vt_send('>');
     vt_send(' ');
     tmp_e = mc_getline(w, y);
-    mc_wdrawelm_var(w, tmp_e, tmp_line);
+    wchar_t *tmp_line;
+    mc_wdrawelm_var(w, tmp_e, &tmp_line);
     tmp_line[w->xs] = 0;
     for (x = w->xs-1; x >= 0; x--) {
       if (tmp_line[x] <= ' ')
@@ -422,6 +428,7 @@ static void do_cite(WIN *w, int start, int end)
         vt_send(buf[i]);
     }
     vt_send(13);
+    free(tmp_line);
   }
 }
 
@@ -433,7 +440,6 @@ static void scrollback(void)
   ELM *tmp_e;
   int case_matters=0;	/* fmg: case-importance, needed for 'N' */
   static wchar_t look_for[MAX_SEARCH];	/* fmg: last used search pattern */
-  wchar_t tmp_line[MAXCOLS];
   int citemode = 0;
   int cite_ystart = 1000000,
       cite_yend = -1,
@@ -608,9 +614,11 @@ static void scrollback(void)
           tmp_e = mc_getline(b_us, y);
           if (wcslen(look_for) > 1) {
             /* quick scan for pattern match */
-            mc_wdrawelm_var(b_us, tmp_e, tmp_line);
+            wchar_t *tmp_line;
+            mc_wdrawelm_var(b_us, tmp_e, &tmp_line);
             inverse = (wcslen(tmp_line)>1 &&
                          StrStr(tmp_line, look_for, case_matters));
+            free(tmp_line);
           } else
             inverse = 0;
         }
@@ -656,9 +664,11 @@ static void scrollback(void)
           tmp_e = mc_getline(b_us, y + b_us->ys - 1);
           if (wcslen(look_for) > 1) {
             /* quick scan for pattern match */
-            mc_wdrawelm_var(b_us, tmp_e, tmp_line);
+            wchar_t *tmp_line;
+            mc_wdrawelm_var(b_us, tmp_e, &tmp_line);
             inverse = (wcslen(tmp_line)>1 &&
                          StrStr(tmp_line, look_for, case_matters));
+            free(tmp_line);
           } else
             inverse = 0;
         }

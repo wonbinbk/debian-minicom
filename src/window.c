@@ -25,6 +25,7 @@
 #include <limits.h>
 #include <stdarg.h>
 #include <wchar.h>
+#include <assert.h>
 
 #include "port.h"
 #include "minicom.h"
@@ -1046,15 +1047,16 @@ void mc_wdrawelm(WIN *w, int y, ELM *e)
  * 'accumulate' one line of ELM's into a string
  * WHY: need this in search function to see if line contains search pattern
  */
-void mc_wdrawelm_var(WIN *w, ELM *e, wchar_t *buf)
+void mc_wdrawelm_var(WIN *w, ELM *e, wchar_t **buf)
 {
-  int x, c = 0;
+  int sz = w->x2 - w->x1 + 2;
+  *buf = malloc(sizeof(**buf) * sz);
+  assert(*buf);
 
-  /* MARK updated 02/17/94 - Fixes bug, to do all 80 cols, not 79 cols */
-  for (x = w->x1; x <= w->x2; x++) {
-    buf[c++] = e->value;
-    e++;
-  }
+  (*buf)[sz - 1] = 0;
+
+  for (int c = 0; c < sz - 1; c++, e++)
+    (*buf)[c] = e->value;
 }
 
 /*
