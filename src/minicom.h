@@ -47,12 +47,6 @@
 #include <arpa/inet.h>
 #endif
 
-/*
- * kubota@debian.or.jp 08/08/98
- * COLS must be equal to or less than MAXCOLS.
- */
-#define MAXCOLS 256
-
 #define XA_OK_EXIST	1
 #define XA_OK_NOTEXIST	2
 
