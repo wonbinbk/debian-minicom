@@ -174,7 +174,6 @@ static void shjump(int sig)
 static ELM *mc_getline(WIN *w, int no)
 {
   int i;
-  static ELM outofrange[MAXCOLS] = {{0,0,0}};
 
   if (no < us->histlines) {
     /* Get a line from the history buffer. */
@@ -189,13 +188,20 @@ static ELM *mc_getline(WIN *w, int no)
   /* Get a line from the "us" window. */
   no -= us->histlines;
   if (no >= w->ys) {
-    if (outofrange[0].value == 0) {
-      for (i = 0; i < MAXCOLS; i++) {
-        outofrange[i].value = ' ';
-        outofrange[i].color = us->color;
-        outofrange[i].attr  = us->attr;
+    static int alloced_columns;
+    static ELM *outofrange;
+    int cols = w->x2 + 1;
+    if (cols > alloced_columns) {
+      free(outofrange);
+      outofrange = malloc(sizeof(*outofrange) * cols);
+      assert(outofrange);
+      alloced_columns = cols;
+
+      for (i = 0; i < cols; i++) {
+	outofrange[i].value = i == 0 ? '~' : ' ';
+	outofrange[i].color = us->color;
+	outofrange[i].attr  = us->attr;
       }
-      outofrange[0].value = '~';
     }
     return outofrange;
   }
