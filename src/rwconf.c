@@ -135,7 +135,7 @@ struct pars mpars[MPARS_MAX + 1] = {
   { "BS",		0,   "backspace" },
   { N_("enabled"),	0,   "statusline" },
   { N_("Yes"),		0,   "hasdcd" },
-  { N_("Yes"),		0,   "rtscts" },
+  { N_("No"),		0,   "rtscts" },
   { N_("No"),		0,   "xonxoff" },
   { "D",		0,   "zauto" },
 
