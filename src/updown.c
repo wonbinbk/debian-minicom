@@ -385,8 +385,8 @@ void updown(int what, int nr)
             trim (trimbuf, buf, sizeof(trimbuf));
             do_log("%s", trimbuf);
           } else if (!strncmp (buffirst, "Bytes", 5)) {
-            strncpy (xfrstr, buf, sizeof(xfrstr));
-            xfrstr[sizeof(xfrstr) - 1] = '\0';
+            _Static_assert(sizeof(xfrstr) >= sizeof(buf), "String sizes");
+            strcpy(xfrstr, buf);
           }
           buffirst[0] = 0;
           trimbuf[0] = 0;
