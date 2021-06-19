@@ -4,8 +4,9 @@ the previous released version. For a full list of changes
 please refer to the ChangeLog file.
 
 New for version x.y:
- - Timestamping mode is now saved and restored
- - Split "Screen and Keyboard" menu into to menus.
+ - Change Hardware Flow Control Default to No.
+ - Timestamping mode is now saved and restored.
+ - Split "Screen and Keyboard" menu into two menus.
 
 New for version 2.8:
  - Moved project to https://salsa.debian.org/minicom-team/minicom
