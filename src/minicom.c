@@ -1606,7 +1606,10 @@ int main(int argc, char **argv)
 #endif
 
   /* On some Linux systems SIGALRM is masked by default. Unmask it */
-  sigrelse(SIGALRM);
+  sigset_t ss;
+  sigemptyset(&ss);
+  sigaddset(&ss, SIGALRM);
+  sigprocmask(SIG_UNBLOCK, &ss, NULL);
 
   keyboard(KINSTALL, 0);
 
