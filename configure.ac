@@ -3,10 +3,10 @@ dnl configure.in autoconf/automake input script
 dnl for minicom
 dnl
 
-AC_INIT([minicom], [2.8], [minicom-devel@lists.alioth.debian.org])
+AC_INIT([minicom],[2.8],[minicom-devel@lists.alioth.debian.org])
 AC_CONFIG_SRCDIR([src/minicom.c])
-AM_CONFIG_HEADER([config.h])
-AC_PREREQ(2.59)
+AC_CONFIG_HEADERS([config.h])
+AC_PREREQ([2.71])
 
 AM_INIT_AUTOMAKE([1.7])
 
@@ -16,14 +16,14 @@ dnl Checks for programs.
 AC_PROG_CC
 AM_PROG_AR
 
-AC_AIX
-AC_MINIX
+AC_USE_SYSTEM_EXTENSIONS
+AC_USE_SYSTEM_EXTENSIONS
 
 AC_PROG_INSTALL
 dnl AC_PROG_LIBTOOL
 AC_PROG_RANLIB
 
-AC_ISC_POSIX
+AC_SEARCH_LIBS([strerror],[cposix])
 AM_ICONV_LINK
 
 AC_ARG_ENABLE([music],
@@ -175,10 +175,9 @@ AC_CHECK_LIB(socket, socket)
 
 dnl Checks for header files.
 AC_HEADER_DIRENT
-AC_HEADER_STDC
 AC_HEADER_SYS_WAIT
 AC_HEADER_STAT
-AC_HEADER_TIME
+
 
 AC_SYS_POSIX_TERMIOS
 AC_HEADER_TIOCGWINSZ
@@ -200,7 +199,6 @@ AC_TYPE_SIZE_T
 AC_STRUCT_TM
 
 dnl Checks for library functions.
-AC_TYPE_SIGNAL
 AC_FUNC_ERROR_AT_LINE
 AC_FUNC_CLOSEDIR_VOID
 AM_WITH_DMALLOC
@@ -309,7 +307,7 @@ then
 	CFLAGS="$CFLAGS -I\$(top_srcdir)/lib"
 fi
 
-if test "x$ac_cv_prog_gcc" = xyes
+if test "x$ac_cv_c_compiler_gnu" = xyes
 then
 	CFLAGS="$CFLAGS -W -Wall -Wextra -std=gnu99 -fno-common -Wno-format-truncation"
 fi
