@@ -43,7 +43,13 @@ if test "x$enable_socket" = xyes; then
 fi
 
 PKG_PROG_PKG_CONFIG
-if test -n "$PKG_CONFIG"; then
+
+AC_ARG_ENABLE([lockdev],
+        AS_HELP_STRING([--enable-lockdev],
+                       [Enable lockdev support (def: enabled)]),
+        [], [enable_lockdev="yes"])
+
+if test -n "$PKG_CONFIG" && test "x$enable_lockdev" = xyes; then
 	PKG_CHECK_MODULES([LOCKDEV], [lockdev], AC_DEFINE([HAVE_LOCKDEV],[1],[Define if you have lockdev]),[:])
 fi
 
