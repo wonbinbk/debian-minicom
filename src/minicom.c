@@ -1315,14 +1315,14 @@ int main(int argc, char **argv)
                  "modify it under the terms of the GNU General Public License\n"
                  "as published by the Free Software Foundation; either version\n"
                  "2 of the License, or (at your option) any later version.\n\n"));
-          exit(1);
+          exit(0);
           break;
         case 's': /* setup mode */
           dosetup = 1;
           break;
         case 'h':
           helpthem();
-          exit(1);
+          exit(0);
           break;
         case 'p': /* Pseudo terminal to use. */
           if (strncmp(optarg, "/dev/", 5) == 0)
