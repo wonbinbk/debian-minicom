@@ -129,7 +129,7 @@ ALL_LINGUAS="cs da de es fr fi hu id ja nb pl pt_BR ro ru rw sr sv vi zh_CN zh_T
 
 dnl Checks for programs.
 AM_GNU_GETTEXT([external])
-AM_GNU_GETTEXT_VERSION([0.16.1])
+AM_GNU_GETTEXT_VERSION([0.21])
 
 dnl This is a hacky workaround as the m4 scripts for iconv seem to set
 dnl LIBICONV to '-liconv' despite that this lib is not available if iconv
