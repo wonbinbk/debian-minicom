@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: minicom 2.6.1.90\n"
 "Report-Msgid-Bugs-To: minicom-devel@lists.alioth.debian.org\n"
-"POT-Creation-Date: 2013-12-31 16:15+0100\n"
+"POT-Creation-Date: 2021-12-11 20:36+0100\n"
 "PO-Revision-Date: 2012-12-25 13:22+0200\n"
 "Last-Translator: Jorma Karvonen <karvonen.jorma@gmail.com>\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
@@ -24,76 +24,76 @@ msgstr ""
 msgid "minicom: cannot open macro file %s\n"
 msgstr "minicom: makrotiedoston %s avaus epäonnistui\n"
 
-#: src/config.c:245
+#: src/config.c:246
 msgid " A - File name (empty=disable) :"
 msgstr " A - Tiedostonimi (tyhjä=ei käytetä):"
 
-#: src/config.c:246
+#: src/config.c:247
 msgid " B - Log connects and hangups  :"
 msgstr " B - Kirjataan yhteydet             :"
 
-#: src/config.c:247
+#: src/config.c:248
 msgid " C - Log file transfers        :"
 msgstr " C - Kirjataan tiedostonsiirrot     :"
 
-#: src/config.c:248 src/config.c:302 src/config.c:544 src/config.c:650
-#: src/config.c:1194 src/dial.c:1186
+#: src/config.c:249 src/config.c:303 src/config.c:554 src/config.c:719
+#: src/config.c:1317 src/dial.c:1186
 msgid "Change which setting?"
 msgstr "Muuta asetusta:"
 
-#: src/config.c:252
+#: src/config.c:253
 msgid "Logging options"
 msgstr "Lokitiedoston asetukset"
 
-#: src/config.c:294
+#: src/config.c:295
 msgid " A - Download directory :"
 msgstr " A - Lataushakemisto         :"
 
-#: src/config.c:295
+#: src/config.c:296
 msgid " B - Upload directory   :"
 msgstr " B - Lähetyshakemisto        :"
 
-#: src/config.c:296
+#: src/config.c:297
 msgid " C - Script directory   :"
 msgstr " C - Skriptihakemisto        :"
 
-#: src/config.c:297
+#: src/config.c:298
 msgid " D - Script program     :"
 msgstr " D - Skriptiohjelma          :"
 
-#: src/config.c:298
+#: src/config.c:299
 msgid " E - Kermit program     :"
 msgstr " E - Kermit-ohjelma          :"
 
-#: src/config.c:300
+#: src/config.c:301
 msgid " F - Logging options"
 msgstr " F - Lokitiedoston käyttö"
 
-#: src/config.c:355 src/rwconf.c:114 src/rwconf.c:147 src/rwconf.c:148
+#: src/config.c:356 src/rwconf.c:104 src/rwconf.c:137
 msgid "Yes"
 msgstr "Kyllä"
 
-#: src/config.c:355
+#: src/config.c:356
 msgid "No "
 msgstr "Ei   "
 
-#: src/config.c:430
+#: src/config.c:431
 msgid "M  Zmodem download string activates..."
 msgstr "M  Autom. käynnistettävä Zmodem-imurointi.."
 
-#: src/config.c:431
+#: src/config.c:432
 msgid "N  Use filename selection window......"
 msgstr "N  Käytetäänkö tiedostovalintaikkunaa......"
 
-#: src/config.c:432
+#: src/config.c:433
 msgid "O  Prompt for download directory......"
 msgstr "O  Kysytäänkö lataushakemistoa............."
 
-#: src/config.c:433
+#: src/config.c:434
 msgid "Change which setting? (SPACE to delete)"
 msgstr "Muutettava asetus? (poisto välilyönnillä)"
 
-#: src/config.c:436
+#: src/config.c:437
 msgid "     Name             Program"
 msgstr "     Nimi             Ohjelma"
 
@@ -103,252 +103,296 @@ msgstr "     Nimi             Ohjelma"
 #. * FullScr: Command runs fullscreen
 #. * IO-Red: Redirect output of commands to logfile
 #. * Multi: Protocol can transfer multiple files at once
-#: src/config.c:445
+#: src/config.c:446
 msgid "Name U/D FullScr IO-Red. Multi"
 msgstr "Nimi läh./lat. Kokor. Siir.ohj. Monta"
 
-#: src/config.c:476
+#: src/config.c:477
 msgid "Delete which protocol? "
 msgstr "Poistettava yhteyskäytäntö? "
 
-#: src/config.c:537
+#: src/config.c:538
 msgid " A -    Serial Device      :"
 msgstr " A - Sarjaportti                   :"
 
-#: src/config.c:538
+#: src/config.c:540
 msgid " B - Lockfile Location     :"
 msgstr " B - Lukkotiedostojen hakemisto    :"
 
-#: src/config.c:539
+#: src/config.c:542
 msgid " C -   Callin Program      :"
 msgstr " C - Sisäänsoitto-ohjelma          :"
 
-#: src/config.c:540
+#: src/config.c:543
 msgid " D -  Callout Program      :"
 msgstr " D - Ulossoitto-ohjelma            :"
 
 #  Baudia per second on vanhentunut yksikkö. Nykyisin käytössä bittiä per sekunti, joka ei aivan tarkalleen tarkoita samaa asiaa. Käännetään tässä sanalla "Nopeus"
-#: src/config.c:541
+#: src/config.c:544
 msgid " E -    Bps/Par/Bits       :"
 msgstr " E - Nopeus/Pariteetti/Bitit       :"
 
-#: src/config.c:542
+#: src/config.c:545
 msgid " F - Hardware Flow Control :"
 msgstr " F - Laitteistovuo-ohjaus          :"
 
-#: src/config.c:543
+#: src/config.c:546
 msgid " G - Software Flow Control :"
 msgstr " G - Ohjelmistovuo-ohjaus          :"
 
-#: src/config.c:620
+#: src/config.c:547
+#, fuzzy
+msgid " H -     RS485 Enable      :"
+msgstr " A - Sarjaportti                   :"
+
+#: src/config.c:548
+msgid " I -   RS485 Rts On Send   :"
+msgstr ""
+
+#: src/config.c:549
+msgid " J -  RS485 Rts After Send :"
+msgstr ""
+
+#: src/config.c:550
+msgid " K -  RS485 Rx During Tx   :"
+msgstr ""
+
+#: src/config.c:551
+#, fuzzy
+msgid " L -  RS485 Terminate Bus  :"
+msgstr " H - Pääte-emulointi            :"
+
+#: src/config.c:552
+msgid " M - RS485 Delay Rts Before:"
+msgstr ""
+
+#: src/config.c:553
+msgid " N - RS485 Delay Rts After :"
+msgstr ""
+
+#: src/config.c:689
 msgid "DTE speed "
 msgstr "päätenopeus"
 
-#: src/config.c:622
+#: src/config.c:691
 msgid "line speed"
 msgstr "linjanopeus"
 
-#: src/config.c:630
+#: src/config.c:699
 msgid " A - Init string ........."
 msgstr " A - Modeemin alustuskomento ......"
 
-#: src/config.c:631
+#: src/config.c:700
 msgid " B - Reset string ........"
 msgstr " B - Reset-komento ................"
 
-#: src/config.c:632
+#: src/config.c:701
 msgid " C - Dialing prefix #1...."
 msgstr " C - Soittokomento #1 ............."
 
-#: src/config.c:633
+#: src/config.c:702
 msgid " D - Dialing suffix #1...."
 msgstr " D - Soittokomennon loppu #1 ......"
 
-#: src/config.c:634
+#: src/config.c:703
 msgid " E - Dialing prefix #2...."
 msgstr " E - Soittokomento #2 ............."
 
-#: src/config.c:635
+#: src/config.c:704
 msgid " F - Dialing suffix #2...."
 msgstr " F - Soittokomennon loppu #2 ......"
 
-#: src/config.c:636
+#: src/config.c:705
 msgid " G - Dialing prefix #3...."
 msgstr " G - Soittokomento #3 ............."
 
-#: src/config.c:637
+#: src/config.c:706
 msgid " H - Dialing suffix #3...."
 msgstr " H - Soittokomennon loppu #3 ......"
 
-#: src/config.c:638
+#: src/config.c:707
 msgid " I - Connect string ......"
 msgstr " I - Yhteys saatu ................."
 
-#: src/config.c:639
+#: src/config.c:708
 msgid " J - No connect strings .."
 msgstr " J - Yhteyttä ei saatu ............"
 
-#: src/config.c:640
+#: src/config.c:709
 msgid " K - Hang-up string ......"
 msgstr " K - Yhteyden katkaisukomento ....."
 
-#: src/config.c:641
+#: src/config.c:710
 msgid " L - Dial cancel string .."
 msgstr " L - Soittoyrityksen keskeytys ...."
 
-#: src/config.c:642
+#: src/config.c:711
 msgid " M - Dial time ..........."
 msgstr " M - Yhteyden odotusaika ....."
 
-#: src/config.c:643
+#: src/config.c:712
 msgid " N - Delay before redial ."
 msgstr " N - Soittoyritysten väliaika "
 
-#: src/config.c:644
+#: src/config.c:713
 msgid " O - Number of tries ....."
 msgstr " O - Soittoyritysten määrä ..."
 
-#: src/config.c:645
+#: src/config.c:714
 msgid " P - DTR drop time (0=no)."
 msgstr " P - DTR:n pudotusaika (0=ei) "
 
-#: src/config.c:646
+#: src/config.c:715
 msgid " Q - Auto bps detect ....."
 msgstr " Q - Päätenopeus=linjanopeus "
 
-#: src/config.c:647
+#: src/config.c:716
 msgid " R - Modem has DCD line .."
 msgstr " R - DCD-signaali käytössä .."
 
-#: src/config.c:648
+#: src/config.c:717
 msgid " S - Status line shows ..."
 msgstr " S - Tilarivillä näkyy ......"
 
-#: src/config.c:649
+#: src/config.c:718
 msgid " T - Multi-line untag ...."
 msgstr " T - Monen linjan systeemit.."
 
-#: src/config.c:661
+#: src/config.c:730
 msgid "Modem and dialing parameter setup"
 msgstr "Modeemi- ja soittoasetukset"
 
-#: src/config.c:694
+#: src/config.c:763
 msgid "    Return or Esc to exit. Edit A+B to get defaults."
 msgstr ""
 "    Poistu Enter- tai Esc-näppäimillä. Muokkaa A+B oletusten saamiseksi."
 
-#: src/config.c:832
-msgid " A - Command key is         :"
-msgstr " A - Komentonäppäin on        :"
-
-#: src/config.c:833
-msgid " B - Backspace key sends    :"
-msgstr " B - Peruutusnäppäin lähet$$$tää :"
-
-#: src/config.c:834
+#: src/config.c:909
 msgid " C - Status line is         :"
 msgstr " C - Tilarivi                 :"
 
-#: src/config.c:835
-msgid " D - Alarm sound            :"
-msgstr " D - Hälytysääni              :"
-
-#: src/config.c:836
+#: src/config.c:910
 msgid " E - Foreground Color (menu):"
 msgstr " E - Tekstin väri (valikko)   :"
 
-#: src/config.c:837
+#: src/config.c:911
 msgid " F - Background Color (menu):"
 msgstr " F - Taustaväri (valikko)     :"
 
-#: src/config.c:838
+#: src/config.c:912
 msgid " G - Foreground Color (term):"
 msgstr " G - Tekstin väri (pääte)     :"
 
-#: src/config.c:839
+#: src/config.c:913
 msgid " H - Background Color (term):"
 msgstr " H - Taustaväri (pääte)       :"
 
-#: src/config.c:840
+#: src/config.c:914
 msgid " I - Foreground Color (stat):"
 msgstr " I - Tekstin väri (tilarivi)  :"
 
-#: src/config.c:841
+#: src/config.c:915
 msgid " J - Background Color (stat):"
 msgstr " J - Taustaväri (tilarivi)    :"
 
-#: src/config.c:842
-msgid " K - History Buffer Size    :"
-msgstr " K - Tekstipuskurin koko      :"
-
-#: src/config.c:843
-msgid " L - Macros file            :"
-msgstr " L - Makrotiedosto            :"
-
-#: src/config.c:844
-msgid " N - Macros enabled         :"
-msgstr " N - Makrot käytössä          :"
-
-#: src/config.c:845
-msgid " O - Character conversion   :"
-msgstr " O - Merkkikonversio          :"
-
-#: src/config.c:846
+#: src/config.c:916
 msgid " P - Add linefeed           :"
 msgstr " P - Lisää rivinsyöttö        :"
 
-#: src/config.c:847
+#: src/config.c:917
 msgid " Q - Local echo             :"
 msgstr " Q - Paikallinen kaiutus      :"
 
-#: src/config.c:848
+#: src/config.c:918
 msgid " R - Line Wrap              :"
 msgstr " R - Rivinjatko (linewrap)      :"
 
-#: src/config.c:849
+#: src/config.c:919
 msgid " S - Hex Display            :"
 msgstr " S - Heksadesimaalinäyttö       :"
 
-#: src/config.c:850
+#: src/config.c:920
 msgid " T - Add carriage return    :"
 msgstr " T - Lisää rivinvaihto          :"
 
-#: src/config.c:851 src/config.c:1604
+#: src/config.c:921
+#, fuzzy
+msgid " U - Line Timestamp         :"
+msgstr " R - Rivinjatko (linewrap)      :"
+
+#: src/config.c:922 src/config.c:1133 src/config.c:1740
 msgid "Change which setting?  (Esc to exit)"
 msgstr "Muutettava asetus:  (Esc poistuu)"
 
-#: src/config.c:855 src/config.c:1376
-msgid "Screen and keyboard"
-msgstr "Näyttö ja näppäimistö"
+#: src/config.c:926 src/config.c:1504
+msgid "Screen"
+msgstr ""
 
-#: src/config.c:874
-msgid " M - Edit Macros\n"
-msgstr " M - Makrojen muokkaus\n"
-
-#: src/config.c:902
-msgid "You can't change colors in black and white mode"
-msgstr "Et voi muuttaa värejä mustavalkotilassa"
-
-#: src/config.c:914
+#: src/config.c:967
 msgid "Menu foreground == background color, change!"
 msgstr "Valikon taustaväri sama kuin tekstin väri, vaihda toinen!"
 
-#: src/config.c:923
+#: src/config.c:973
 msgid "Terminal foreground == background color, change!"
 msgstr "Päätteen taustaväri sama kuin tekstin väri, vaihda toinen!"
 
-#: src/config.c:935
+#: src/config.c:985 src/config.c:1370
+msgid "disabled"
+msgstr "ei käytössä"
+
+#: src/config.c:988 src/config.c:1373 src/rwconf.c:136
+msgid "enabled"
+msgstr "on käytössä"
+
+#: src/config.c:1126
+msgid " A - Command key is         :"
+msgstr " A - Komentonäppäin on        :"
+
+#: src/config.c:1127
+msgid " B - Backspace key sends    :"
+msgstr " B - Peruutusnäppäin lähet$$$tää :"
+
+#: src/config.c:1128
+msgid " D - Alarm sound            :"
+msgstr " D - Hälytysääni              :"
+
+#: src/config.c:1129
+msgid " K - History Buffer Size    :"
+msgstr " K - Tekstipuskurin koko      :"
+
+#: src/config.c:1130
+msgid " L - Macros file            :"
+msgstr " L - Makrotiedosto            :"
+
+#: src/config.c:1131
+msgid " N - Macros enabled         :"
+msgstr " N - Makrot käytössä          :"
+
+#: src/config.c:1132
+msgid " O - Character conversion   :"
+msgstr " O - Merkkikonversio          :"
+
+#: src/config.c:1137 src/config.c:1505
+msgid "Keyboard and Misc"
+msgstr ""
+
+#: src/config.c:1144
+msgid " M - Edit Macros\n"
+msgstr " M - Makrojen muokkaus\n"
+
+#: src/config.c:1172
 msgid "History Buffer Size"
 msgstr "Historiapuskurin koko"
 
-#: src/config.c:936
+#: src/config.c:1174
+#, fuzzy
 msgid ""
 "\n"
-"                You have changed the history buffer size.\n"
-"                You will need to save the configuration file and\n"
-"                restart minicom for the change to take effect.\n"
+" You have changed the history buffer size.\n"
+" You will need to save the configuration file and\n"
+" restart minicom for the change to take effect.\n"
 "\n"
-"                Hit a key to Continue... "
+" Hit a key to Continue... "
 msgstr ""
 "\n"
 "                Olet vaihtanut historiapuskurin kokoa.\n"
@@ -358,11 +402,11 @@ msgstr ""
 "\n"
 "                Jatka painamalla jotain näppäintä... "
 
-#: src/config.c:953
+#: src/config.c:1192
 msgid "Program new command key"
 msgstr "Komentonäppäin"
 
-#: src/config.c:955
+#: src/config.c:1194
 msgid ""
 "\n"
 " Press the new command key. If you want to use\n"
@@ -384,207 +428,199 @@ msgstr ""
 "\n"
 " Paina uutta komentonäppäintä: "
 
-#: src/config.c:964
+#: src/config.c:1203
 msgid "Meta-8th bit "
 msgstr "Meta(8.bitti)"
 
-#: src/config.c:966
+#: src/config.c:1205
 msgid "Escape (Meta)"
 msgstr "Escape (Meta)"
 
-#: src/config.c:999 src/config.c:1247
-msgid "disabled"
-msgstr "ei käytössä"
-
-#: src/config.c:1002 src/config.c:1250 src/rwconf.c:146
-msgid "enabled"
-msgstr "on käytössä"
-
-#: src/config.c:1117
+#: src/config.c:1266
 msgid "ERROR: you do not have permission to create a file there!"
 msgstr "VIRHE: Ei kirjoitusoikeutta hakemistoon!"
 
 # , c-format
-#: src/config.c:1123
+#: src/config.c:1272
 #, c-format
 msgid "ERROR: cannot open macro file %s"
 msgstr "VIRHE: makrotiedoston %s avaus epäonnistui"
 
-#: src/config.c:1129
+#: src/config.c:1278
 msgid "Reading macros"
 msgstr "Luetaan makrot"
 
-#: src/config.c:1188
+#: src/config.c:1311
 msgid " A -      Terminal emulation :"
 msgstr " A -      Pääte-emulointi    :"
 
-#: src/config.c:1189
+#: src/config.c:1312
 msgid " B -     Backspace key sends :"
 msgstr " B - Peruutusnäppäin lähettää:"
 
-#: src/config.c:1190
+#: src/config.c:1313
 msgid " C -          Status line is :"
 msgstr " C -          Tilarivi on    :"
 
-#: src/config.c:1191
+#: src/config.c:1314
 msgid " D -   Newline tx delay (ms) :"
 msgstr " D -   Rivinvaihdon tx-viive (ms):"
 
-#: src/config.c:1192
+#: src/config.c:1315
 msgid " E -          ENQ answerback :"
 msgstr " E -          ENQ-kyselyn vastaaja:"
 
-#: src/config.c:1193
+#: src/config.c:1316
 msgid " F - Character tx delay (ms) :"
 msgstr " F - Merkin tx-viive (ms)    :"
 
-#: src/config.c:1197
+#: src/config.c:1320
 msgid "Terminal settings"
 msgstr "Pääteasetukset"
 
 # , c-format
-#: src/config.c:1301
+#: src/config.c:1424
 #, c-format
 msgid "Cannot write to %s"
 msgstr "%s: kirjoitus epäonnistui"
 
-#: src/config.c:1308
+#: src/config.c:1431
 msgid "Configuration saved"
 msgstr "Asetukset tallennettu"
 
-#: src/config.c:1323
+#: src/config.c:1446
 msgid "ERROR: Macros have changed but no filename is set!"
 msgstr "VIRHE: Makroja muutettu mutta tiedostonimi puuttuu!"
 
 # , c-format
-#: src/config.c:1327
+#: src/config.c:1450
 #, c-format
 msgid "Cannot write macros file %s"
 msgstr "Makrotiedoston %s kirjoitus epäonnistui"
 
-#: src/config.c:1333
+#: src/config.c:1456
 msgid "Macros saved"
 msgstr "Makrot tallennettu"
 
-#: src/config.c:1350
+#: src/config.c:1473
 msgid "Give name to save this configuration?"
 msgstr "Tallennetaan asetukset nimelle:"
 
-#: src/config.c:1372
+#: src/config.c:1500
 msgid "Filenames and paths"
 msgstr "Tiedostot ja hakemistot"
 
-#: src/config.c:1373
+#: src/config.c:1501
 msgid "File transfer protocols"
 msgstr "Tiedostonsiirtoyhteyskäytännöt"
 
-#: src/config.c:1374
+#: src/config.c:1502
 msgid "Serial port setup"
 msgstr "Sarjaportin asetukset"
 
-#: src/config.c:1375
+#: src/config.c:1503
 msgid "Modem and dialing"
 msgstr "Modeemi ja soitto"
 
-#: src/config.c:1378
+#: src/config.c:1507
 msgid "Save setup as.."
 msgstr "Tallenna nimellä.."
 
-#: src/config.c:1379
+#: src/config.c:1508
 msgid "Exit"
 msgstr "Pois asetuksista"
 
-#: src/config.c:1380
+#: src/config.c:1509
 msgid "Exit from Minicom"
 msgstr "Poistu Minicomista"
 
 # , c-format
-#: src/config.c:1392
+#: src/config.c:1525
 #, c-format
 msgid "Save setup as %s"
 msgstr "Tallenna nimellä %s"
 
-#: src/config.c:1398
+#: src/config.c:1531
 msgid "configuration"
 msgstr "asetukset"
 
-#: src/config.c:1407
+#: src/config.c:1540
 msgid "BLACK"
 msgstr "MUSTA"
 
-#: src/config.c:1407
+#: src/config.c:1540
 msgid "RED"
 msgstr "PUNAINEN"
 
-#: src/config.c:1407
+#: src/config.c:1540
 msgid "GREEN"
 msgstr "VIHREÄ"
 
-#: src/config.c:1407
+#: src/config.c:1540
 msgid "YELLOW"
 msgstr "KELTAINEN"
 
-#: src/config.c:1408
+#: src/config.c:1541
 msgid "BLUE"
 msgstr "SININEN"
 
-#: src/config.c:1408
+#: src/config.c:1541
 msgid "MAGENTA"
 msgstr "SINIPUNAINEN"
 
-#: src/config.c:1408
+#: src/config.c:1541
 msgid "CYAN"
 msgstr "SINIVIHREÄ"
 
-#: src/config.c:1408
+#: src/config.c:1541
 msgid "WHITE"
 msgstr "VALKOINEN"
 
-#: src/config.c:1438
+#: src/config.c:1571
 msgid "Comm Parameters"
 msgstr "Sarjaliitännän asetukset"
 
-#: src/config.c:1443
+#: src/config.c:1576
 msgid " Speed            Parity      Data\n"
 msgstr " Nopeus           Pariteetti  Data\n"
 
-#: src/config.c:1444
+#: src/config.c:1577
 msgid " A: <next>        L: None     S: 5\n"
 msgstr " A: <seuraava>    L: Ei käyt. S: 5\n"
 
-#: src/config.c:1445
+#: src/config.c:1578
 msgid " B: <prev>        M: Even     T: 6\n"
 msgstr " B: <edellinen>   M: Paril.   T: 6\n"
 
-#: src/config.c:1446
+#: src/config.c:1579
 msgid " C:   9600        N: Odd      U: 7\n"
 msgstr " C:   9600        N: Pariton  U: 7\n"
 
-#: src/config.c:1447
+#: src/config.c:1580
 msgid " D:  38400        O: Mark     V: 8\n"
 msgstr " D:  38400        O: Mark     V: 8\n"
 
-#: src/config.c:1448
+#: src/config.c:1581
 msgid " E: 115200        P: Space\n"
 msgstr " E: 115200        P: Space\n"
 
-#: src/config.c:1450
+#: src/config.c:1583
 msgid " Stopbits\n"
 msgstr " Stop-bitit\n"
 
-#: src/config.c:1451
+#: src/config.c:1584
 msgid " W: 1             Q: 8-N-1\n"
 msgstr " W: 1             Q: 8-N-1\n"
 
-#: src/config.c:1452
+#: src/config.c:1585
 msgid " X: 2             R: 7-E-1\n"
 msgstr " X: 2             R: 7-E-1\n"
 
-#: src/config.c:1454
+#: src/config.c:1587
 msgid " K: Current\n"
 msgstr " K: Nykyinen\n"
 
-#: src/config.c:1457
+#: src/config.c:1590
 msgid ""
 "\n"
 " Choice, or <Enter> to exit? "
@@ -593,52 +629,53 @@ msgstr ""
 " Valitse tai poistu <Enter>:illä: "
 
 # , c-format
-#: src/config.c:1465
+#: src/config.c:1598
 #, c-format
 msgid "Current: %5s %s%s%s  "
 msgstr "Nykyinen: %5s %s%s%s "
 
-#: src/config.c:1607
-msgid "F1 to F10 Macros"
+#: src/config.c:1743
+#, fuzzy
+msgid "F1 to F12 Macros"
 msgstr "Makrot F1 - F10 "
 
-#: src/config.c:1626
+#: src/config.c:1764
 msgid " (LEGEND: ^M = C-M, ^L = C-L, ^G = C-G, ^R = C-R, ^~ = pause 1 second,"
 msgstr " (ERIKOISMERKIT: ^M=C-M, ^L=C-L, ^G=C-G, ^R=C-R, ^~ = tauko 1 sekunti,"
 
-#: src/config.c:1628
+#: src/config.c:1766
 msgid "  \\u = username, \\p = password, \\\\ = \\, \\e = toggle echo, "
 msgstr ""
 "  \\u = käyttäjänimi, \\p = salasana, \\\\ = \\, \\e = vuorottele kaiutusta, "
 
-#: src/config.c:1630
+#: src/config.c:1768
 msgid ""
 "  \\l = toggle LF, \\bX1..Xn<sp> = change baud rate. Example: \"\\beq \""
 msgstr ""
 "  \\l = vuorottele rivinvaihto, \\bX1..Xn<sp> = vaihda nopeus. Esim.: ”\\beq "
 "”"
 
-#: src/config.c:1632
+#: src/config.c:1770
 msgid ""
 "  = 115200 8N1. (See the \"Comm Parameters\" menu for valid values of X.))"
 msgstr ""
 "  = 115200 8N1. (Katso kelvolliset X-arvot valikosta ”Sarjaliitännän "
 "asetukset”.))"
 
-#: src/config.c:1647
+#: src/config.c:1785
 msgid "CHANGED"
 msgstr "MUUTETTU"
 
-#: src/config.c:1734
+#: src/config.c:1884
 msgid "Character conversion"
 msgstr "Merkkikonversio"
 
-#: src/config.c:1739
+#: src/config.c:1889
 msgid " char    in out    char    in out    char    in out    char    in out\n"
 msgstr ""
 " merkki sis ulos   merkki sis ulos   merkki sis ulos   merkki sis ulos\n"
 
-#: src/config.c:1761
+#: src/config.c:1911
 msgid ""
 "\n"
 " A - load table\tB - save table"
@@ -647,12 +684,12 @@ msgstr ""
 " A - lataa taulu\tB - tallenna taulu"
 
 # , c-format
-#: src/config.c:1763
+#: src/config.c:1913
 #, c-format
 msgid "\tfile:%s"
 msgstr "\ttiedosto:%s"
 
-#: src/config.c:1764
+#: src/config.c:1914
 msgid ""
 "\n"
 " C - edit char\tD - next screen\tE - prev screen\n"
@@ -661,140 +698,140 @@ msgstr ""
 " C - muokkaa merkki\tD - seuraavat\t\tE - edelliset\n"
 
 # , c-format
-#: src/config.c:1765
+#: src/config.c:1915
 #, c-format
 msgid " F - convert capture: %s\n"
 msgstr " F - konvertoidaan tiedostoon tallennettaessa: %s\n"
 
 # , c-format
-#: src/config.c:1780
+#: src/config.c:1930
 #, c-format
 msgid "Load file: %s"
 msgstr "Lataa tiedosto: %s"
 
 # , c-format
-#: src/config.c:1792
+#: src/config.c:1942
 #, c-format
 msgid "Save as file: %s"
 msgstr "Tallenna tiedosto: %s"
 
-#: src/config.c:1803
+#: src/config.c:1953
 msgid "Character to be edited: "
 msgstr "Muokattava merkki: "
 
-#: src/config.c:1811 src/config.c:1823 src/config.c:1835
+#: src/config.c:1961 src/config.c:1973 src/config.c:1985
 msgid "Input character ascii value 0-255"
 msgstr "Anna merkin ascii-koodi (0-255)"
 
 # , c-format
-#: src/config.c:1817
+#: src/config.c:1967
 #, c-format
 msgid "Change input to: %s"
 msgstr "Muutettu tuleva: %s"
 
 # , c-format
-#: src/config.c:1829
+#: src/config.c:1979
 #, c-format
 msgid "Change output to: %s"
 msgstr "Muutettu lähtevä: %s"
 
 # , c-format
-#: src/config.c:1867
+#: src/config.c:2018
 #, c-format
 msgid "Cannot open conversion table %s"
 msgstr "Muunnostaulun %s avaus epäonnistui"
 
 # , c-format
-#: src/config.c:1873
+#: src/config.c:2024
 #, fuzzy, c-format
 msgid "Cannot read conversion table %s"
 msgstr "Tiedoston %s kirjoitus epäonnistui"
 
 # , c-format
-#: src/config.c:1885
+#: src/config.c:2037
 #, c-format
 msgid "Cannot write conversion table %s"
 msgstr "Tiedoston %s kirjoitus epäonnistui"
 
-#: src/dial.c:250
+#: src/dial.c:247
 msgid "Initializing Modem"
 msgstr "Modeemin alustus"
 
-#: src/dial.c:266
+#: src/dial.c:263
 msgid "Resetting Modem"
 msgstr "Modeemin resetointi"
 
-#: src/dial.c:280
+#: src/dial.c:277
 msgid "Hanging up"
 msgstr "Katkaisen yhteyden"
 
 # , c-format
-#: src/dial.c:284
+#: src/dial.c:281
 #, c-format
 msgid "Hangup (%ld:%02ld:%02ld)"
 msgstr "Yhteyden katkaisu (%ld:%02ld:%02ld)"
 
-#: src/dial.c:316
+#: src/dial.c:313
 msgid "Sending BREAK"
 msgstr "Lähetetään BREAK"
 
 # , c-format
-#: src/dial.c:382
+#: src/dial.c:379
 #, c-format
 msgid "    No connection: %s.      \n"
 msgstr "      Ei yhteyttä: %s.      \n"
 
-#: src/dial.c:384
+#: src/dial.c:381
 msgid "   Press any key to continue..    "
 msgstr "   Paina jotain näppäintä..    "
 
 # , c-format
-#: src/dial.c:389 src/dial.c:401
+#: src/dial.c:386 src/dial.c:397
 #, c-format
 msgid "     Retry in %2d seconds             "
 msgstr "     Uusi yritys %2d sekunnin kuluttua "
 
-#: src/dial.c:427
+#: src/dial.c:423
 msgid "Max retries"
 msgstr "Liikaa yrityksiä"
 
-#: src/dial.c:437
+#: src/dial.c:433
 msgid "You are already online! Hang up first."
 msgstr "Olet jo linjalla! Katkaise yhteys ensin."
 
-#: src/dial.c:442
+#: src/dial.c:438
 msgid "Autodial"
 msgstr "Soitto"
 
-#: src/dial.c:446 src/dial.c:476
+#: src/dial.c:442 src/dial.c:472
 msgid "Dialing"
 msgstr "Soitetaan "
 
 # , c-format
-#: src/dial.c:447 src/dial.c:479
+#: src/dial.c:443 src/dial.c:475
 #, c-format
 msgid "      At : %s"
 msgstr " Numero  : %s"
 
 # , c-format
-#: src/dial.c:450 src/dial.c:483
+#: src/dial.c:446 src/dial.c:479
 #, c-format
 msgid " Last on : %s at %s"
 msgstr " Viimeksi: %s klo %s"
 
 # , c-format
-#: src/dial.c:498
+#: src/dial.c:494
 #, c-format
 msgid "    Time : %-3d"
 msgstr "    Aika : %-3d"
 
 # , c-format
-#: src/dial.c:500
+#: src/dial.c:496
 #, c-format
 msgid "     Attempt #%d"
 msgstr "     Yritys  #%d"
 
-#: src/dial.c:501
+#: src/dial.c:497
 msgid ""
 "\n"
 "\n"
@@ -806,40 +843,40 @@ msgstr ""
 "\n"
 " Esc keskeyttää, välilyönti->seuraava."
 
-#: src/dial.c:542
+#: src/dial.c:538
 msgid "Cancelled"
 msgstr "Peruttu"
 
-#: src/dial.c:598
+#: src/dial.c:596
 msgid "Connected. Press any key to continue"
 msgstr "Yhteys muodostui. Paina jotain näppäintä"
 
-#: src/dial.c:678
+#: src/dial.c:672
 msgid "Timeout"
 msgstr "Aikakatkaisu"
 
-#: src/dial.c:880
+#: src/dial.c:875
 msgid "Manually entered number"
 msgstr "Käsin syötetty numero"
 
-#: src/dial.c:889
+#: src/dial.c:884
 msgid "Cannot open ~/.dialdir: permission denied"
 msgstr "~/.dialdir:in avaus epäonnistui: ei oikeuksia"
 
-#: src/dial.c:911
+#: src/dial.c:906
 #, fuzzy
 msgid "Failed to read dialing directory\n"
 msgstr "Puhelinluettelo ei mahdu muistiin"
 
-#: src/dial.c:945
+#: src/dial.c:941
 msgid "Phonelist garbled (unknown version?)"
 msgstr "Puhelinluettelo sekaisin (outo versio?)"
 
-#: src/dial.c:952 src/dial.c:960
+#: src/dial.c:949 src/dial.c:958
 msgid "Phonelist corrupted"
 msgstr "Puhelinluettelo vaurioitunut"
 
-#: src/dial.c:965
+#: src/dial.c:964
 msgid "Unknown dialing directory version"
 msgstr "Tuntematon puhelinluettelon versio"
 
@@ -849,6 +886,11 @@ msgstr "Puhelinluettelo sekaisin (?)"
 
 #: src/dial.c:994
 msgid "Out of memory while reading dialing directory"
+msgstr "Puhelinluettelo ei mahdu muistiin"
+
+#: src/dial.c:1024
+#, fuzzy
+msgid "Failed to read phonelist\n"
 msgstr "Puhelinluettelo ei mahdu muistiin"
 
 #: src/dial.c:1046
@@ -971,11 +1013,11 @@ msgstr "siiRrä"
 msgid "Manual"
 msgstr "KäsiN"
 
-#: src/dial.c:1453 src/file.c:71 src/minicom.c:68 src/minicom.c:71
+#: src/dial.c:1453 src/file.c:72 src/minicom.c:70 src/minicom.c:73
 msgid "   Yes  "
 msgstr " Kyllä  "
 
-#: src/dial.c:1453 src/file.c:71 src/minicom.c:68 src/minicom.c:71
+#: src/dial.c:1453 src/file.c:72 src/minicom.c:70 src/minicom.c:73
 msgid "   No   "
 msgstr "   Ei   "
 
@@ -987,7 +1029,7 @@ msgstr "   Ei   "
 msgid "Entry \"%s\" not found. Enter dialdir?"
 msgstr "Ei tietoja numerolle ”%s”. Mennäänkö puhelinluetteloon?"
 
-#: src/dial.c:1576 src/file.c:429
+#: src/dial.c:1576 src/file.c:430
 msgid "( Escape to exit, Space to tag )"
 msgstr "( Esc poistumiseen, välilyönti merkitsemiseen )"
 
@@ -1018,116 +1060,116 @@ msgstr "Anna numero"
 #. TRANSLATORS: Translation of each of these menu items should not be
 #. * longer than 7 characters. The upper-case letter is a shortcut,
 #. * so keep them unique and ASCII; 'h', 'j', 'k', 'l' are reserved
-#: src/file.c:59
+#: src/file.c:60
 msgid "[Goto]"
 msgstr "[Mene]"
 
-#: src/file.c:59
+#: src/file.c:60
 msgid "[Prev]"
 msgstr "[Edell]"
 
-#: src/file.c:59
+#: src/file.c:60
 msgid "[Show]"
 msgstr "[Näytä]"
 
-#: src/file.c:59
+#: src/file.c:60
 msgid "[Tag]"
 msgstr "[Merk]"
 
-#: src/file.c:59
+#: src/file.c:60
 msgid "[Untag]"
 msgstr "[Palaa]"
 
-#: src/file.c:60
+#: src/file.c:61
 msgid "[Okay]"
 msgstr "[Selvä]"
 
-#: src/file.c:322
+#: src/file.c:323
 #, c-format
 msgid "Could not change to directory %s (%s)"
 msgstr "Vaihtaminen hakemistoon %s (%s) epäonnistui"
 
-#: src/file.c:346
+#: src/file.c:347
 msgid "Select one or more files for download"
 msgstr "Valitse yksi tai useampi tiedosto latausta varten"
 
-#: src/file.c:348
+#: src/file.c:349
 msgid "Select a file for download"
 msgstr "Valitse tiedosto ladattavaksi"
 
-#: src/file.c:350
+#: src/file.c:351
 msgid "Select a directory for download"
 msgstr "Valitse hakemisto latausta varten"
 
-#: src/file.c:353
+#: src/file.c:354
 msgid "Select one or more files for upload"
 msgstr "Valitse yksi tai useampi tiedosto kopioitavaksi palvelimelle"
 
-#: src/file.c:355
+#: src/file.c:356
 msgid "Select a file for upload"
 msgstr "Valitse tiedosto kopioitavaksi palvelimelle"
 
-#: src/file.c:357
+#: src/file.c:358
 msgid "Select a directory for upload"
 msgstr "Valitse hakemisto palvelimelle kopiointia varten"
 
-#: src/file.c:366
+#: src/file.c:367
 #, c-format
 msgid "Directory: %%-%ds"
 msgstr "Hakemisto: %%-%ds"
 
-#: src/file.c:454
+#: src/file.c:455
 msgid "Can't back up!"
 msgstr "Olet jo juuressa!"
 
-#: src/file.c:552 src/file.c:565
+#: src/file.c:554 src/file.c:567
 msgid "Too many files tagged - buffer would overflow"
 msgstr "Liikaa tiedostoja - puskurin ylivuoto"
 
-#: src/file.c:669 src/file.c:796
+#: src/file.c:671 src/file.c:798
 msgid "Can select only one!"
 msgstr "Valitse vain yksi."
 
-#: src/file.c:771
+#: src/file.c:773
 msgid "Goto directory:"
 msgstr "Siirry hakemistoon:"
 
-#: src/file.c:785
+#: src/file.c:787
 msgid "Filename pattern:"
 msgstr "Valintapeite:"
 
-#: src/file.c:802
+#: src/file.c:804
 msgid "Tag pattern:"
 msgstr "Valintapeite:"
 
-#: src/file.c:806
+#: src/file.c:808
 msgid "No file(s) tagged"
 msgstr "Ei tiedostoja valittuna"
 
-#: src/file.c:823
+#: src/file.c:825
 msgid "Untag pattern:"
 msgstr "Poista peite:"
 
-#: src/file.c:827
+#: src/file.c:829
 msgid "No file(s) untagged"
 msgstr "Ei valintaa"
 
-#: src/file.c:843
+#: src/file.c:845
 msgid "No file selected - enter filename:"
 msgstr "Ei tiedostoja valittuna - anna nimi:"
 
 # , c-format
-#: src/file.c:853
+#: src/file.c:855
 #, c-format
 msgid "File: \"%s\" exists! Overwrite?"
 msgstr "Tiedosto: ”%s” on jo olemassa! Korvataanko?"
 
-#: src/file.c:864
+#: src/file.c:866
 msgid "no such file!"
 msgstr "tiedostoa ei löydy!"
 
 # , c-format
-#: src/getsdir.c:315
+#: src/getsdir.c:316
 #, c-format
 msgid "%d files:\n"
 msgstr "%d tiedostoa:\n"
@@ -1214,137 +1256,159 @@ msgstr "Muuttanut Jukka Lahtinen 1997-2000"
 msgid "i18n by Arnaldo Carvalho de Melo 1998"
 msgstr "i18n Arnaldo Carvalho de Melo 1998"
 
-#: src/main.c:241
+#: src/main.c:318
+#, c-format
+msgid "Lockfile %s cannot be queried (%d).\n"
+msgstr ""
+
+#: src/main.c:326
+#, c-format
+msgid "Lockfile %s owned by someone else (uid=%d).\n"
+msgstr ""
+
+# , c-format
+#: src/main.c:336
+#, fuzzy, c-format
+msgid "Device %s is locked by someone else.\n"
+msgstr "%s on lukittu.\n"
+
+#: src/main.c:355
 #, c-format
 msgid "Lockfile is stale. Overriding it..\n"
 msgstr "Ohitetaan vanha lukkotiedosto..\n"
 
 # , c-format
-#: src/main.c:250 src/updown.c:498
+#: src/main.c:364 src/updown.c:499
 #, c-format
 msgid "Device %s is locked.\n"
 msgstr "%s on lukittu.\n"
 
-#: src/main.c:265
+#: src/main.c:380
 #, c-format
 msgid "Could not setup for dial out.\n"
 msgstr "Soiton asetus epäonnistui.\n"
 
 # , c-format
-#: src/main.c:316
+#: src/main.c:429
 #, c-format
 msgid "minicom: cannot open %s: %s\n"
 msgstr "minicom: %s:n avaus epäonnistui: %s\n"
 
 # , c-format
-#: src/main.c:319
+#: src/main.c:432
 #, c-format
 msgid "minicom: cannot open %s. Sorry.\n"
 msgstr "minicom: %s:n avaus epäonnistui.\n"
 
 # , c-format
-#: src/main.c:326 src/main.c:804
+#: src/main.c:439 src/main.c:982
 #, c-format
 msgid "Cannot open %s!"
 msgstr "Kohteen %s avaus epäonnistui!"
 
-#: src/main.c:554
+# , c-format
+#: src/main.c:602
+#, fuzzy
+msgid "%H for help | %b | %C | Minicom %V | %T | %t | %D"
+msgstr " %7.7sZ = Opaste |           |     | Minicom %-6.6s |       | "
+
+#: src/main.c:677
 msgid "Offline"
 msgstr "Ei yhteyttä"
 
-#: src/main.c:554
+#: src/main.c:677
 msgid "OFFLINE"
 msgstr "EI YHTEYTTÄ"
 
-#: src/main.c:557
+#: src/main.c:680
 msgid "Online"
 msgstr "Yhteys"
 
-#: src/main.c:557
+#: src/main.c:680
 msgid "ONLINE"
 msgstr "YHTEYS"
 
 # , c-format
-#: src/main.c:627
+#: src/main.c:753
 #, c-format
 msgid "Gone offline (%ld:%02ld:%02ld)"
 msgstr "Yhteys katkesi (%ld:%02ld:%02ld)"
 
-#: src/main.c:785
+#: src/main.c:962
 msgid "Could not re-initialize window system."
 msgstr "Ikkunoiden uudelleenalustus epäonnistui."
 
 # , c-format
-#: src/minicom.c:56 src/minicom.c:58
+#: src/minicom.c:57 src/minicom.c:59
 #, c-format
 msgid "Got signal %d"
 msgstr "Signaali %d"
 
-#: src/minicom.c:69 src/minicom.c:70
+#: src/minicom.c:71 src/minicom.c:72
 msgid "  Close "
 msgstr "  Sulje "
 
-#: src/minicom.c:69
+#: src/minicom.c:71
 msgid " Pause  "
 msgstr " Tauko  "
 
-#: src/minicom.c:69 src/minicom.c:70
+#: src/minicom.c:71 src/minicom.c:72
 msgid "  Exit  "
 msgstr "  Pois  "
 
-#: src/minicom.c:70
+#: src/minicom.c:72
 msgid " Unpause"
 msgstr "  Jatka "
 
-#: src/minicom.c:85
+#: src/minicom.c:94
 msgid "Hang-up line?"
 msgstr "Katkaise yhteys?"
 
 # , c-format
-#: src/minicom.c:96
+#: src/minicom.c:105
 #, c-format
 msgid "Killed by signal %d !\n"
 msgstr "Lopetettu signaaliin %d !\n"
 
-#: src/minicom.c:120
+#: src/minicom.c:129
 msgid "Suspended. Type \"fg\" to resume.\n"
 msgstr "Shellissä. Paluu komennolla ”fg”.\n"
 
-#: src/minicom.c:139
+#: src/minicom.c:148
 msgid "SHELL variable not set"
 msgstr "SHELL-muuttujalla ei arvoa"
 
-#: src/minicom.c:143 src/updown.c:314 src/updown.c:526 src/updown.c:725
+#: src/minicom.c:152 src/updown.c:314 src/updown.c:527 src/updown.c:729
 msgid "Out of memory: could not fork()"
 msgstr "Muisti lopussa. fork() epäonnistui"
 
-#: src/minicom.c:153
+#: src/minicom.c:162
 msgid "Shelled out. Type \"exit\" to return.\n"
 msgstr "Shell. Palaa komennolla ”exit”.\n"
 
-#: src/minicom.c:266
+#: src/minicom.c:283
 msgid "SEARCH FOR (ESC=Exit)"
 msgstr "ETSI TEKSTI (ESC=paluu)"
 
-#: src/minicom.c:316 src/minicom.c:337
+#: src/minicom.c:330 src/minicom.c:358
 msgid "Search Wrapping Around to Start!"
 msgstr "Jatketaan etsintää alusta!"
 
-#: src/minicom.c:462
+#: src/minicom.c:484
 msgid ""
 "HISTORY: U=Up D=Down F=PgDn B=PgUp s=Srch S=CaseLess N=Next C=Cite ESC=Exit "
 msgstr ""
 "PUSKURI: U=ylös D=alas F=PgDn B=PgUp s=haku S=HAKU N=seur C=lainaa ESC=pois"
 
-#: src/minicom.c:501
+#: src/minicom.c:524
 msgid "History buffer Disabled!"
 msgstr "Puskuri ei ole käytössä!"
 
-#: src/minicom.c:506
+#: src/minicom.c:529
 msgid "History buffer empty!"
 msgstr "Historiapuskuri on tyhjä!"
 
-#: src/minicom.c:564
+#: src/minicom.c:587
 msgid ""
 "No previous search!\n"
 "  Please 's' or 'S' first!"
@@ -1352,30 +1416,30 @@ msgstr ""
 "Ei aiempaa hakua!\n"
 "  Anna komento 's' tai 'S'!"
 
-#: src/minicom.c:721 src/minicom.c:764
+#: src/minicom.c:748 src/minicom.c:791
 msgid ""
 "  CITATION: ENTER=select start line ESC=exit                               "
 msgstr ""
 "  LAINAUS: ENTER=valitse alkurivi ESC=peru                                 "
 
-#: src/minicom.c:738
+#: src/minicom.c:765
 msgid ""
 "  CITATION: ENTER=select end line ESC=exit                                 "
 msgstr ""
 "  LAINAUS: ENTER=valitse loppurivi ESC=peru                                "
 
 # , c-format
-#: src/minicom.c:798
+#: src/minicom.c:875
 #, c-format
 msgid "Wrong option in environment MINICOM=\"%s\"\n"
 msgstr "Tuntematon asetus MINICOM=”%s”\n"
 
-#: src/minicom.c:799
+#: src/minicom.c:876
 #, c-format
 msgid "Type \"minicom %s\" for help.\n"
 msgstr "Apua komennolla ”minicom %s”\n"
 
-#: src/minicom.c:809
+#: src/minicom.c:886
 #, fuzzy, c-format
 msgid ""
 "Usage: %s [OPTION]... [configuration]\n"
@@ -1402,6 +1466,7 @@ msgid ""
 "  -d, --dial=ENTRY       : dial ENTRY from the dialing directory\n"
 "  -p, --ptty=TTYP        : connect to pseudo terminal\n"
 "  -C, --capturefile=FILE : start capturing to FILE\n"
+"  --capturefile-buffer-mode=MODE : set buffering mode of capture file\n"
 "  -F, --statlinefmt      : format of status line\n"
 "  -R, --remotecharset    : character set of communication partner\n"
 "  -v, --version          : output version information and exit\n"
@@ -1444,18 +1509,18 @@ msgstr ""
 "Nämä valitsimet voidaan määritellä myös MINICOM-ympäristömuuttujassa.\n"
 
 # , c-format
-#: src/minicom.c:839
+#: src/minicom.c:917
 #, c-format
 msgid "This variable is currently set to \"%s\".\n"
 msgstr "Tämä muuttuja on nykyisin asetettu arvoon ”%s”.\n"
 
 # , c-format
-#: src/minicom.c:841
+#: src/minicom.c:919
 #, c-format
 msgid "This variable is currently unset.\n"
 msgstr "Tämä muuttujaa ei ole nykyään asetettuna.\n"
 
-#: src/minicom.c:844
+#: src/minicom.c:922
 #, c-format
 msgid ""
 "The configuration directory for the access file and the configurations\n"
@@ -1471,19 +1536,49 @@ msgstr ""
 "Ilmoita käännösvirheistä osoitteeseen <translation-team-fi@lists.sourceforge."
 "net>.\n"
 
-#: src/minicom.c:1161
+#: src/minicom.c:1037
+#, c-format
+msgid "Activating iconv failed with: %s (%d)\n"
+msgstr ""
+
+#: src/minicom.c:1185
+msgid "Timestamp OFF"
+msgstr "Aiakaleima POIS"
+
+#: src/minicom.c:1188
+msgid "Timestamp every line (simple)"
+msgstr "Aikaleima jokaisella rivillä (yksinkertainen)"
+
+#: src/minicom.c:1191
+msgid "Timestamp every line (extended)"
+msgstr "Aikaleima jokaisella rivillä (laajennettu)"
+
+#: src/minicom.c:1194
+msgid "Timestamp lines every second"
+msgstr "Aikaleima kerran sekunnissa"
+
+#: src/minicom.c:1197
+#, fuzzy
+msgid "Timestamp delta between lines"
+msgstr "Aikaleima jokaisella rivillä (yksinkertainen)"
+
+#: src/minicom.c:1200
+msgid "Timestamp relative to trigger pattern"
+msgstr ""
+
+#: src/minicom.c:1367
 #, c-format
 msgid "%s version %s"
 msgstr "%s versio %s"
 
 # , c-format
-#: src/minicom.c:1163
+#: src/minicom.c:1369
 #, c-format
 msgid " (compiled %s)"
 msgstr " (käännetty %s)"
 
 # , c-format
-#: src/minicom.c:1166
+#: src/minicom.c:1372
 #, c-format
 msgid ""
 "Copyright (C) Miquel van Smoorenburg.\n"
@@ -1492,45 +1587,67 @@ msgstr ""
 "Copyright © Miquel van Smoorenburg.\n"
 "\n"
 
-#: src/minicom.c:1189
+#: src/minicom.c:1373
+#, c-format
+msgid ""
+"This program is free software; you can redistribute it and/or\n"
+"modify it under the terms of the GNU General Public License\n"
+"as published by the Free Software Foundation; either version\n"
+"2 of the License, or (at your option) any later version.\n"
+"\n"
+msgstr ""
+
+#: src/minicom.c:1395
 #, c-format
 msgid "minicom: argument to -p must be a pty\n"
 msgstr "minicom: valitsimen -p argumenttina pitää olla jokin pty\n"
 
-#: src/minicom.c:1253 src/minicom.c:1580
-msgid "Cannot open capture file"
+#: src/minicom.c:1460
+#, fuzzy, c-format
+msgid "Cannot open capture file\n"
 msgstr "Tallennustiedoston avaus epäonnistui"
 
-#: src/minicom.c:1316
+#: src/minicom.c:1478
+#, c-format
+msgid "Invalid buffering mode '%s'\n"
+msgstr ""
+
+#: src/minicom.c:1548
 msgid "You don't exist. Go away.\n"
 msgstr "En tunne sinua. Poistu.\n"
 
-#: src/minicom.c:1391
+#: src/minicom.c:1629
 msgid "Sorry. Your screen is too small.\n"
 msgstr "Näyttösi on liian pieni.\n"
 
-#: src/minicom.c:1463
+#: src/minicom.c:1707
 msgid "Welcome to minicom"
 msgstr "Minicom"
 
-#: src/minicom.c:1464
+#: src/minicom.c:1708
 msgid "OPTIONS"
 msgstr "VALITSIMET"
 
-#: src/minicom.c:1466
+#: src/minicom.c:1710
 msgid "Compiled on"
 msgstr "Käännetty "
 
-#: src/minicom.c:1482
+#: src/minicom.c:1726
 msgid "Port"
 msgstr "Portti"
 
-#: src/minicom.c:1485
+#: src/minicom.c:1730
 msgid "Using character set conversion"
 msgstr "Käytetään merkkikonversiota"
 
 # , c-format
-#: src/minicom.c:1486
+#: src/minicom.c:1731
+#, fuzzy
+msgid " (failed test)"
+msgstr " (käännetty %s)"
+
+# , c-format
+#: src/minicom.c:1732
 #, c-format
 msgid ""
 "\n"
@@ -1541,243 +1658,241 @@ msgstr ""
 "Komentonäppäinten ohjeet: %sZ%c\n"
 "\n"
 
-#: src/minicom.c:1507
+#: src/minicom.c:1753
 msgid "Add linefeed ON"
 msgstr "rivinvaihto LISÄTÄÄN"
 
-#: src/minicom.c:1507
+#: src/minicom.c:1753
 msgid "Add linefeed OFF"
 msgstr "rivinvaihtoa EI LISÄTÄ"
 
-#: src/minicom.c:1512
+#: src/minicom.c:1758
 msgid "Add carriage return ON"
 msgstr "Lisää rivinvaihto PÄÄLLÄ"
 
-#: src/minicom.c:1512
+#: src/minicom.c:1758
 msgid "Add carriage return OFF"
 msgstr "Lisää rivinvaihto POIS"
 
-#: src/minicom.c:1517
+#: src/minicom.c:1763
 msgid "Local echo ON"
 msgstr "Kaiutus PÄÄLLÄ"
 
-#: src/minicom.c:1517
+#: src/minicom.c:1763
 msgid "Local echo OFF"
 msgstr "Kaiutus POIS"
 
-#: src/minicom.c:1536
+#: src/minicom.c:1782
 msgid "You are online. Really initialize?"
 msgstr "Yhteys on auki. Alustetaanko modeemi silti?"
 
-#: src/minicom.c:1543
+#: src/minicom.c:1789
 msgid "Leave without reset?"
 msgstr "Poistu resetoimatta?"
 
-#: src/minicom.c:1547 src/minicom.c:1565
+#: src/minicom.c:1793 src/minicom.c:1811
 msgid "Save macros?"
 msgstr "Tallenna makrot?"
 
-#: src/minicom.c:1557
+#: src/minicom.c:1803
 msgid "Leave Minicom?"
 msgstr "Poistu Minicomista?"
 
-#: src/minicom.c:1576
+#: src/minicom.c:1822
 msgid "Capture to which file? "
 msgstr "Tallennetaan tiedostoon: "
 
-#: src/minicom.c:1585 src/minicom.c:1594
+#: src/minicom.c:1826
+msgid "Cannot open capture file"
+msgstr "Tallennustiedoston avaus epäonnistui"
+
+#: src/minicom.c:1832 src/minicom.c:1841
 msgid "Capture file"
 msgstr "Tallennetaan tiedostoon"
 
-#: src/minicom.c:1628
+#: src/minicom.c:1875
 msgid "Linewrap ON"
 msgstr "Rivinjatko PÄÄLLÄ"
 
-#: src/minicom.c:1628
+#: src/minicom.c:1875
 msgid "Linewrap OFF"
 msgstr "Rivinjatko POIS"
 
-#: src/minicom.c:1637
-msgid "Timestamp OFF"
-msgstr "Aiakaleima POIS"
-
-#: src/minicom.c:1640
-msgid "Timestamp every line (simple)"
-msgstr "Aikaleima jokaisella rivillä (yksinkertainen)"
-
-#: src/minicom.c:1643
-msgid "Timestamp every line (extended)"
-msgstr "Aikaleima jokaisella rivillä (laajennettu)"
-
-#: src/minicom.c:1646
-msgid "Timestamp lines every second"
-msgstr "Aikaleima kerran sekunnissa"
-
-#: src/minicom.c:1687
+#: src/minicom.c:1918
 msgid "Quit without reset while online."
 msgstr "Poistuminen katkaisematta linjaa."
 
-#: src/rwconf.c:115 src/rwconf.c:149
+#: src/rwconf.c:105 src/rwconf.c:138 src/rwconf.c:139
 msgid "No"
 msgstr "Ei"
 
-#: src/rwconf.c:226
+#: src/rwconf.c:227
 #, c-format
 msgid "# Machine-generated file - use \"minicom -s\" to change parameters.\n"
 msgstr "# Minicomin tuottama tiedosto - muuta komennolla ”minicom -s”.\n"
 
-#: src/rwconf.c:228
+#: src/rwconf.c:229
 #, c-format
 msgid ""
 "# Machine-generated file - use setup menu in minicom to change parameters.\n"
 msgstr ""
 "# Minicomin tuottama tiedosto - asetusten muutto Minicomin valikoilla.\n"
 
-#: src/rwconf.c:253
+#: src/rwconf.c:254
 #, c-format
 msgid "Memory allocation failed.\n"
 msgstr "Muistin varaus epäonnistui.\n"
 
-#: src/rwconf.c:322
+#: src/rwconf.c:323
 #, c-format
 msgid "** Line %d of the %s config file is unparsable.\n"
 msgstr "** Rivi %d / %s config -tiedosto ei ole jäsennettävissä.\n"
 
-#: src/rwconf.c:323
+#: src/rwconf.c:324
 msgid "global"
 msgstr "globaalissa"
 
-#: src/rwconf.c:323
+#: src/rwconf.c:324
 msgid "personal"
 msgstr "yksityisessä"
 
 # , c-format
-#: src/script.c:134
+#: src/script.c:135
 #, c-format
 msgid "script \"%s\": syntax error in line %d %s%s\n"
 msgstr "skripti ”%s”: syntaksivirhe rivillä %d %s%s\n"
 
 # , c-format
-#: src/script.c:158
+#: src/script.c:159
 #, c-format
 msgid "script \"%s\": global timeout%s\n"
 msgstr "skripti ”%s”: aikaraja ylitetty%s\n"
 
-#: src/script.c:297
+#: src/script.c:298
 msgid "(word contains ESC or quote)"
 msgstr "(sanassa ESC tai lainausmerkki)"
 
 # , c-format
-#: src/script.c:350
+#: src/script.c:351
 #, c-format
 msgid "runscript: couldn't open \"%s\"%s\n"
 msgstr "runscript: kohteen ”%s”%s epäonnistui\n"
 
+#: src/script.c:363
+#, c-format
+msgid "Input line %u too long, aborting (and fix me!)!\n"
+msgstr ""
+
 # , c-format
-#: src/script.c:371 src/script.c:485
+#: src/script.c:372 src/script.c:486
 #, c-format
 msgid "script \"%s\": out of memory%s\n"
 msgstr "skripti ”%s”: muisti ei riitä%s\n"
 
+#: src/script.c:423
+#, c-format
+msgid "NULL paramenter to %s!"
+msgstr ""
+
 # , c-format
-#: src/script.c:479
+#: src/script.c:480
 #, c-format
 msgid "script \"%s\" line %d: unknown variable \"%s\"%s\n"
 msgstr "skripti ”%s” rivi %d: tuntematon muuttuja ”%s”%s\n"
 
 # , c-format
-#: src/script.c:524
+#: src/script.c:525
 #, c-format
 msgid "script \"%s\": unexpected end of file%s\n"
 msgstr "skripti ”%s”: tiedosto loppui odottamatta%s\n"
 
-#: src/script.c:532
+#: src/script.c:533
 msgid "(garbage after })"
 msgstr "(roskaa }-merkin jälkeen)"
 
-#: src/script.c:540
+#: src/script.c:541
 msgid "(too many arguments)"
 msgstr "(liikaa argumentteja)"
 
 # , c-format
-#: src/script.c:559
+#: src/script.c:560
 #, c-format
 msgid "script \"%s\" line %d: nested expect%s\n"
 msgstr "skripti ”%s” rivi %d: sisäkkäiset expect-käskyt%s\n"
 
-#: src/script.c:569
+#: src/script.c:570
 msgid "(garbage after {)"
 msgstr "(roskaa {-merkin jälkeen)"
 
-#: src/script.c:590 src/script.c:891 src/script.c:959
+#: src/script.c:591 src/script.c:898 src/script.c:966
 msgid "(argument expected)"
 msgstr "(argumentti puuttuu)"
 
-#: src/script.c:593 src/script.c:893
+#: src/script.c:594 src/script.c:900
 msgid "(invalid argument)"
 msgstr "(tuntematon argumentti)"
 
-#: src/script.c:724
+#: src/script.c:731
 msgid "(in goto/gosub label)"
 msgstr "(goto/gosub -osoitteessa)"
 
 # , c-format
-#: src/script.c:731
+#: src/script.c:738
 #, c-format
 msgid "script \"%s\" line %d: label \"%s\" not found%s\n"
 msgstr "skripti ”%s” rivi %d: osoitetta ”%s” ei löydy%s\n"
 
 # , c-format
-#: src/script.c:753
+#: src/script.c:760
 #, c-format
 msgid "script \"%s\": no return from gosub%s\n"
 msgstr "skripti ”%s”: gosub:ista puuttuu return-käsky%s\n"
 
-#: src/script.c:796
+#: src/script.c:803
 msgid "(missing var name)"
 msgstr "(muuttujanimi puuttuu)"
 
-#: src/script.c:813 src/script.c:829
+#: src/script.c:820 src/script.c:836
 msgid "(expected variable)"
 msgstr "(muuttuja puuttuu)"
 
-#: src/script.c:861
+#: src/script.c:868
 msgid "(expected command after if)"
 msgstr "(ehtolauseesta puuttuu komento)"
 
-#: src/script.c:876
+#: src/script.c:883
 msgid "(unknown operator)"
 msgstr "(tuntematon operaattori)"
 
-#: src/script.c:915
+#: src/script.c:922
 msgid "(unexpected argument)"
 msgstr "(tuntematon argumentti)"
 
 # , c-format
-#: src/script.c:942
+#: src/script.c:949
 #, c-format
 msgid "script \"%s\" line %d: break outside of expect%s\n"
 msgstr "skripti ”%s” rivi %d: break-käsky expect:in ulkopuolella%s\n"
 
 # , c-format
-#: src/script.c:962
+#: src/script.c:969
 #, c-format
 msgid "script \"%s\" line %d: call inside expect%s\n"
 msgstr "skripti ”%s” rivi %d: call-käsky expect:in sisällä%s\n"
 
 # , c-format
-#: src/script.c:1031
+#: src/script.c:1038
 #, c-format
 msgid "script \"%s\" line %d: unknown command \"%s\"%s\n"
 msgstr "skripti ”%s” rivi %d: tuntematon komento ”%s”%s\n"
 
-#: src/script.c:1072
+#: src/script.c:1079
 #, c-format
 msgid "runscript, part of minicom version %s\n"
 msgstr "runscript, osa minicom-versiota %s\n"
 
 # , c-format
-#: src/script.c:1077
+#: src/script.c:1084
 #, c-format
 msgid "Usage: runscript <scriptfile> [logfile [homedir]]%s\n"
 msgstr ""
@@ -1788,6 +1903,12 @@ msgstr ""
 #, c-format
 msgid "Cannot chdir to %.30s"
 msgstr "Hakemistoon %.30s vaihtaminen epäonnistui"
+
+# , c-format
+#: src/updown.c:138
+#, fuzzy
+msgid "out of memory"
+msgstr "skripti ”%s”: muisti ei riitä%s\n"
 
 #: src/updown.c:225
 msgid "Upload"
@@ -1819,7 +1940,11 @@ msgstr "lähetys"
 msgid "download"
 msgstr "vastaanotto"
 
-#: src/updown.c:433
+#: src/updown.c:306
+msgid "pipe() call failed"
+msgstr ""
+
+#: src/updown.c:434
 msgid ""
 "\n"
 " READY: press any key to continue..."
@@ -1827,79 +1952,90 @@ msgstr ""
 "\n"
 " VALMIS: paina jotain näppäintä..."
 
-#: src/updown.c:478
+#: src/updown.c:479
 msgid "Cannot create lockfile!"
 msgstr "Lukkotiedoston luonti epäonnistui!"
 
 # , c-format
-#: src/updown.c:486
+#: src/updown.c:487
 #, fuzzy, c-format
 msgid "Failed to write lockfile %s\n"
 msgstr "Makrotiedoston %s kirjoitus epäonnistui"
 
-#: src/updown.c:496
+#: src/updown.c:497
 #, c-format
 msgid "Cannot create lockfile for %s: %s\n"
 msgstr "Lukkotiedoston luonti kohteelle %s epäonnistui: %s\n"
 
+#: src/updown.c:517
+msgid "No kermit path defined!"
+msgstr ""
+
 # , c-format
-#: src/updown.c:643
+#: src/updown.c:644
 msgid "Same as last"
 msgstr "Sama kuin viimeksi"
 
-#: src/updown.c:644
+#: src/updown.c:645
 msgid " A -   Username        :"
 msgstr " A - Käyttäjänimi      :"
 
-#: src/updown.c:645
+#: src/updown.c:646
 msgid " B -   Password        :"
 msgstr " B - Salasana          :"
 
-#: src/updown.c:646
+#: src/updown.c:647
 msgid " C -   Name of script  :"
 msgstr " C - Skriptinimi       :"
 
-#: src/updown.c:647
+#: src/updown.c:648
 msgid "Change which setting?     (Return to run, ESC to stop)"
 msgstr "Muuta asetuksia?          (ENTER jatkaa, ESC keskeyttää)"
 
-#: src/updown.c:652
+#: src/updown.c:653
 msgid "Run a script"
 msgstr "Suorita skripti"
 
-#: src/window.c:1938
+#: src/window.c:1894
 #, c-format
 msgid "Environment variable TERM not set\n"
 msgstr "Ympäristömuuttujaa TERM ei ole määritelty\n"
 
-#: src/window.c:1944
+#: src/window.c:1900
 #, c-format
 msgid "No termcap entry for %s\n"
 msgstr "Termcap:issa ei ole tietoja päätetyypille %s\n"
 
-#: src/window.c:1947
+#: src/window.c:1903
 #, c-format
 msgid "No termcap database present!\n"
 msgstr "Termcap-tiedostoa ei löydy!\n"
 
-#: src/window.c:1955
+#: src/window.c:1911
 #, c-format
 msgid "No cursor motion capability (cm)\n"
 msgstr "Ei kursorinsiirtokomentoa (cm) termcap-tiedoissa\n"
 
-#: src/window.c:1964
+#: src/window.c:1920
 #, c-format
 msgid "Number of terminal lines unknown\n"
 msgstr "Päätteen rivimäärä tuntematon\n"
 
-#: src/window.c:1968
+#: src/window.c:1924
 #, c-format
 msgid "Number of terminal columns unknown\n"
 msgstr "Päätteen rivinpituus tuntematon\n"
 
-# , c-format
-#~ msgid " %7.7sZ for help |           |     | Minicom %-6.6s |       | "
-#~ msgstr " %7.7sZ = Opaste |           |     | Minicom %-6.6s |       | "
+#: src/window.c:2062
+#, c-format
+msgid "Not enough memory\n"
+msgstr ""
+
+#~ msgid "Screen and keyboard"
+#~ msgstr "Näyttö ja näppäimistö"
+
+#~ msgid "You can't change colors in black and white mode"
+#~ msgstr "Et voi muuttaa värejä mustavalkotilassa"
 
 #~ msgid "minicom: WARNING: configuration file not found, using defaults\n"
 #~ msgstr "minicom: VAROITUS: ei asetustiedostoa, oletukset käytössä\n"

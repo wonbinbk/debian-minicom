@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: minicom 2.7.1\n"
 "Report-Msgid-Bugs-To: minicom-devel@lists.alioth.debian.org\n"
-"POT-Creation-Date: 2013-12-31 16:15+0100\n"
+"POT-Creation-Date: 2021-12-11 20:36+0100\n"
 "PO-Revision-Date: 2018-11-06 19:50+0100\n"
 "Last-Translator: Sebastian Rasmussen <sebras@gmail.com>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -24,76 +24,76 @@ msgstr ""
 msgid "minicom: cannot open macro file %s\n"
 msgstr "minicom: kan inte öppna makrofil %s\n"
 
-#: src/config.c:245
+#: src/config.c:246
 msgid " A - File name (empty=disable) :"
 msgstr " A - Filnamn (tom=avstängd)           :"
 
-#: src/config.c:246
+#: src/config.c:247
 msgid " B - Log connects and hangups  :"
 msgstr " B - Logga anslutning och nedkoppling :"
 
-#: src/config.c:247
+#: src/config.c:248
 msgid " C - Log file transfers        :"
 msgstr " C - Logga filöverföringar            :"
 
-#: src/config.c:248 src/config.c:302 src/config.c:544 src/config.c:650
-#: src/config.c:1194 src/dial.c:1186
+#: src/config.c:249 src/config.c:303 src/config.c:554 src/config.c:719
+#: src/config.c:1317 src/dial.c:1186
 msgid "Change which setting?"
 msgstr "Ändra vilken inställning?"
 
-#: src/config.c:252
+#: src/config.c:253
 msgid "Logging options"
 msgstr "Alternativ för loggning"
 
-#: src/config.c:294
+#: src/config.c:295
 msgid " A - Download directory :"
 msgstr " A - Hämtningskatalog    :"
 
-#: src/config.c:295
+#: src/config.c:296
 msgid " B - Upload directory   :"
 msgstr " B - Uppsändningskatalog :"
 
-#: src/config.c:296
+#: src/config.c:297
 msgid " C - Script directory   :"
 msgstr " C - Skriptkatalog       :"
 
-#: src/config.c:297
+#: src/config.c:298
 msgid " D - Script program     :"
 msgstr " D - Skriptprogram       :"
 
-#: src/config.c:298
+#: src/config.c:299
 msgid " E - Kermit program     :"
 msgstr " E - Kermit-program      :"
 
-#: src/config.c:300
+#: src/config.c:301
 msgid " F - Logging options"
 msgstr " F - Loggningsalternativ"
 
-#: src/config.c:355 src/rwconf.c:114 src/rwconf.c:147 src/rwconf.c:148
+#: src/config.c:356 src/rwconf.c:104 src/rwconf.c:137
 msgid "Yes"
 msgstr "Ja "
 
-#: src/config.c:355
+#: src/config.c:356
 msgid "No "
 msgstr "Nej "
 
-#: src/config.c:430
+#: src/config.c:431
 msgid "M  Zmodem download string activates..."
 msgstr "M  Aktiveringssträng för hämtning via Zmodem......"
 
-#: src/config.c:431
+#: src/config.c:432
 msgid "N  Use filename selection window......"
 msgstr "N  Använd fönster för val av filnamn.............."
 
-#: src/config.c:432
+#: src/config.c:433
 msgid "O  Prompt for download directory......"
 msgstr "O  Fråga efter hämtningskatalog..................."
 
-#: src/config.c:433
+#: src/config.c:434
 msgid "Change which setting? (SPACE to delete)"
 msgstr "Ändra vilken inställning? (MELLANSLAG för att ta bort)"
 
-#: src/config.c:436
+#: src/config.c:437
 msgid "     Name             Program"
 msgstr "    Namn       Program"
 
@@ -104,250 +104,294 @@ msgstr "    Namn       Program"
 #. * FullScr: Command runs fullscreen
 #. * IO-Red: Redirect output of commands to logfile
 #. * Multi: Protocol can transfer multiple files at once
-#: src/config.c:445
+#: src/config.c:446
 msgid "Name U/D FullScr IO-Red. Multi"
 msgstr "Namn U/D Fullskä IO-Red. Multi"
 
-#: src/config.c:476
+#: src/config.c:477
 msgid "Delete which protocol? "
 msgstr "Ta bort vilket protokoll? "
 
-#: src/config.c:537
+#: src/config.c:538
 msgid " A -    Serial Device      :"
 msgstr " A - Serieenhet                :"
 
-#: src/config.c:538
+#: src/config.c:540
 msgid " B - Lockfile Location     :"
 msgstr " B - Plats för låsfil          :"
 
-#: src/config.c:539
+#: src/config.c:542
 msgid " C -   Callin Program      :"
 msgstr " C - Program för inringning    :"
 
-#: src/config.c:540
+#: src/config.c:543
 msgid " D -  Callout Program      :"
 msgstr " D - Program för utringning    :"
 
-#: src/config.c:541
+#: src/config.c:544
 msgid " E -    Bps/Par/Bits       :"
 msgstr " E - Bps/Par/Bitar             :"
 
-#: src/config.c:542
+#: src/config.c:545
 msgid " F - Hardware Flow Control :"
 msgstr " F - Hårdvaruflödeskontroll    :"
 
-#: src/config.c:543
+#: src/config.c:546
 msgid " G - Software Flow Control :"
 msgstr " G - Programvaruflödeskontroll :"
 
-#: src/config.c:620
+#: src/config.c:547
+#, fuzzy
+msgid " H -     RS485 Enable      :"
+msgstr " A - Serieenhet                :"
+
+#: src/config.c:548
+msgid " I -   RS485 Rts On Send   :"
+msgstr ""
+
+#: src/config.c:549
+msgid " J -  RS485 Rts After Send :"
+msgstr ""
+
+#: src/config.c:550
+msgid " K -  RS485 Rx During Tx   :"
+msgstr ""
+
+#: src/config.c:551
+#, fuzzy
+msgid " L -  RS485 Terminate Bus  :"
+msgstr " H -  Terminalemulering      :"
+
+#: src/config.c:552
+msgid " M - RS485 Delay Rts Before:"
+msgstr ""
+
+#: src/config.c:553
+msgid " N - RS485 Delay Rts After :"
+msgstr ""
+
+#: src/config.c:689
 msgid "DTE speed "
 msgstr "DTE-hastighet "
 
-#: src/config.c:622
+#: src/config.c:691
 msgid "line speed"
 msgstr "linjehastighet"
 
-#: src/config.c:630
+#: src/config.c:699
 msgid " A - Init string ........."
 msgstr " A - Initieringssträng ....."
 
-#: src/config.c:631
+#: src/config.c:700
 msgid " B - Reset string ........"
 msgstr " B - Återställningssträng .."
 
-#: src/config.c:632
+#: src/config.c:701
 msgid " C - Dialing prefix #1...."
 msgstr " C - Ringprefix #1.........."
 
-#: src/config.c:633
+#: src/config.c:702
 msgid " D - Dialing suffix #1...."
 msgstr " D - Ringsuffix #1.........."
 
-#: src/config.c:634
+#: src/config.c:703
 msgid " E - Dialing prefix #2...."
 msgstr " E - Ringprefix #2.........."
 
-#: src/config.c:635
+#: src/config.c:704
 msgid " F - Dialing suffix #2...."
 msgstr " F - Ringsuffix #2.........."
 
-#: src/config.c:636
+#: src/config.c:705
 msgid " G - Dialing prefix #3...."
 msgstr " G - Ringprefix #3.........."
 
-#: src/config.c:637
+#: src/config.c:706
 msgid " H - Dialing suffix #3...."
 msgstr " H - Ringsuffix #3.........."
 
-#: src/config.c:638
+#: src/config.c:707
 msgid " I - Connect string ......"
 msgstr " I - Anslutningssträng ....."
 
-#: src/config.c:639
+#: src/config.c:708
 msgid " J - No connect strings .."
 msgstr " J - Strängar för ej ansluten ...."
 
-#: src/config.c:640
+#: src/config.c:709
 msgid " K - Hang-up string ......"
 msgstr " K - Sträng för lägg på .........."
 
-#: src/config.c:641
+#: src/config.c:710
 msgid " L - Dial cancel string .."
 msgstr " L - Sträng för avbryt ringning .."
 
-#: src/config.c:642
+#: src/config.c:711
 msgid " M - Dial time ..........."
 msgstr " M - Ringtid ................."
 
-#: src/config.c:643
+#: src/config.c:712
 msgid " N - Delay before redial ."
 msgstr " N - Tid före nytt ringförsök."
 
-#: src/config.c:644
+#: src/config.c:713
 msgid " O - Number of tries ....."
 msgstr " O - Antal försök ............"
 
-#: src/config.c:645
+#: src/config.c:714
 msgid " P - DTR drop time (0=no)."
 msgstr " P - Tid före DTR släpps 0=av."
 
-#: src/config.c:646
+#: src/config.c:715
 msgid " Q - Auto bps detect ....."
 msgstr " Q - Autoidentifiera hastighet ."
 
-#: src/config.c:647
+#: src/config.c:716
 msgid " R - Modem has DCD line .."
 msgstr " R - Modem har DCD-linje ......."
 
-#: src/config.c:648
+#: src/config.c:717
 msgid " S - Status line shows ..."
 msgstr " S - Statusrad visar ..."
 
-#: src/config.c:649
+#: src/config.c:718
 msgid " T - Multi-line untag ...."
 msgstr " T - Fler-rads avmärkning ......"
 
-#: src/config.c:661
+#: src/config.c:730
 msgid "Modem and dialing parameter setup"
 msgstr "Ställ in parametrar för modem och uppringning"
 
-#: src/config.c:694
+#: src/config.c:763
 msgid "    Return or Esc to exit. Edit A+B to get defaults."
 msgstr "    Retur/Esc avslut. Redig. A+B ger standardvärd"
 
-#: src/config.c:832
-msgid " A - Command key is         :"
-msgstr " A - Kommandotangent är          :"
-
-#: src/config.c:833
-msgid " B - Backspace key sends    :"
-msgstr " B - Backstegstangent skickar    :"
-
-#: src/config.c:834
+#: src/config.c:909
 msgid " C - Status line is         :"
 msgstr " C - Statusrad är                :"
 
-#: src/config.c:835
-msgid " D - Alarm sound            :"
-msgstr " D - Alarmljud                   :"
-
-#: src/config.c:836
+#: src/config.c:910
 msgid " E - Foreground Color (menu):"
 msgstr " E - Förgrundsfärg (meny)        :"
 
-#: src/config.c:837
+#: src/config.c:911
 msgid " F - Background Color (menu):"
 msgstr " F - Bakgrundsfärg (meny)        :"
 
-#: src/config.c:838
+#: src/config.c:912
 msgid " G - Foreground Color (term):"
 msgstr " G - Förgrundsfärg (term)        :"
 
-#: src/config.c:839
+#: src/config.c:913
 msgid " H - Background Color (term):"
 msgstr " H - Bakgrundsfärg (term)        :"
 
-#: src/config.c:840
+#: src/config.c:914
 msgid " I - Foreground Color (stat):"
 msgstr " I - Förgrundsfärg (stat)        :"
 
-#: src/config.c:841
+#: src/config.c:915
 msgid " J - Background Color (stat):"
 msgstr " J - Bakgrundsfärg (stat)        :"
 
-#: src/config.c:842
-msgid " K - History Buffer Size    :"
-msgstr " K - Storlek för historikbuffert :"
-
-#: src/config.c:843
-msgid " L - Macros file            :"
-msgstr " L - Makrofil                    :"
-
-#: src/config.c:844
-msgid " N - Macros enabled         :"
-msgstr " N - Makro aktiverade            :"
-
-#: src/config.c:845
-msgid " O - Character conversion   :"
-msgstr " O - Teckenkonvertering          :"
-
-#: src/config.c:846
+#: src/config.c:916
 msgid " P - Add linefeed           :"
 msgstr " P - Lägg till nyrad             :"
 
-#: src/config.c:847
+#: src/config.c:917
 msgid " Q - Local echo             :"
 msgstr " Q - Lokalt eko                  :"
 
-#: src/config.c:848
+#: src/config.c:918
 msgid " R - Line Wrap              :"
 msgstr " R - Radbryt                     :"
 
-#: src/config.c:849
+#: src/config.c:919
 msgid " S - Hex Display            :"
 msgstr " S - Hex-visning                 :"
 
-#: src/config.c:850
+#: src/config.c:920
 msgid " T - Add carriage return    :"
 msgstr " T - Lägg till vagnretur         :"
 
-#: src/config.c:851 src/config.c:1604
+#: src/config.c:921
+#, fuzzy
+msgid " U - Line Timestamp         :"
+msgstr " R - Radbryt                     :"
+
+#: src/config.c:922 src/config.c:1133 src/config.c:1740
 msgid "Change which setting?  (Esc to exit)"
 msgstr "Ändra vilken inställning? (Esc för att avsluta)"
 
-#: src/config.c:855 src/config.c:1376
-msgid "Screen and keyboard"
-msgstr "Skärm och tangentbord"
+#: src/config.c:926 src/config.c:1504
+msgid "Screen"
+msgstr ""
 
-#: src/config.c:874
-msgid " M - Edit Macros\n"
-msgstr " M - Redigera makro\n"
-
-#: src/config.c:902
-msgid "You can't change colors in black and white mode"
-msgstr "Du kan inte ändra färger i svart-vitt-läge"
-
-#: src/config.c:914
+#: src/config.c:967
 msgid "Menu foreground == background color, change!"
 msgstr "Meny förgrund == bakgrundsfärg, ändra!"
 
-#: src/config.c:923
+#: src/config.c:973
 msgid "Terminal foreground == background color, change!"
 msgstr "Terminal förgrund == bakgrundsfärg, ändra!"
 
-#: src/config.c:935
+#: src/config.c:985 src/config.c:1370
+msgid "disabled"
+msgstr "avstängd"
+
+#: src/config.c:988 src/config.c:1373 src/rwconf.c:136
+msgid "enabled"
+msgstr "aktiverad"
+
+#: src/config.c:1126
+msgid " A - Command key is         :"
+msgstr " A - Kommandotangent är          :"
+
+#: src/config.c:1127
+msgid " B - Backspace key sends    :"
+msgstr " B - Backstegstangent skickar    :"
+
+#: src/config.c:1128
+msgid " D - Alarm sound            :"
+msgstr " D - Alarmljud                   :"
+
+#: src/config.c:1129
+msgid " K - History Buffer Size    :"
+msgstr " K - Storlek för historikbuffert :"
+
+#: src/config.c:1130
+msgid " L - Macros file            :"
+msgstr " L - Makrofil                    :"
+
+#: src/config.c:1131
+msgid " N - Macros enabled         :"
+msgstr " N - Makro aktiverade            :"
+
+#: src/config.c:1132
+msgid " O - Character conversion   :"
+msgstr " O - Teckenkonvertering          :"
+
+#: src/config.c:1137 src/config.c:1505
+msgid "Keyboard and Misc"
+msgstr ""
+
+#: src/config.c:1144
+msgid " M - Edit Macros\n"
+msgstr " M - Redigera makro\n"
+
+#: src/config.c:1172
 msgid "History Buffer Size"
 msgstr "Storlek för historikbuffert"
 
-#: src/config.c:936
+#: src/config.c:1174
+#, fuzzy
 msgid ""
 "\n"
-"                You have changed the history buffer size.\n"
-"                You will need to save the configuration file and\n"
-"                restart minicom for the change to take effect.\n"
+" You have changed the history buffer size.\n"
+" You will need to save the configuration file and\n"
+" restart minicom for the change to take effect.\n"
 "\n"
-"                Hit a key to Continue... "
+" Hit a key to Continue... "
 msgstr ""
 "\n"
 "                Du har ändrat storleken på historikbufferten.\n"
@@ -356,11 +400,11 @@ msgstr ""
 "\n"
 "                Tryck en tangent för att fortsätta... "
 
-#: src/config.c:953
+#: src/config.c:1192
 msgid "Program new command key"
 msgstr "Programmera ny kommandotangent"
 
-#: src/config.c:955
+#: src/config.c:1194
 msgid ""
 "\n"
 " Press the new command key. If you want to use\n"
@@ -382,203 +426,195 @@ msgstr ""
 "\n"
 " Tryck på den nya kommandotangenten: "
 
-#: src/config.c:964
+#: src/config.c:1203
 msgid "Meta-8th bit "
 msgstr "Meta-8:de biten "
 
-#: src/config.c:966
+#: src/config.c:1205
 msgid "Escape (Meta)"
 msgstr "Escape (Meta)"
 
-#: src/config.c:999 src/config.c:1247
-msgid "disabled"
-msgstr "avstängd"
-
-#: src/config.c:1002 src/config.c:1250 src/rwconf.c:146
-msgid "enabled"
-msgstr "aktiverad"
-
-#: src/config.c:1117
+#: src/config.c:1266
 msgid "ERROR: you do not have permission to create a file there!"
 msgstr "FEL: du har inte rättighet att skapa en fil där!"
 
-#: src/config.c:1123
+#: src/config.c:1272
 #, c-format
 msgid "ERROR: cannot open macro file %s"
 msgstr "FEL: kan inte öppna makrofil %s"
 
-#: src/config.c:1129
+#: src/config.c:1278
 msgid "Reading macros"
 msgstr "Läser makro"
 
-#: src/config.c:1188
+#: src/config.c:1311
 msgid " A -      Terminal emulation :"
 msgstr " A -      Terminalemulering :"
 
-#: src/config.c:1189
+#: src/config.c:1312
 msgid " B -     Backspace key sends :"
 msgstr " B - Backstegstang. skickar :"
 
-#: src/config.c:1190
+#: src/config.c:1313
 msgid " C -          Status line is :"
 msgstr " C -           Statusrad är :"
 
-#: src/config.c:1191
+#: src/config.c:1314
 msgid " D -   Newline tx delay (ms) :"
 msgstr " D - Nyradsfördröjning (ms) :"
 
-#: src/config.c:1192
+#: src/config.c:1315
 msgid " E -          ENQ answerback :"
 msgstr " E -               ENQ-svar :"
 
-#: src/config.c:1193
+#: src/config.c:1316
 msgid " F - Character tx delay (ms) :"
 msgstr " F - Teckenfördröjning (ms) :"
 
-#: src/config.c:1197
+#: src/config.c:1320
 msgid "Terminal settings"
 msgstr "Terminalinställningar"
 
-#: src/config.c:1301
+#: src/config.c:1424
 #, c-format
 msgid "Cannot write to %s"
 msgstr "Kan inte skriva till %s"
 
-#: src/config.c:1308
+#: src/config.c:1431
 msgid "Configuration saved"
 msgstr "Konfiguration sparad"
 
-#: src/config.c:1323
+#: src/config.c:1446
 msgid "ERROR: Macros have changed but no filename is set!"
 msgstr "FEL: Makro har ändrats men inget filnamn är satt!"
 
-#: src/config.c:1327
+#: src/config.c:1450
 #, c-format
 msgid "Cannot write macros file %s"
 msgstr "Kan inte spara makrofil %s"
 
-#: src/config.c:1333
+#: src/config.c:1456
 msgid "Macros saved"
 msgstr "Makro sparade"
 
-#: src/config.c:1350
+#: src/config.c:1473
 msgid "Give name to save this configuration?"
 msgstr "Ange namn att spara konfigurationen som?"
 
-#: src/config.c:1372
+#: src/config.c:1500
 msgid "Filenames and paths"
 msgstr "Filnamn och sökvägar"
 
-#: src/config.c:1373
+#: src/config.c:1501
 msgid "File transfer protocols"
 msgstr "Protokoll för filöverföring"
 
-#: src/config.c:1374
+#: src/config.c:1502
 msgid "Serial port setup"
 msgstr "Inställningar för serieport"
 
-#: src/config.c:1375
+#: src/config.c:1503
 msgid "Modem and dialing"
 msgstr "Modem och ringning"
 
-#: src/config.c:1378
+#: src/config.c:1507
 msgid "Save setup as.."
 msgstr "Spara konfiguration som.."
 
-#: src/config.c:1379
+#: src/config.c:1508
 msgid "Exit"
 msgstr "Avsluta"
 
-#: src/config.c:1380
+#: src/config.c:1509
 msgid "Exit from Minicom"
 msgstr "Avsluta Minicom"
 
-#: src/config.c:1392
+#: src/config.c:1525
 #, c-format
 msgid "Save setup as %s"
 msgstr "Spara konfiguration som %s"
 
-#: src/config.c:1398
+#: src/config.c:1531
 msgid "configuration"
 msgstr "konfiguration"
 
-#: src/config.c:1407
+#: src/config.c:1540
 msgid "BLACK"
 msgstr "SVART"
 
-#: src/config.c:1407
+#: src/config.c:1540
 msgid "RED"
 msgstr "RÖD"
 
-#: src/config.c:1407
+#: src/config.c:1540
 msgid "GREEN"
 msgstr "GRÖN"
 
-#: src/config.c:1407
+#: src/config.c:1540
 msgid "YELLOW"
 msgstr "GUL"
 
-#: src/config.c:1408
+#: src/config.c:1541
 msgid "BLUE"
 msgstr "BLÅ"
 
-#: src/config.c:1408
+#: src/config.c:1541
 msgid "MAGENTA"
 msgstr "LILA"
 
-#: src/config.c:1408
+#: src/config.c:1541
 msgid "CYAN"
 msgstr "TURKOS"
 
-#: src/config.c:1408
+#: src/config.c:1541
 msgid "WHITE"
 msgstr "VIT"
 
-#: src/config.c:1438
+#: src/config.c:1571
 msgid "Comm Parameters"
 msgstr "Kommunikationsparametrar"
 
-#: src/config.c:1443
+#: src/config.c:1576
 msgid " Speed            Parity      Data\n"
 msgstr " Hastighet        Partitet    Data\n"
 
-#: src/config.c:1444
+#: src/config.c:1577
 msgid " A: <next>        L: None     S: 5\n"
 msgstr " A: <nästa>       L: Ingen    S: 5\n"
 
-#: src/config.c:1445
+#: src/config.c:1578
 msgid " B: <prev>        M: Even     T: 6\n"
 msgstr " B: <föreg.>      M: Jämn     T: 6\n"
 
-#: src/config.c:1446
+#: src/config.c:1579
 msgid " C:   9600        N: Odd      U: 7\n"
 msgstr " C:   9600        N: Udda     U: 7\n"
 
-#: src/config.c:1447
+#: src/config.c:1580
 msgid " D:  38400        O: Mark     V: 8\n"
 msgstr " D:  38400        O: Märke    V: 8\n"
 
-#: src/config.c:1448
+#: src/config.c:1581
 msgid " E: 115200        P: Space\n"
 msgstr " E: 115200        P: Blanksteg\n"
 
-#: src/config.c:1450
+#: src/config.c:1583
 msgid " Stopbits\n"
 msgstr " Stoppbitar\n"
 
-#: src/config.c:1451
+#: src/config.c:1584
 msgid " W: 1             Q: 8-N-1\n"
 msgstr " W: 1             Q: 8-N-1\n"
 
-#: src/config.c:1452
+#: src/config.c:1585
 msgid " X: 2             R: 7-E-1\n"
 msgstr " X: 2             R: 7-E-1\n"
 
-#: src/config.c:1454
+#: src/config.c:1587
 msgid " K: Current\n"
 msgstr " K: Nuvarande\n"
 
-#: src/config.c:1457
+#: src/config.c:1590
 msgid ""
 "\n"
 " Choice, or <Enter> to exit? "
@@ -586,44 +622,51 @@ msgstr ""
 "\n"
 " Välj eller <Enter> för att avsluta?"
 
-#: src/config.c:1465
+#: src/config.c:1598
 #, c-format
 msgid "Current: %5s %s%s%s  "
 msgstr "Nuvarande: %5s %s%s%s  "
 
-#: src/config.c:1607
-msgid "F1 to F10 Macros"
+#: src/config.c:1743
+#, fuzzy
+msgid "F1 to F12 Macros"
 msgstr "F1 till F10 makro"
 
-#: src/config.c:1626
+#: src/config.c:1764
 msgid " (LEGEND: ^M = C-M, ^L = C-L, ^G = C-G, ^R = C-R, ^~ = pause 1 second,"
-msgstr " (FÖRKLAR: ^M = C-M, ^L = C-L, ^G = C-G, ^R = C-R, ^~ = paus i 1 sekund,"
+msgstr ""
+" (FÖRKLAR: ^M = C-M, ^L = C-L, ^G = C-G, ^R = C-R, ^~ = paus i 1 sekund,"
 
-#: src/config.c:1628
+#: src/config.c:1766
 msgid "  \\u = username, \\p = password, \\\\ = \\, \\e = toggle echo, "
 msgstr "  \\u = användarnamn, \\p = lösenord, \\\\ = \\, \\e = växla eko, "
 
-#: src/config.c:1630
-msgid "  \\l = toggle LF, \\bX1..Xn<sp> = change baud rate. Example: \"\\beq \""
-msgstr "  \\l = växla LF, \\bX1..Xn<sp> = ändra baudhastighet. Exempel: \"\\beq \""
+#: src/config.c:1768
+msgid ""
+"  \\l = toggle LF, \\bX1..Xn<sp> = change baud rate. Example: \"\\beq \""
+msgstr ""
+"  \\l = växla LF, \\bX1..Xn<sp> = ändra baudhastighet. Exempel: \"\\beq \""
 
-#: src/config.c:1632
-msgid "  = 115200 8N1. (See the \"Comm Parameters\" menu for valid values of X.))"
-msgstr "  = 115200 8N1. (Se menyn \"Kommunikationsparametrar\" för värden för X.))"
+#: src/config.c:1770
+msgid ""
+"  = 115200 8N1. (See the \"Comm Parameters\" menu for valid values of X.))"
+msgstr ""
+"  = 115200 8N1. (Se menyn \"Kommunikationsparametrar\" för värden för X.))"
 
-#: src/config.c:1647
+#: src/config.c:1785
 msgid "CHANGED"
 msgstr "ÄNDRAD"
 
-#: src/config.c:1734
+#: src/config.c:1884
 msgid "Character conversion"
 msgstr "Teckenkonvertering"
 
-#: src/config.c:1739
+#: src/config.c:1889
 msgid " char    in out    char    in out    char    in out    char    in out\n"
-msgstr " tecken  in  ut    tecken  in  ut    tecken  in  ut    tecken  in  ut\n"
+msgstr ""
+" tecken  in  ut    tecken  in  ut    tecken  in  ut    tecken  in  ut\n"
 
-#: src/config.c:1761
+#: src/config.c:1911
 msgid ""
 "\n"
 " A - load table\tB - save table"
@@ -631,12 +674,12 @@ msgstr ""
 "\n"
 " A - läs in tabell\tB - spara tabell"
 
-#: src/config.c:1763
+#: src/config.c:1913
 #, c-format
 msgid "\tfile:%s"
 msgstr "\tfil:%s"
 
-#: src/config.c:1764
+#: src/config.c:1914
 msgid ""
 "\n"
 " C - edit char\tD - next screen\tE - prev screen\n"
@@ -644,126 +687,126 @@ msgstr ""
 "\n"
 " C - redigera tecken\tD - nästa skärm\t  E - föreg skärm\n"
 
-#: src/config.c:1765
+#: src/config.c:1915
 #, c-format
 msgid " F - convert capture: %s\n"
 msgstr " F - konvertera fångst: %s\n"
 
-#: src/config.c:1780
+#: src/config.c:1930
 #, c-format
 msgid "Load file: %s"
 msgstr "Läs in fil: %s"
 
-#: src/config.c:1792
+#: src/config.c:1942
 #, c-format
 msgid "Save as file: %s"
 msgstr "Spara som fil: %s"
 
-#: src/config.c:1803
+#: src/config.c:1953
 msgid "Character to be edited: "
 msgstr "Tecken att redigera: "
 
-#: src/config.c:1811 src/config.c:1823 src/config.c:1835
+#: src/config.c:1961 src/config.c:1973 src/config.c:1985
 msgid "Input character ascii value 0-255"
 msgstr "Mata in tecken med ASCII-värde 0-255"
 
-#: src/config.c:1817
+#: src/config.c:1967
 #, c-format
 msgid "Change input to: %s"
 msgstr "Ändra inmatning till: %s"
 
-#: src/config.c:1829
+#: src/config.c:1979
 #, c-format
 msgid "Change output to: %s"
 msgstr "Ändra utmatning till: %s"
 
-#: src/config.c:1867
+#: src/config.c:2018
 #, c-format
 msgid "Cannot open conversion table %s"
 msgstr "Kan inte öppna konverteringstabell %s"
 
-#: src/config.c:1873
+#: src/config.c:2024
 #, c-format
 msgid "Cannot read conversion table %s"
 msgstr "Kan inte läsa konverteringstabell %s"
 
-#: src/config.c:1885
+#: src/config.c:2037
 #, c-format
 msgid "Cannot write conversion table %s"
 msgstr "Kan inte skriva konverteringstabell %s"
 
-#: src/dial.c:250
+#: src/dial.c:247
 msgid "Initializing Modem"
 msgstr "Initierar modem"
 
-#: src/dial.c:266
+#: src/dial.c:263
 msgid "Resetting Modem"
 msgstr "Återställer modem"
 
-#: src/dial.c:280
+#: src/dial.c:277
 msgid "Hanging up"
 msgstr "Lägger på"
 
-#: src/dial.c:284
+#: src/dial.c:281
 #, c-format
 msgid "Hangup (%ld:%02ld:%02ld)"
 msgstr "Lägg på (%ld:%02ld:%02ld)"
 
-#: src/dial.c:316
+#: src/dial.c:313
 msgid "Sending BREAK"
 msgstr "Skickar AVBRYT"
 
-#: src/dial.c:382
+#: src/dial.c:379
 #, c-format
 msgid "    No connection: %s.      \n"
 msgstr "    Ingen anslutning: %s.      \n"
 
-#: src/dial.c:384
+#: src/dial.c:381
 msgid "   Press any key to continue..    "
 msgstr "   Tryck en tangent för att fortsätta..    "
 
-#: src/dial.c:389 src/dial.c:401
+#: src/dial.c:386 src/dial.c:397
 #, c-format
 msgid "     Retry in %2d seconds             "
 msgstr "     Försöker igen om %2d sekunder             "
 
-#: src/dial.c:427
+#: src/dial.c:423
 msgid "Max retries"
 msgstr "Max antal försök"
 
-#: src/dial.c:437
+#: src/dial.c:433
 msgid "You are already online! Hang up first."
 msgstr "Du är redan uppkopplad! Lägg på först."
 
-#: src/dial.c:442
+#: src/dial.c:438
 msgid "Autodial"
 msgstr "Auto ring"
 
-#: src/dial.c:446 src/dial.c:476
+#: src/dial.c:442 src/dial.c:472
 msgid "Dialing"
 msgstr "Ringer"
 
-#: src/dial.c:447 src/dial.c:479
+#: src/dial.c:443 src/dial.c:475
 #, c-format
 msgid "      At : %s"
 msgstr "    Den : %s"
 
-#: src/dial.c:450 src/dial.c:483
+#: src/dial.c:446 src/dial.c:479
 #, c-format
 msgid " Last on : %s at %s"
 msgstr "  Senast : %s kl %s"
 
-#: src/dial.c:498
+#: src/dial.c:494
 #, c-format
 msgid "    Time : %-3d"
 msgstr "     Tid : %-3d"
 
-#: src/dial.c:500
+#: src/dial.c:496
 #, c-format
 msgid "     Attempt #%d"
 msgstr "     Försök #%d"
 
-#: src/dial.c:501
+#: src/dial.c:497
 msgid ""
 "\n"
 "\n"
@@ -775,39 +818,39 @@ msgstr ""
 "\n"
 " Escape - avbryt, mellanslag - försök igen."
 
-#: src/dial.c:542
+#: src/dial.c:538
 msgid "Cancelled"
 msgstr "Avbruten"
 
-#: src/dial.c:598
+#: src/dial.c:596
 msgid "Connected. Press any key to continue"
 msgstr "Ansluten. Tryck en tangent för att fortsätta"
 
-#: src/dial.c:678
+#: src/dial.c:672
 msgid "Timeout"
 msgstr "Tidsgräns nådd"
 
-#: src/dial.c:880
+#: src/dial.c:875
 msgid "Manually entered number"
 msgstr "Manuellt inmatat nummer"
 
-#: src/dial.c:889
+#: src/dial.c:884
 msgid "Cannot open ~/.dialdir: permission denied"
 msgstr "Kan inte öppna ~/.dialdir: åtkomst nekad"
 
-#: src/dial.c:911
+#: src/dial.c:906
 msgid "Failed to read dialing directory\n"
 msgstr "Kunde inte läsa telefonkatalog\n"
 
-#: src/dial.c:945
+#: src/dial.c:941
 msgid "Phonelist garbled (unknown version?)"
 msgstr "Telefonlista skadad (okänd version?)"
 
-#: src/dial.c:952 src/dial.c:960
+#: src/dial.c:949 src/dial.c:958
 msgid "Phonelist corrupted"
 msgstr "Telefonlista skadad"
 
-#: src/dial.c:965
+#: src/dial.c:964
 msgid "Unknown dialing directory version"
 msgstr "Okänd version av telefonkatalog"
 
@@ -818,6 +861,11 @@ msgstr "Telefonlista skadad (?)"
 #: src/dial.c:994
 msgid "Out of memory while reading dialing directory"
 msgstr "Slut på minne vid inläsning av telefonkatalog"
+
+#: src/dial.c:1024
+#, fuzzy
+msgid "Failed to read phonelist\n"
+msgstr "Kunde inte läsa telefonkatalog\n"
 
 #: src/dial.c:1046
 #, c-format
@@ -937,11 +985,11 @@ msgstr "Flytta"
 msgid "Manual"
 msgstr "Manuell"
 
-#: src/dial.c:1453 src/file.c:71 src/minicom.c:68 src/minicom.c:71
+#: src/dial.c:1453 src/file.c:72 src/minicom.c:70 src/minicom.c:73
 msgid "   Yes  "
 msgstr "   Ja   "
 
-#: src/dial.c:1453 src/file.c:71 src/minicom.c:68 src/minicom.c:71
+#: src/dial.c:1453 src/file.c:72 src/minicom.c:70 src/minicom.c:73
 msgid "   No   "
 msgstr "   Nej  "
 
@@ -950,7 +998,7 @@ msgstr "   Nej  "
 msgid "Entry \"%s\" not found. Enter dialdir?"
 msgstr "Post \"%s\" hittades inte. Gå till telefonkatalog?"
 
-#: src/dial.c:1576 src/file.c:429
+#: src/dial.c:1576 src/file.c:430
 msgid "( Escape to exit, Space to tag )"
 msgstr "( Escape för att avsluta, Mellanslag för att märka )"
 
@@ -981,114 +1029,114 @@ msgstr "Ange nummer"
 #. TRANSLATORS: Translation of each of these menu items should not be
 #. * longer than 7 characters. The upper-case letter is a shortcut,
 #. * so keep them unique and ASCII; 'h', 'j', 'k', 'l' are reserved
-#: src/file.c:59
+#: src/file.c:60
 msgid "[Goto]"
 msgstr "[Hoppa]"
 
-#: src/file.c:59
+#: src/file.c:60
 msgid "[Prev]"
 msgstr "[Föreg]"
 
-#: src/file.c:59
+#: src/file.c:60
 msgid "[Show]"
 msgstr "[Visa]"
 
-#: src/file.c:59
+#: src/file.c:60
 msgid "[Tag]"
 msgstr "[Märk]"
 
-#: src/file.c:59
+#: src/file.c:60
 msgid "[Untag]"
 msgstr "[Avmär]"
 
-#: src/file.c:60
+#: src/file.c:61
 msgid "[Okay]"
 msgstr "[OK]"
 
-#: src/file.c:322
+#: src/file.c:323
 #, c-format
 msgid "Could not change to directory %s (%s)"
 msgstr "Kunde inte byta till katalog %s (%s)"
 
-#: src/file.c:346
+#: src/file.c:347
 msgid "Select one or more files for download"
 msgstr "Välj en eller flera filer för hämtning"
 
-#: src/file.c:348
+#: src/file.c:349
 msgid "Select a file for download"
 msgstr "Välj en fil för hämtning"
 
-#: src/file.c:350
+#: src/file.c:351
 msgid "Select a directory for download"
 msgstr "Välj en katalog för hämtning"
 
-#: src/file.c:353
+#: src/file.c:354
 msgid "Select one or more files for upload"
 msgstr "Välj en eller flera filer för uppsändning"
 
-#: src/file.c:355
+#: src/file.c:356
 msgid "Select a file for upload"
 msgstr "Välj en fil för uppsändning"
 
-#: src/file.c:357
+#: src/file.c:358
 msgid "Select a directory for upload"
 msgstr "Välj en katalog för uppsänding"
 
-#: src/file.c:366
+#: src/file.c:367
 #, c-format
 msgid "Directory: %%-%ds"
 msgstr "Katalog: %%-%ds"
 
-#: src/file.c:454
+#: src/file.c:455
 msgid "Can't back up!"
 msgstr "Kan inte säkerhetskopiera!"
 
-#: src/file.c:552 src/file.c:565
+#: src/file.c:554 src/file.c:567
 msgid "Too many files tagged - buffer would overflow"
 msgstr "För många filer märkta - buffert skulle bli överfylld"
 
-#: src/file.c:669 src/file.c:796
+#: src/file.c:671 src/file.c:798
 msgid "Can select only one!"
 msgstr "Kan endast välja en!"
 
-#: src/file.c:771
+#: src/file.c:773
 msgid "Goto directory:"
 msgstr "Gå till katalog:"
 
-#: src/file.c:785
+#: src/file.c:787
 msgid "Filename pattern:"
 msgstr "Filnamnsmönster:"
 
-#: src/file.c:802
+#: src/file.c:804
 msgid "Tag pattern:"
 msgstr "Märkesmönster:"
 
-#: src/file.c:806
+#: src/file.c:808
 msgid "No file(s) tagged"
 msgstr "Inga fil(er) märkta"
 
-#: src/file.c:823
+#: src/file.c:825
 msgid "Untag pattern:"
 msgstr "Avmärk mönster:"
 
-#: src/file.c:827
+#: src/file.c:829
 msgid "No file(s) untagged"
 msgstr "Inga fil(er) avmärkta"
 
-#: src/file.c:843
+#: src/file.c:845
 msgid "No file selected - enter filename:"
 msgstr "Ingen fil vald - ange filnamn:"
 
-#: src/file.c:853
+#: src/file.c:855
 #, c-format
 msgid "File: \"%s\" exists! Overwrite?"
 msgstr "Fil: ”%s” existerar! Skriv över?"
 
-#: src/file.c:864
+#: src/file.c:866
 msgid "no such file!"
 msgstr "ingen sådan fil!"
 
-#: src/getsdir.c:315
+#: src/getsdir.c:316
 #, c-format
 msgid "%d files:\n"
 msgstr "%d filer:\n"
@@ -1174,128 +1222,151 @@ msgstr " Vissa tillägg av Jukka Lahtinen 1997-2000"
 msgid "i18n by Arnaldo Carvalho de Melo 1998"
 msgstr "   i18n av Arnaldo Carvalho de Melo 1998"
 
-#: src/main.c:241
+#: src/main.c:318
+#, c-format
+msgid "Lockfile %s cannot be queried (%d).\n"
+msgstr ""
+
+#: src/main.c:326
+#, c-format
+msgid "Lockfile %s owned by someone else (uid=%d).\n"
+msgstr ""
+
+#: src/main.c:336
+#, fuzzy, c-format
+msgid "Device %s is locked by someone else.\n"
+msgstr "Enhet %s är låst.\n"
+
+#: src/main.c:355
 #, c-format
 msgid "Lockfile is stale. Overriding it..\n"
 msgstr "Låsfil är gammal. Överskrider den..\n"
 
-#: src/main.c:250 src/updown.c:498
+#: src/main.c:364 src/updown.c:499
 #, c-format
 msgid "Device %s is locked.\n"
 msgstr "Enhet %s är låst.\n"
 
-#: src/main.c:265
+#: src/main.c:380
 #, c-format
 msgid "Could not setup for dial out.\n"
 msgstr "Kunde inte ställa in för utringning.\n"
 
-#: src/main.c:316
+#: src/main.c:429
 #, c-format
 msgid "minicom: cannot open %s: %s\n"
 msgstr "minicom: kan inte öppna %s: %s\n"
 
-#: src/main.c:319
+#: src/main.c:432
 #, c-format
 msgid "minicom: cannot open %s. Sorry.\n"
 msgstr "minicom: kan inte öppna %s. Tyvärr.\n"
 
-#: src/main.c:326 src/main.c:804
+#: src/main.c:439 src/main.c:982
 #, c-format
 msgid "Cannot open %s!"
 msgstr "Kan inte öppna %s!"
 
-#: src/main.c:554
+#: src/main.c:602
+#, fuzzy
+msgid "%H for help | %b | %C | Minicom %V | %T | %t | %D"
+msgstr " %7.7sZ för hjälp |           |     | Minicom %-6.6s |       | "
+
+#: src/main.c:677
 msgid "Offline"
 msgstr "Offline"
 
-#: src/main.c:554
+#: src/main.c:677
 msgid "OFFLINE"
 msgstr "OFFLINE"
 
-#: src/main.c:557
+#: src/main.c:680
 msgid "Online"
 msgstr "Online"
 
-#: src/main.c:557
+#: src/main.c:680
 msgid "ONLINE"
 msgstr "ONLINE"
 
-#: src/main.c:627
+#: src/main.c:753
 #, c-format
 msgid "Gone offline (%ld:%02ld:%02ld)"
 msgstr "Gick offline (%ld:%02ld:%02ld)"
 
-#: src/main.c:785
+#: src/main.c:962
 msgid "Could not re-initialize window system."
 msgstr "Kunde inte återinitiera fönstersystem."
 
-#: src/minicom.c:56 src/minicom.c:58
+#: src/minicom.c:57 src/minicom.c:59
 #, c-format
 msgid "Got signal %d"
 msgstr "Fick signal %d"
 
-#: src/minicom.c:69 src/minicom.c:70
+#: src/minicom.c:71 src/minicom.c:72
 msgid "  Close "
 msgstr "  Stäng "
 
-#: src/minicom.c:69
+#: src/minicom.c:71
 msgid " Pause  "
 msgstr "  Paus  "
 
-#: src/minicom.c:69 src/minicom.c:70
+#: src/minicom.c:71 src/minicom.c:72
 msgid "  Exit  "
 msgstr " Avsluta"
 
-#: src/minicom.c:70
+#: src/minicom.c:72
 msgid " Unpause"
 msgstr "Fortsätt"
 
-#: src/minicom.c:85
+#: src/minicom.c:94
 msgid "Hang-up line?"
 msgstr "Lägg på?"
 
-#: src/minicom.c:96
+#: src/minicom.c:105
 #, c-format
 msgid "Killed by signal %d !\n"
 msgstr "Dödad av signal %d !\n"
 
-#: src/minicom.c:120
+#: src/minicom.c:129
 msgid "Suspended. Type \"fg\" to resume.\n"
 msgstr "Viloläge. Skriv \"fg\" för att återuppta.\n"
 
-#: src/minicom.c:139
+#: src/minicom.c:148
 msgid "SHELL variable not set"
 msgstr "variabeln SHELL inte satt"
 
-#: src/minicom.c:143 src/updown.c:314 src/updown.c:526 src/updown.c:725
+#: src/minicom.c:152 src/updown.c:314 src/updown.c:527 src/updown.c:729
 msgid "Out of memory: could not fork()"
 msgstr "Slut på minne: kunde inte dela process"
 
-#: src/minicom.c:153
+#: src/minicom.c:162
 msgid "Shelled out. Type \"exit\" to return.\n"
 msgstr "Ute i ett skal. Skriv \"exit\" för att återvända.\n"
 
-#: src/minicom.c:266
+#: src/minicom.c:283
 msgid "SEARCH FOR (ESC=Exit)"
 msgstr "SÖK EFTER (ESC=Avsluta)"
 
-#: src/minicom.c:316 src/minicom.c:337
+#: src/minicom.c:330 src/minicom.c:358
 msgid "Search Wrapping Around to Start!"
 msgstr "Sökning återgick till start!"
 
-#: src/minicom.c:462
-msgid "HISTORY: U=Up D=Down F=PgDn B=PgUp s=Srch S=CaseLess N=Next C=Cite ESC=Exit "
-msgstr "HISTORIK: U=Upp D=Ned F=PgDn B=PgUp s=Sök S=utanSkif N=Näst C=Citat ESC=Avslut"
+#: src/minicom.c:484
+msgid ""
+"HISTORY: U=Up D=Down F=PgDn B=PgUp s=Srch S=CaseLess N=Next C=Cite ESC=Exit "
+msgstr ""
+"HISTORIK: U=Upp D=Ned F=PgDn B=PgUp s=Sök S=utanSkif N=Näst C=Citat "
+"ESC=Avslut"
 
-#: src/minicom.c:501
+#: src/minicom.c:524
 msgid "History buffer Disabled!"
 msgstr "Historikbuffert avstängd!"
 
-#: src/minicom.c:506
+#: src/minicom.c:529
 msgid "History buffer empty!"
 msgstr "Historikbuffert tom!"
 
-#: src/minicom.c:564
+#: src/minicom.c:587
 msgid ""
 "No previous search!\n"
 "  Please 's' or 'S' first!"
@@ -1304,27 +1375,31 @@ msgstr ""
 "  Ange \"s\" eller \"S\" först!"
 
 # Hittar inte ord för CITATION
-#: src/minicom.c:721 src/minicom.c:764
-msgid "  CITATION: ENTER=select start line ESC=exit                               "
-msgstr "  CITAT: RETUR=välj startrad ESC=avsluta                                   "
+#: src/minicom.c:748 src/minicom.c:791
+msgid ""
+"  CITATION: ENTER=select start line ESC=exit                               "
+msgstr ""
+"  CITAT: RETUR=välj startrad ESC=avsluta                                   "
 
 # Hittar inte ord för CITATION
-#: src/minicom.c:738
-msgid "  CITATION: ENTER=select end line ESC=exit                                 "
-msgstr "  CITAT: RETUR=välj slutrad ESC=avslut                                     "
+#: src/minicom.c:765
+msgid ""
+"  CITATION: ENTER=select end line ESC=exit                                 "
+msgstr ""
+"  CITAT: RETUR=välj slutrad ESC=avslut                                     "
 
-#: src/minicom.c:798
+#: src/minicom.c:875
 #, c-format
 msgid "Wrong option in environment MINICOM=\"%s\"\n"
 msgstr "Felaktig flagga i miljövariabeln MINICOM=\"%s\"\n"
 
-#: src/minicom.c:799
+#: src/minicom.c:876
 #, c-format
 msgid "Type \"minicom %s\" for help.\n"
 msgstr "Skriv \"minicom %s\" för hjälp.\n"
 
-#: src/minicom.c:809
-#, c-format
+#: src/minicom.c:886
+#, fuzzy, c-format
 msgid ""
 "Usage: %s [OPTION]... [configuration]\n"
 "A terminal program for Linux and other unix-like systems.\n"
@@ -1335,7 +1410,8 @@ msgid ""
 "  -o, --noinit           : do not initialize modem & lockfiles at startup\n"
 "  -m, --metakey          : use meta or alt key for commands\n"
 "  -M, --metakey8         : use 8bit meta key for commands\n"
-"  -l, --ansi             : literal; assume screen uses non IBM-PC character set\n"
+"  -l, --ansi             : literal; assume screen uses non IBM-PC character "
+"set\n"
 "  -L, --iso              : don't assume screen uses ISO8859\n"
 "  -w, --wrap             : Linewrap on\n"
 "  -H, --displayhex       : display output in hex\n"
@@ -1349,6 +1425,7 @@ msgid ""
 "  -d, --dial=ENTRY       : dial ENTRY from the dialing directory\n"
 "  -p, --ptty=TTYP        : connect to pseudo terminal\n"
 "  -C, --capturefile=FILE : start capturing to FILE\n"
+"  --capturefile-buffer-mode=MODE : set buffering mode of capture file\n"
 "  -F, --statlinefmt      : format of status line\n"
 "  -R, --remotecharset    : character set of communication partner\n"
 "  -v, --version          : output version information and exit\n"
@@ -1360,13 +1437,16 @@ msgstr ""
 "Användning: %s [FLAGGA]… [konfiguration]\n"
 "Ett terminalprogram för Linux och andra unix-lika system.\n"
 "\n"
-"  -b, --baudrate         : ställ in baudhastighet (ignorera värde från konfiguration)\n"
-"  -D, --device           : ställ in enhetsnamn (ignorera värde från konfig.)\n"
+"  -b, --baudrate         : ställ in baudhastighet (ignorera värde från "
+"konfiguration)\n"
+"  -D, --device           : ställ in enhetsnamn (ignorera värde från "
+"konfig.)\n"
 "  -s, --setup            : gå in i inställningsläge\n"
 "  -o, --noinit           : initiera inte modem & låsfiler vid uppstart\n"
 "  -m, --metakey          : använd meta- eller alt-tangent för kommandon\n"
 "  -M, --metakey8         : använd 8bit metatangent för kommandon\n"
-"  -l, --ansi             : förutsätt att skärm inte använder IBM-PC teckenupp.\n"
+"  -l, --ansi             : förutsätt att skärm inte använder IBM-PC "
+"teckenupp.\n"
 "  -L, --iso              : förutsätt inte att skärm använder ISO8859\n"
 "  -w, --wrap             : Radbrytning på\n"
 "  -H, --displayhex       : visa utdata i hex\n"
@@ -1374,7 +1454,8 @@ msgstr ""
 "  -7, --7bit             : tvinga 7bitarsläge\n"
 "  -8, --8bit             : tvinga 8bitarsläge\n"
 "  -c, --color=on/off     : använd ANSI-stilfärg på eller av\n"
-"  -a, --attrib=on/off    : använd omvänt- eller markeringsattribut på eller av\n"
+"  -a, --attrib=on/off    : använd omvänt- eller markeringsattribut på eller "
+"av\n"
 "  -t, --term=TERM        : åsidosätt miljövariabeln TERM\n"
 "  -S, --script=SKRIPT    : kör SKRIPT vid uppstart\n"
 "  -d, --dial=POST        : ring POST från telefonkatalog\n"
@@ -1388,17 +1469,17 @@ msgstr ""
 "Dessa flaggor kan också anges i miljövariabeln MINICOM.\n"
 "\n"
 
-#: src/minicom.c:839
+#: src/minicom.c:917
 #, c-format
 msgid "This variable is currently set to \"%s\".\n"
 msgstr "Denna variabel är för närvarande inställd på ”%s”.\n"
 
-#: src/minicom.c:841
+#: src/minicom.c:919
 #, c-format
 msgid "This variable is currently unset.\n"
 msgstr "Denna variabel är för närvarande inte inställd.\n"
 
-#: src/minicom.c:844
+#: src/minicom.c:922
 #, c-format
 msgid ""
 "The configuration directory for the access file and the configurations\n"
@@ -1412,17 +1493,47 @@ msgstr ""
 "Rapportera fel till <minicom-devel@lists.alioth.debian.org>.\n"
 "Skicka synpunkter på översättningen till <tp-sv@listor.tp-sv.se>\n"
 
-#: src/minicom.c:1161
+#: src/minicom.c:1037
+#, c-format
+msgid "Activating iconv failed with: %s (%d)\n"
+msgstr ""
+
+#: src/minicom.c:1185
+msgid "Timestamp OFF"
+msgstr "Tidsstämpling AV"
+
+#: src/minicom.c:1188
+msgid "Timestamp every line (simple)"
+msgstr "Tidsstämpla varje rad (enkel)"
+
+#: src/minicom.c:1191
+msgid "Timestamp every line (extended)"
+msgstr "Tidsstämpla varje rad (utökad)"
+
+#: src/minicom.c:1194
+msgid "Timestamp lines every second"
+msgstr "Tidsstämpla rader varje sekund"
+
+#: src/minicom.c:1197
+#, fuzzy
+msgid "Timestamp delta between lines"
+msgstr "Tidsstämpla varje rad (enkel)"
+
+#: src/minicom.c:1200
+msgid "Timestamp relative to trigger pattern"
+msgstr ""
+
+#: src/minicom.c:1367
 #, c-format
 msgid "%s version %s"
 msgstr "%s version %s"
 
-#: src/minicom.c:1163
+#: src/minicom.c:1369
 #, c-format
 msgid " (compiled %s)"
 msgstr " (kompilerad %s)"
 
-#: src/minicom.c:1166
+#: src/minicom.c:1372
 #, c-format
 msgid ""
 "Copyright (C) Miquel van Smoorenburg.\n"
@@ -1431,44 +1542,65 @@ msgstr ""
 "Copyright (C) Miquel van Smoorenburg.\n"
 "\n"
 
-#: src/minicom.c:1189
+#: src/minicom.c:1373
+#, c-format
+msgid ""
+"This program is free software; you can redistribute it and/or\n"
+"modify it under the terms of the GNU General Public License\n"
+"as published by the Free Software Foundation; either version\n"
+"2 of the License, or (at your option) any later version.\n"
+"\n"
+msgstr ""
+
+#: src/minicom.c:1395
 #, c-format
 msgid "minicom: argument to -p must be a pty\n"
 msgstr "minicom: argument till -p måste vara en pty\n"
 
-#: src/minicom.c:1253 src/minicom.c:1580
-msgid "Cannot open capture file"
+#: src/minicom.c:1460
+#, fuzzy, c-format
+msgid "Cannot open capture file\n"
 msgstr "Kan inte öppna fångstfil"
 
-#: src/minicom.c:1316
+#: src/minicom.c:1478
+#, c-format
+msgid "Invalid buffering mode '%s'\n"
+msgstr ""
+
+#: src/minicom.c:1548
 msgid "You don't exist. Go away.\n"
 msgstr "Du existerar inte. Gå din väg.\n"
 
-#: src/minicom.c:1391
+#: src/minicom.c:1629
 msgid "Sorry. Your screen is too small.\n"
 msgstr "Tyvärr. Din skärm är för liten.\n"
 
-#: src/minicom.c:1463
+#: src/minicom.c:1707
 msgid "Welcome to minicom"
 msgstr "Välkommen till minicom"
 
-#: src/minicom.c:1464
+#: src/minicom.c:1708
 msgid "OPTIONS"
 msgstr "FLAGGOR"
 
-#: src/minicom.c:1466
+#: src/minicom.c:1710
 msgid "Compiled on"
 msgstr "Kompilerad"
 
-#: src/minicom.c:1482
+#: src/minicom.c:1726
 msgid "Port"
 msgstr "Port"
 
-#: src/minicom.c:1485
+#: src/minicom.c:1730
 msgid "Using character set conversion"
 msgstr "Använder teckenuppsättningskonvertering"
 
-#: src/minicom.c:1486
+#: src/minicom.c:1731
+#, fuzzy
+msgid " (failed test)"
+msgstr " (kompilerad %s)"
+
+#: src/minicom.c:1732
 #, c-format
 msgid ""
 "\n"
@@ -1479,231 +1611,233 @@ msgstr ""
 "Tryck %sZ för hjälp om specialtangenter%c\n"
 "\n"
 
-#: src/minicom.c:1507
+#: src/minicom.c:1753
 msgid "Add linefeed ON"
 msgstr "Lägg till radmatning PÅ"
 
-#: src/minicom.c:1507
+#: src/minicom.c:1753
 msgid "Add linefeed OFF"
 msgstr "Lägg till radmatning AV"
 
-#: src/minicom.c:1512
+#: src/minicom.c:1758
 msgid "Add carriage return ON"
 msgstr "Lägg till vagnretur PÅ"
 
-#: src/minicom.c:1512
+#: src/minicom.c:1758
 msgid "Add carriage return OFF"
 msgstr "Lägg till vagnretur AV"
 
-#: src/minicom.c:1517
+#: src/minicom.c:1763
 msgid "Local echo ON"
 msgstr "Lokalt eko PÅ"
 
-#: src/minicom.c:1517
+#: src/minicom.c:1763
 msgid "Local echo OFF"
 msgstr "Lokalt eko AV"
 
-#: src/minicom.c:1536
+#: src/minicom.c:1782
 msgid "You are online. Really initialize?"
 msgstr "Du är uppkopplad. Verkligen initiera?"
 
-#: src/minicom.c:1543
+#: src/minicom.c:1789
 msgid "Leave without reset?"
 msgstr "Lämna utan att återställa?"
 
-#: src/minicom.c:1547 src/minicom.c:1565
+#: src/minicom.c:1793 src/minicom.c:1811
 msgid "Save macros?"
 msgstr "Spara makro?"
 
-#: src/minicom.c:1557
+#: src/minicom.c:1803
 msgid "Leave Minicom?"
 msgstr "Lämna Minicom?"
 
-#: src/minicom.c:1576
+#: src/minicom.c:1822
 msgid "Capture to which file? "
 msgstr "Fånga till vilken fil? "
 
-#: src/minicom.c:1585 src/minicom.c:1594
+#: src/minicom.c:1826
+msgid "Cannot open capture file"
+msgstr "Kan inte öppna fångstfil"
+
+#: src/minicom.c:1832 src/minicom.c:1841
 msgid "Capture file"
 msgstr "Fångstfil"
 
-#: src/minicom.c:1628
+#: src/minicom.c:1875
 msgid "Linewrap ON"
 msgstr "Radbrytning PÅ"
 
-#: src/minicom.c:1628
+#: src/minicom.c:1875
 msgid "Linewrap OFF"
 msgstr "Radbrytning AV"
 
-#: src/minicom.c:1637
-msgid "Timestamp OFF"
-msgstr "Tidsstämpling AV"
-
-#: src/minicom.c:1640
-msgid "Timestamp every line (simple)"
-msgstr "Tidsstämpla varje rad (enkel)"
-
-#: src/minicom.c:1643
-msgid "Timestamp every line (extended)"
-msgstr "Tidsstämpla varje rad (utökad)"
-
-#: src/minicom.c:1646
-msgid "Timestamp lines every second"
-msgstr "Tidsstämpla rader varje sekund"
-
-#: src/minicom.c:1687
+#: src/minicom.c:1918
 msgid "Quit without reset while online."
 msgstr "Avsluta utan återställning vid online."
 
-#: src/rwconf.c:115 src/rwconf.c:149
+#: src/rwconf.c:105 src/rwconf.c:138 src/rwconf.c:139
 msgid "No"
 msgstr "Nej"
 
-#: src/rwconf.c:226
+#: src/rwconf.c:227
 #, c-format
 msgid "# Machine-generated file - use \"minicom -s\" to change parameters.\n"
-msgstr "# Maskingenererad fil - använd \"minicom -s\" för att ändra parametrar.\n"
+msgstr ""
+"# Maskingenererad fil - använd \"minicom -s\" för att ändra parametrar.\n"
 
-#: src/rwconf.c:228
+#: src/rwconf.c:229
 #, c-format
-msgid "# Machine-generated file - use setup menu in minicom to change parameters.\n"
-msgstr "# Maskingenererad fil - använd inställningsmenyn i minicom för att ändra parametrar.\n"
+msgid ""
+"# Machine-generated file - use setup menu in minicom to change parameters.\n"
+msgstr ""
+"# Maskingenererad fil - använd inställningsmenyn i minicom för att ändra "
+"parametrar.\n"
 
-#: src/rwconf.c:253
+#: src/rwconf.c:254
 #, c-format
 msgid "Memory allocation failed.\n"
 msgstr "Minnesallokering misslyckades.\n"
 
-#: src/rwconf.c:322
+#: src/rwconf.c:323
 #, c-format
 msgid "** Line %d of the %s config file is unparsable.\n"
 msgstr "** Rad %d i konfigurationsfilen %s är inte tolkningsbar.\n"
 
-#: src/rwconf.c:323
+#: src/rwconf.c:324
 msgid "global"
 msgstr "global"
 
-#: src/rwconf.c:323
+#: src/rwconf.c:324
 msgid "personal"
 msgstr "personlig"
 
-#: src/script.c:134
+#: src/script.c:135
 #, c-format
 msgid "script \"%s\": syntax error in line %d %s%s\n"
 msgstr "skript \"%s\": syntaxfel på rad %d %s%s\n"
 
-#: src/script.c:158
+#: src/script.c:159
 #, c-format
 msgid "script \"%s\": global timeout%s\n"
 msgstr "skript \"%s\": global tidsgräns överstigen%s\n"
 
-#: src/script.c:297
+#: src/script.c:298
 msgid "(word contains ESC or quote)"
 msgstr "(ord innehåller ESC eller citattecken)"
 
-#: src/script.c:350
+#: src/script.c:351
 #, c-format
 msgid "runscript: couldn't open \"%s\"%s\n"
 msgstr "runscript: kunde inte öppna ”%s”%s\n"
 
-#: src/script.c:371 src/script.c:485
+#: src/script.c:363
+#, c-format
+msgid "Input line %u too long, aborting (and fix me!)!\n"
+msgstr ""
+
+#: src/script.c:372 src/script.c:486
 #, c-format
 msgid "script \"%s\": out of memory%s\n"
 msgstr "skript \"%s\": slut på minne%s\n"
 
-#: src/script.c:479
+#: src/script.c:423
+#, c-format
+msgid "NULL paramenter to %s!"
+msgstr ""
+
+#: src/script.c:480
 #, c-format
 msgid "script \"%s\" line %d: unknown variable \"%s\"%s\n"
 msgstr "skript \"%s\" rad %d: okänd variabel \"%s\"%s\n"
 
-#: src/script.c:524
+#: src/script.c:525
 #, c-format
 msgid "script \"%s\": unexpected end of file%s\n"
 msgstr "skript \"%s\": oväntat slut på fil%s\n"
 
-#: src/script.c:532
+#: src/script.c:533
 msgid "(garbage after })"
 msgstr "(skräp efter })"
 
-#: src/script.c:540
+#: src/script.c:541
 msgid "(too many arguments)"
 msgstr "(för många argument)"
 
 # Nested expect? Förslag?
-#: src/script.c:559
+#: src/script.c:560
 #, c-format
 msgid "script \"%s\" line %d: nested expect%s\n"
 msgstr "skript \"%s\" rad %d: nested expect%s\n"
 
-#: src/script.c:569
+#: src/script.c:570
 msgid "(garbage after {)"
 msgstr "(skräp efter {)"
 
-#: src/script.c:590 src/script.c:891 src/script.c:959
+#: src/script.c:591 src/script.c:898 src/script.c:966
 msgid "(argument expected)"
 msgstr "(argument förväntades)"
 
-#: src/script.c:593 src/script.c:893
+#: src/script.c:594 src/script.c:900
 msgid "(invalid argument)"
 msgstr "(ogiltigt argument)"
 
-#: src/script.c:724
+#: src/script.c:731
 msgid "(in goto/gosub label)"
 msgstr "(i goto/gosub-etikett)"
 
-#: src/script.c:731
+#: src/script.c:738
 #, c-format
 msgid "script \"%s\" line %d: label \"%s\" not found%s\n"
 msgstr "skript \"%s\" rad %d: etikett \"%s\" hittades inte%s\n"
 
-#: src/script.c:753
+#: src/script.c:760
 #, c-format
 msgid "script \"%s\": no return from gosub%s\n"
 msgstr "skript \"%s\": ingen återvänding från gosub%s\n"
 
-#: src/script.c:796
+#: src/script.c:803
 msgid "(missing var name)"
 msgstr "(variabelnamn saknas)"
 
-#: src/script.c:813 src/script.c:829
+#: src/script.c:820 src/script.c:836
 msgid "(expected variable)"
 msgstr "(förväntade variabel)"
 
-#: src/script.c:861
+#: src/script.c:868
 msgid "(expected command after if)"
 msgstr "(förväntade kommando efter if)"
 
-#: src/script.c:876
+#: src/script.c:883
 msgid "(unknown operator)"
 msgstr "(okänd operator)"
 
-#: src/script.c:915
+#: src/script.c:922
 msgid "(unexpected argument)"
 msgstr "(oväntat argument)"
 
 # Förslag?
-#: src/script.c:942
+#: src/script.c:949
 #, c-format
 msgid "script \"%s\" line %d: break outside of expect%s\n"
 msgstr "skript \"%s\" rad %d: break outside of expect%s\n"
 
 # Förslag? Anrop inne i...
-#: src/script.c:962
+#: src/script.c:969
 #, c-format
 msgid "script \"%s\" line %d: call inside expect%s\n"
 msgstr "skript \"%s\" rad %d: call inside expect%s\n"
 
-#: src/script.c:1031
+#: src/script.c:1038
 #, c-format
 msgid "script \"%s\" line %d: unknown command \"%s\"%s\n"
 msgstr "skript \"%s\" rad %d: okänt kommando \"%s\"%s\n"
 
-#: src/script.c:1072
+#: src/script.c:1079
 #, c-format
 msgid "runscript, part of minicom version %s\n"
 msgstr "runscript, del av minicom version %s\n"
 
-#: src/script.c:1077
+#: src/script.c:1084
 #, c-format
 msgid "Usage: runscript <scriptfile> [logfile [homedir]]%s\n"
 msgstr "Användning: runscript <skriptfil> [loggfil [hemkatalog]]%s\n"
@@ -1712,6 +1846,11 @@ msgstr "Användning: runscript <skriptfil> [loggfil [hemkatalog]]%s\n"
 #, c-format
 msgid "Cannot chdir to %.30s"
 msgstr "Kan inte byta katalog till %.30s"
+
+#: src/updown.c:138
+#, fuzzy
+msgid "out of memory"
+msgstr "skript %s: slut på minne%s\n"
 
 #: src/updown.c:225
 msgid "Upload"
@@ -1742,7 +1881,11 @@ msgstr "sänd upp"
 msgid "download"
 msgstr "hämta"
 
-#: src/updown.c:433
+#: src/updown.c:306
+msgid "pipe() call failed"
+msgstr ""
+
+#: src/updown.c:434
 msgid ""
 "\n"
 " READY: press any key to continue..."
@@ -1750,80 +1893,94 @@ msgstr ""
 "\n"
 " KLAR: tryck en tangent för att fortsätta..."
 
-#: src/updown.c:478
+#: src/updown.c:479
 msgid "Cannot create lockfile!"
 msgstr "Kan inte skapa låsfil!"
 
-#: src/updown.c:486
+#: src/updown.c:487
 #, c-format
 msgid "Failed to write lockfile %s\n"
 msgstr "Kan inte spara låsfil %s\n"
 
-#: src/updown.c:496
+#: src/updown.c:497
 #, c-format
 msgid "Cannot create lockfile for %s: %s\n"
 msgstr "Kan inte skapa låsfil för %s: %s\n"
 
-#: src/updown.c:643
+#: src/updown.c:517
+msgid "No kermit path defined!"
+msgstr ""
+
+#: src/updown.c:644
 msgid "Same as last"
 msgstr "Samma som senast"
 
-#: src/updown.c:644
+#: src/updown.c:645
 msgid " A -   Username        :"
 msgstr " A -   Användarnamn    :"
 
-#: src/updown.c:645
+#: src/updown.c:646
 msgid " B -   Password        :"
 msgstr " B -   Lösenord        :"
 
-#: src/updown.c:646
+#: src/updown.c:647
 msgid " C -   Name of script  :"
 msgstr " C -   Namn på skript  :"
 
-#: src/updown.c:647
+#: src/updown.c:648
 msgid "Change which setting?     (Return to run, ESC to stop)"
 msgstr "Ändra vilken inställning?    (ENTER - kör, ESC - stoppa)"
 
-#: src/updown.c:652
+#: src/updown.c:653
 msgid "Run a script"
 msgstr "Kör ett skript"
 
-#: src/window.c:1938
+#: src/window.c:1894
 #, c-format
 msgid "Environment variable TERM not set\n"
 msgstr "Miljövariabeln TERM är inte satt\n"
 
-#: src/window.c:1944
+#: src/window.c:1900
 #, c-format
 msgid "No termcap entry for %s\n"
 msgstr "Ingen termcap-post för %s\n"
 
-#: src/window.c:1947
+#: src/window.c:1903
 #, c-format
 msgid "No termcap database present!\n"
 msgstr "Ingen termcapdatabas hittades!\n"
 
 # Osäker. Förslag?
-#: src/window.c:1955
+#: src/window.c:1911
 #, c-format
 msgid "No cursor motion capability (cm)\n"
 msgstr "Ingen möjlighet för rörelse av pekare (cm)\n"
 
-#: src/window.c:1964
+#: src/window.c:1920
 #, c-format
 msgid "Number of terminal lines unknown\n"
 msgstr "Antalet terminalrader är okänt\n"
 
-#: src/window.c:1968
+#: src/window.c:1924
 #, c-format
 msgid "Number of terminal columns unknown\n"
 msgstr "Antalet terminalkolumner är okänt\n"
 
-#~ msgid " %7.7sZ for help |           |     | Minicom %-6.6s |       | "
-#~ msgstr " %7.7sZ för hjälp |           |     | Minicom %-6.6s |       | "
+#: src/window.c:2062
+#, c-format
+msgid "Not enough memory\n"
+msgstr ""
+
+#~ msgid "Screen and keyboard"
+#~ msgstr "Skärm och tangentbord"
+
+#~ msgid "You can't change colors in black and white mode"
+#~ msgstr "Du kan inte ändra färger i svart-vitt-läge"
 
 #~ msgid "minicom: WARNING: configuration file not found, using defaults\n"
-#~ msgstr "minicom: VARNING: konfigurationsfil hittades inte, använder förvalda värden\n"
+#~ msgstr ""
+#~ "minicom: VARNING: konfigurationsfil hittades inte, använder förvalda "
+#~ "värden\n"
 
 #~ msgid "minicom: there is no global configuration file %s\n"
 #~ msgstr "minicom: det finns ingen global konfigurationsfil %s\n"
@@ -1941,7 +2098,8 @@ msgstr "Antalet terminalkolumner är okänt\n"
 #~ msgstr "| Skrolla bakåt.......B"
 
 #~ msgid "sigack: unexpected ACK signal &^%%$!! (pardon my French)%c\n"
-#~ msgstr "sigack: oväntad ACK-signal &^%%$!! (ursäkta mitt ovårdade språk)%c\n"
+#~ msgstr ""
+#~ "sigack: oväntad ACK-signal &^%%$!! (ursäkta mitt ovårdade språk)%c\n"
 
 #~ msgid "minicom: out of file descriptors\n"
 #~ msgstr "minicom: slut på filbeskrivare\n"
@@ -1956,8 +2114,12 @@ msgstr "Antalet terminalkolumner är okänt\n"
 #~ msgstr "Ändring av skärmstorlek stöds inte, skärm kan bli felaktig!"
 
 # Hittar inte ord för Cite
-#~ msgid "  SCROLL MODE    U=up D=down F=page-forward B=page-backward C=Cite ESC=exit "
-#~ msgstr "  SKROLL-LÄGE     U=upp D=ned F=sida-framåt B=sida-bakåt C=Cite ESC=avslut "
+#~ msgid ""
+#~ "  SCROLL MODE    U=up D=down F=page-forward B=page-backward C=Cite "
+#~ "ESC=exit "
+#~ msgstr ""
+#~ "  SKROLL-LÄGE     U=upp D=ned F=sida-framåt B=sida-bakåt C=Cite "
+#~ "ESC=avslut "
 
 #~ msgid "Usage: %s [OPTION]... [configuration]\n"
 #~ msgstr "Användning: %s [FLAGGA]... [konfiguration]\n"
@@ -1970,22 +2132,33 @@ msgstr "Antalet terminalkolumner är okänt\n"
 #~ "\n"
 
 #~ msgid "  -s, --setup            : enter setup mode (only as root)\n"
-#~ msgstr "  -s, --setup            : gå in i inställningsläge (endast som root)\n"
+#~ msgstr ""
+#~ "  -s, --setup            : gå in i inställningsläge (endast som root)\n"
 
-#~ msgid "  -o, --noinit           : do not initialize modem & lockfiles at startup\n"
-#~ msgstr "  -o, --noinit           : initiera inte modem & låsfiler vid uppstart\n"
+#~ msgid ""
+#~ "  -o, --noinit           : do not initialize modem & lockfiles at "
+#~ "startup\n"
+#~ msgstr ""
+#~ "  -o, --noinit           : initiera inte modem & låsfiler vid uppstart\n"
 
 #~ msgid "  -m, --metakey          : use meta or alt key for commands\n"
-#~ msgstr "  -m, --metakey          : använd meta eller alt-tangent för kommandon\n"
+#~ msgstr ""
+#~ "  -m, --metakey          : använd meta eller alt-tangent för kommandon\n"
 
 #~ msgid "  -M, --metakey8         : use 8bit meta key for commands\n"
-#~ msgstr "  -M, --metakey8         : använd 8-bit meta-tangent för kommandon\n"
+#~ msgstr ""
+#~ "  -M, --metakey8         : använd 8-bit meta-tangent för kommandon\n"
 
-#~ msgid "  -l, --ansi             : literal; assume screen uses the IBM-PC character set\n"
-#~ msgstr "  -l, --ansi             : litterär; anta skärm använder IBM-PC-teckenuppsätt.\n"
+#~ msgid ""
+#~ "  -l, --ansi             : literal; assume screen uses the IBM-PC "
+#~ "character set\n"
+#~ msgstr ""
+#~ "  -l, --ansi             : litterär; anta skärm använder IBM-PC-"
+#~ "teckenuppsätt.\n"
 
 #~ msgid "  -L, --iso              : Ditto, but assume screen uses ISO8859\n"
-#~ msgstr "  -L, --iso              : Ditto men anta att skärm använder ISO8859\n"
+#~ msgstr ""
+#~ "  -L, --iso              : Ditto men anta att skärm använder ISO8859\n"
 
 #~ msgid "  -w, --wrap             : Linewrap on\n"
 #~ msgstr "  -w, --wrap             : Radbrytning på\n"
@@ -1999,8 +2172,11 @@ msgstr "Antalet terminalkolumner är okänt\n"
 #~ msgid "  -c, --color=on/off     : ANSI style color usage on or off\n"
 #~ msgstr "  -c, --color=on/off     : Använd ANSI-färger på eller av\n"
 
-#~ msgid "  -a, --attrib=on/off    : use reverse or highlight attributes on or off\n"
-#~ msgstr "  -a, --attrib=on/off    : använd omvänd eller framhäv attribut på eller av\n"
+#~ msgid ""
+#~ "  -a, --attrib=on/off    : use reverse or highlight attributes on or off\n"
+#~ msgstr ""
+#~ "  -a, --attrib=on/off    : använd omvänd eller framhäv attribut på eller "
+#~ "av\n"
 
 #~ msgid "  -t, --term=TERM        : override TERM environment variable\n"
 #~ msgstr "  -t, --term=TERM        : överskrid miljövariabel TERM\n"
@@ -2021,7 +2197,8 @@ msgstr "Antalet terminalkolumner är okänt\n"
 #~ msgstr "  -T, --disabletime      : stäng av visning av tid online\n"
 
 #~ msgid "  -v, --version          : output version information and exit\n"
-#~ msgstr "  -v, --version          : skriv ut versionsinformation och avsluta\n"
+#~ msgstr ""
+#~ "  -v, --version          : skriv ut versionsinformation och avsluta\n"
 
 #~ msgid ""
 #~ "  configuration          : configuration file to use\n"
@@ -2030,7 +2207,8 @@ msgstr "Antalet terminalkolumner är okänt\n"
 #~ "  konfiguration          : konfigurationsfil att använda\n"
 #~ "\n"
 
-#~ msgid "These options can also be specified in the MINICOM environment variable.\n"
+#~ msgid ""
+#~ "These options can also be specified in the MINICOM environment variable.\n"
 #~ msgstr "Dessa inställningar kan också anges i miljövariabeln MINICOM.\n"
 
 #~ msgid "set to "
@@ -2081,6 +2259,3 @@ msgstr "Antalet terminalkolumner är okänt\n"
 
 #~ msgid "== Attempt to change private parameter %s - denied.\n"
 #~ msgstr "== Försök att ändra en privat parameter %s - nekades.\n"
-
-#~ msgid "script %s: out of memory%s\n"
-#~ msgstr "skript %s: slut på minne%s\n"
