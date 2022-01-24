@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: minicom 2.7.1\n"
 "Report-Msgid-Bugs-To: minicom-devel@lists.alioth.debian.org\n"
 "POT-Creation-Date: 2013-12-31 16:15+0100\n"
-"PO-Revision-Date: 2022-01-18 13:30+0100\n"
+"PO-Revision-Date: 2022-01-21 22:50+0100\n"
 "Last-Translator: Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>\n"
 "Language-Team: Romanian <translation-team-ro@lists.sourceforge.net>\n"
 "Language: ro\n"
@@ -116,9 +116,13 @@ msgstr "     Nume             Program"
 msgid "Name U/D FullScr IO-Red. Multi"
 msgstr "Nume Î/D EcranComplet Redir.-In/Ieș Multi"
 
+# DȘ, sugerează modificarea la:
+# → Ar trebui așa: „Care protocol îl ștergeți”
+# R-GC, răspunde:
+# modificare aplicată, mai mult decît, binevenită!
 #: src/config.c:476
 msgid "Delete which protocol? "
-msgstr "Care Ștergeți protocol? "
+msgstr "Care protocol îl ștergeți? "
 
 #: src/config.c:537
 msgid " A -    Serial Device      :"
@@ -240,9 +244,14 @@ msgstr " T - Marcare multi-linie ...."
 msgid "Modem and dialing parameter setup"
 msgstr "Configurare modem și parametri de apelare"
 
+# R-GC, scrie:
+# modificat de la:
+# „... valorile prestabilite.”
+# la:
+# „.. valorile implicite.”, la sugestia făcută de DȘ.
 #: src/config.c:694
 msgid "    Return or Esc to exit. Edit A+B to get defaults."
-msgstr "      Return sau Esc pentru a ieși. Editați A+B pentru a obține valorile prestabilite."
+msgstr "      Return sau Esc pentru a ieși. Editați A+B pentru a obține valorile implicite."
 
 #: src/config.c:832
 msgid " A - Command key is         :"
@@ -310,7 +319,7 @@ msgstr " Q - Echo local              :"
 
 #: src/config.c:848
 msgid " R - Line Wrap              :"
-msgstr " R - Ajustare automată a liniei     :"
+msgstr " R - Încadrare a liniei     :"
 
 #: src/config.c:849
 msgid " S - Hex Display            :"
@@ -318,7 +327,7 @@ msgstr " S - Afișare Hex            :"
 
 #: src/config.c:850
 msgid " T - Add carriage return    :"
-msgstr " T - Adăugați retur de căruț    :"
+msgstr " T - Adăugați returul de caret↵    :"
 
 #: src/config.c:851 src/config.c:1604
 msgid "Change which setting?  (Esc to exit)"
@@ -348,6 +357,19 @@ msgstr "Prim-planul de la terminal == culoarea de fundal, schimbați!"
 msgid "History Buffer Size"
 msgstr "Mărime Buffer Istoric"
 
+# DȘ, sugerează modificarea englezismului:
+# „restartați”, la „reporniți”
+# R-GC, răspunde:
+# Ok,  traducerea acestui mesaj, îi aparține
+# colegului Eugen Hoanca, primul traducător al
+# acestui fișier...
+# A fost o „scăpare”, a mea, după revizuirea făcută
+# înaintea trimiterii spre încărcare în TP...
+# La fel ca „buffer-ului”...
+# Profit, de ocazie, și aplic amîndouă schimbările
+# În final, au fost trei schimbări făcute asupra
+# mesajului:
+# „... pentru Continuare...” → „...pentru a Continua...”
 #: src/config.c:936
 msgid ""
 "\n"
@@ -358,16 +380,19 @@ msgid ""
 "                Hit a key to Continue... "
 msgstr ""
 "\n"
-"                Ați schimbat mărimea buffer-ului istoricului.\n"
+"                Ați schimbat mărimea memoriei tampon a istoricului.\n"
 "                Trebuie să salvați fișierul de configurare și să\n"
-"                restartați minicom-ul pentru ca schimbările să aibă efect.\n"
+"                reporniți minicom-ul pentru ca schimbările să aibă efect.\n"
 "\n"
-"                Apăsați o tastă pentru Continuare... "
+"                Apăsați o tastă pentru a Continua... "
 
 #: src/config.c:953
 msgid "Program new command key"
 msgstr "Programare tastă nouă de comandă"
 
+# Alt englezism „anihilat”, la sugestia lui DȘ:
+# „setează” → „stabilește”
+# Mulțumesc!, zice R-GC.
 #: src/config.c:955
 msgid ""
 "\n"
@@ -384,7 +409,7 @@ msgstr ""
 " Apăsați noua tastă de comandă. Dacă doriți să utilizați\n"
 " tasta META sau ALT, introduceți:\n"
 "\n"
-"  o SPAȚIU dacă tasta meta setează al 8-lea bit\n"
+"  o SPAȚIU dacă tasta meta stabilește al 8-lea bit\n"
 "  o ESC   dacă tasta meta trimite prefixul ESCAPE (standard)\n"
 "\n"
 "\n"
@@ -613,7 +638,7 @@ msgstr "  \\u = nume utilizator, \\p = parolă, \\\\ = \\, \\e = inversare echo,
 
 #: src/config.c:1630
 msgid "  \\l = toggle LF, \\bX1..Xn<sp> = change baud rate. Example: \"\\beq \""
-msgstr "  \\l = comută LF, \\bX1..Xn<sp> = modifică rata de baud. Exemplu: \"\\beq \""
+msgstr "  \\l = comută LF, \\bX1..Xn<sp> = modifică viteza de transmisie(baud). Exemplu: \"\\beq \""
 
 #: src/config.c:1632
 msgid "  = 115200 8N1. (See the \"Comm Parameters\" menu for valid values of X.))"
@@ -739,9 +764,17 @@ msgstr "     Reîncearcă în %2d secunde             "
 msgid "Max retries"
 msgstr "Maximum de încercări"
 
+# R-GC, scrie:
+# Altă „scăpare” a mea, după corectarea făcută înainte de trimeterea mesajului...
+# E vina mea, că am trecut prea repede peste
+# mesajele deja traduse, și care păreau în ordine...
+# Mulțumesc, DȘ, pentru sesizare/sugestia făcută:
+# „Prima dată deconectați-vă.”
+#                                → „Mai întâi deconectați-vă”
+# Corecție aplicată!
 #: src/dial.c:437
 msgid "You are already online! Hang up first."
-msgstr "Sunteți deja conectat! Prima dată deconectați-vă."
+msgstr "Sunteți deja conectat! Mai întâi deconectați-vă."
 
 #: src/dial.c:442
 msgid "Autodial"
@@ -878,7 +911,7 @@ msgstr " I -  Tasta Backspace trimite :"
 
 #: src/dial.c:1183
 msgid " J -  Linewrap            :"
-msgstr " J -  Aranjare linii            :"
+msgstr " J -  Încadrare linie            :"
 
 #: src/dial.c:1184
 msgid " K -  Line Settings       :"
@@ -933,9 +966,13 @@ msgstr "Adaugă"
 msgid "Edit"
 msgstr "Editare"
 
+# R-GC, scrie:
+# Altă „scăpare” a mea, sesizată de DȘ:
+# → se preferă distincția dintre delete/remove să fie șterge/elimină
+# (caută și înlocuiește în tot fișierul)
 #: src/dial.c:1306
 msgid "Remove"
-msgstr "Șterge"
+msgstr "Eliminați"
 
 #: src/dial.c:1306
 msgid "moVe"
@@ -980,7 +1017,7 @@ msgstr "Găsește o intrare"
 
 #: src/dial.c:1834
 msgid "Remove entry?"
-msgstr "Șterge intrarea?"
+msgstr "Eliminați intrarea?"
 
 #: src/dial.c:1878
 msgid "Enter number"
@@ -1152,7 +1189,7 @@ msgstr " Setări terminal..T  rulare Kermit.........K | mod tastă cursor..I\n"
 
 #: src/help.c:66
 msgid " lineWrap on/off....W"
-msgstr " Wraplinii act/dez..W"
+msgstr "Încadrare linie act/dez..W"
 
 #: src/help.c:67
 msgid "  local Echo on/off..E | Help screen........Z\n"
@@ -1164,7 +1201,7 @@ msgstr " Lipește filier.........Y  Comutare MarcareTimp...N | scroll Back......
 
 #: src/help.c:69
 msgid " Add Carriage Ret...U"
-msgstr " Adaugă Retur Cărucior...U"
+msgstr " Adaugați returul de caret↵...U"
 
 #: src/help.c:71
 msgid "Select function or press Enter for none."
@@ -1192,10 +1229,14 @@ msgstr "Fișierul lock este blocat. Se suprascrie..\n"
 msgid "Device %s is locked.\n"
 msgstr "Dispozitivul %s este blocat.\n"
 
+# R-GC, scrie:
+# Altă „scăpare, a mea; altă corecție venită din
+# partea lu DȘ:
+# → Nu se poate configura pentru...
 #: src/main.c:265
 #, c-format
 msgid "Could not setup for dial out.\n"
-msgstr "Nu se pot face setările pentru apelare în afară.\n"
+msgstr "Nu se poate configura pentru apelare în afară.\n"
 
 #: src/main.c:316
 #, c-format
@@ -1303,13 +1344,19 @@ msgstr "Bufferul istoricului este Dezactivat!"
 msgid "History buffer empty!"
 msgstr "Bufferul istoricului este gol!"
 
+# R-GC, scrie:
+# Altă „scăpare”, a mea:
+# → Politețe excesivă... elimină „Vă rugăm”
+# sesizare venită. de la DȘ, plus schimbarea lui:
+# „... în primul rând 's' sau 'S'”     la:
+# „mai întâi „s” sau „S””
 #: src/minicom.c:564
 msgid ""
 "No previous search!\n"
 "  Please 's' or 'S' first!"
 msgstr ""
 "Nu există căutări anterioare!\n"
-"  Vă rugăm, în primul rând 's' sau 'S'!"
+"  Mai întâi, „s” sau „S”!"
 
 #: src/minicom.c:721 src/minicom.c:764
 msgid "  CITATION: ENTER=select start line ESC=exit                               "
@@ -1363,6 +1410,36 @@ msgid ""
 "\n"
 "These options can also be specified in the MINICOM environment variable.\n"
 msgstr ""
+"Utilizare: %s [OPȚIUNE]... [configurare]\n"
+"Un program de terminal pentru Linux și alte sisteme asemănătoare Unix.\n"
+"\n"
+"  -b, --baudrate         : stabilește viteza de transmisie(baud) (ignoră valoarea din configurare)\n"
+"  -D, --device           : stabilește numele dispozitivului (ignoră valoarea din configurare)\n"
+"  -s, --setup            : se intră în modul de configurare\n"
+"  -o, --noinit           : nu se inițializează modemul și fișierele de blocare la pornire\n"
+"  -m, --metakey          : se utilizează tasta «meta» sau «alt» pentru comenzi\n"
+"  -M, --metakey8         : se utilizează tasta meta pe 8 biți pentru comenzi\n"
+"  -l, --ansi             : literal; se deduce că ecranul utilizează un set de caractere non IBM-PC\n"
+"  -L, --iso              : nu se va deduce că ecranul utilizează ISO8859\n"
+"  -w, --wrap             : se activează încadrarea liniei\n"
+"  -H, --displayhex       : afișează ieșirea în hex\n"
+"  -z, --statline         : se încearcă să se utilizeze linia de stare a terminalului\n"
+"  -7, --7bit             : forțează modul de 7biți\n"
+"  -8, --8bit             : forțează modul de 8biți\n"
+"  -c, --color=on/off     : activează sau dezactivează utilizarea culorilor în stil ANSI\n"
+"  -a, --attrib=on/off    : activează sau dezactivează atributele inversate sau evidențiate\n"
+"  -t, --term=TERM        : suprascrie variabila de mediu TERM\n"
+"  -S, --script=SCRIPT    : rulează SCRIPTUL la pornire\n"
+"  -d, --dial=ENTRY       : apelează ENTRY(intrarea) din directorul de apelare\n"
+"  -p, --ptty=TTYP        : se conectează la pseudo terminal\n"
+"  -C, --capturefile=FILE : începe captura în FILE(fișier)\n"
+"  -F, --statlinefmt      : formatul liniei de stare\n"
+"  -R, --remotecharset    : setul de caractere al partenerului de comunicare\n"
+"  -v, --version          : afișează informații despre versiune și iese\n"
+"  -h, --help             : afișează ajutorul\n"
+"  configuration          : fișierul de configurare ce va fi utilizat\n"
+"\n"
+"Aceste opțiuni pot fi specificate, de asemenea, în variabila de mediu MINICOM.\n"
 
 #: src/minicom.c:839
 #, c-format
@@ -1384,9 +1461,9 @@ msgid ""
 msgstr ""
 "Directorul de configurare pentru fișierele de acces și configurații\n"
 "\n"
-"este compilatla %s.\n"
+"este compilat la %s.\n"
 "\n"
-"Raportați hibele la <minicom-devel@lists.alioth.debian.org>.\n"
+"Raportați defectele la <minicom-devel@lists.alioth.debian.org>.\n"
 "\n"
 
 #: src/minicom.c:1161
@@ -1466,11 +1543,11 @@ msgstr "Adăugare linefeed DEZACTIVATĂ"
 
 #: src/minicom.c:1512
 msgid "Add carriage return ON"
-msgstr "Adaugă Retur Cărucior ACTIVAT"
+msgstr "Adaugați returul de caret↵ ACTIVAT"
 
 #: src/minicom.c:1512
 msgid "Add carriage return OFF"
-msgstr "Adaugă Retur Cărucior DEZACTIVAT"
+msgstr "Adaugați returul de caret↵ DEZACTIVAT"
 
 #: src/minicom.c:1517
 msgid "Local echo ON"
@@ -1506,11 +1583,11 @@ msgstr "Fișier de captură"
 
 #: src/minicom.c:1628
 msgid "Linewrap ON"
-msgstr "WrapLinii ACTIVAT"
+msgstr "Încadrare linie ACTIVAT"
 
 #: src/minicom.c:1628
 msgid "Linewrap OFF"
-msgstr "WrapLinii DEZACTIVAT"
+msgstr "Încadrare linie DEZACTIVAT"
 
 #: src/minicom.c:1637
 msgid "Timestamp OFF"
@@ -1697,7 +1774,7 @@ msgstr "Descărcare"
 
 #: src/updown.c:281
 msgid "Please enter file names"
-msgstr "Vă rugăm introduceți numele de fișiere"
+msgstr "Introduceți numele de fișiere"
 
 #: src/updown.c:290
 msgid "Out of memory: could allocate buffer for command line"
