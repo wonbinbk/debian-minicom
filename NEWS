@@ -9,7 +9,7 @@ New for version x.y:
  - Split "Screen and Keyboard" menu into two menus.
  - Update to gettext-0.21.
  - Change return values of --help and --version to success.
- - Update translations: Romanian
+ - Update translations: Romanian, German, French, Norwegian/Bookmal, Polish
 
 New for version 2.8:
  - Moved project to https://salsa.debian.org/minicom-team/minicom
