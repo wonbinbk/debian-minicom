@@ -9,7 +9,8 @@ New for version x.y:
  - Split "Screen and Keyboard" menu into two menus.
  - Update to gettext-0.21.
  - Change return values of --help and --version to success.
- - Update translations: Romanian, German, French, Norwegian/Bookmal, Polish
+ - Update translations: Romanian, German, French, Norwegian/Bookmal, Polish,
+                        Serbian
 
   BEFORE release, give translation team approx. 2 weeks to update
   translations (mail to coordinator@translationproject.org with
