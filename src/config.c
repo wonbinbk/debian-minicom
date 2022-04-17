@@ -1106,10 +1106,8 @@ static void do_menu_screen(void)
         break;
       case 'U':
         {
-          char buf[32];
           int l = toggle_line_timestamp();
-          sprintf(buf, "%d", l);
-          psets(P_LINE_TIMESTAMP, buf);
+          psets(P_LINE_TIMESTAMP, timestamp_option_idstring(l));
           mc_wlocate(w, mbswidth(use_line_timestamp) + 1, 12);
           mc_wprintf(w, "%-35s", line_timestamp_description());
         }

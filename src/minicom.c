@@ -1098,6 +1098,24 @@ static int parse_timestamp_option(const char *option)
   return ret;
 }
 
+const char *timestamp_option_idstring(const int o)
+{
+  switch (o)
+    {
+    default:
+    case TIMESTAMP_LINE_OFF:
+      return "off";
+    case TIMESTAMP_LINE_SIMPLE:
+      return "simple";
+    case TIMESTAMP_LINE_EXTENDED:
+      return "extended";
+    case TIMESTAMP_LINE_PER_SECOND:
+      return "persecond";
+    case TIMESTAMP_LINE_DELTA:
+      return "delta";
+    }
+}
+
 static void parse_options(char *option)
 {
   char *o;

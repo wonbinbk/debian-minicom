@@ -345,3 +345,4 @@ enum {
 
 int toggle_line_timestamp(void);
 const char *line_timestamp_description(void);
+const char *timestamp_option_idstring(const int o);
