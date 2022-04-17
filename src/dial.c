@@ -822,7 +822,7 @@ static int v1_read(FILE *fp, struct dialent *d)
     return 1;
 
   memcpy(d->username, v1.username, sizeof(v1) - offsetof(struct v1_dialent, username));
-  _Static_assert(sizeof(d->name) >= sizeof(v1.name));
+  _Static_assert(sizeof(d->name) >= sizeof(v1.name), "Size mismatch");
   v1.name[sizeof(v1.name) - 1] = 0;
   strcpy(d->name, v1.name);
   d->name[sizeof(d->name) - 1] = '\0';
