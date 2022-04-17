@@ -811,7 +811,6 @@ int paste_file(void)
   char buf[128] = "";
   char *ptr;
   int bytes_read;
-  unsigned long bdone = 0;
   int x;
 
   if ((s = filedir(1, 0)) == NULL)
@@ -845,11 +844,9 @@ int paste_file(void)
 	vt_send(*s);
       vt_send('\r');
       vt_send('\n');
-      bdone += strlen(line) + 2;
     } else {
       for (s = line; *s; s++)
 	vt_send(*s);
-      bdone += strlen(s);
     }
     if (ldelay) {
 #ifdef HAVE_USLEEP
