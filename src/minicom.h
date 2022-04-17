@@ -246,6 +246,9 @@ void status_set_display(const char *text, int duration_s);
 void port_init(void);
 void toggle_addlf(void);
 void toggle_local_echo(void);
+void set_local_echo(int val);
+void set_addlf(int val);
+void set_addcr(int val);
 
 void drawhist_look(WIN *w, int y, int r, wchar_t *look, int case_matters);
 void searchhist(WIN *w_hist, wchar_t *str);

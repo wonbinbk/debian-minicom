@@ -1075,16 +1075,21 @@ static void do_menu_screen(void)
         psets(P_ADDLINEFEED, yesno(P_ADDLINEFEED[0] == 'N'));
         mc_wlocate(w, mbswidth(add_linefeed) + 1, 7);
         mc_wprintf(w, "%s", _(P_ADDLINEFEED));
+        addlf = strcasecmp(P_ADDLINEFEED, "yes") == 0;
+	set_addlf(addlf);
         break;
       case 'Q':
         psets(P_LOCALECHO, yesno(P_LOCALECHO[0] == 'N'));
         mc_wlocate(w, mbswidth(local_echo_str) + 1, 8);
         mc_wprintf(w, "%s", _(P_LOCALECHO));
+        local_echo = strcasecmp(P_LOCALECHO,   "yes") == 0;
+	set_local_echo(local_echo);
         break;
       case 'R':
         psets(P_LINEWRAP, yesno(P_LINEWRAP[0] == 'N'));
         mc_wlocate(w, mbswidth(line_wrap) + 1, 9);
         mc_wprintf(w, "%s", _(P_LINEWRAP));
+        wrapln = strcasecmp(P_LINEWRAP, "yes") == 0;
         break;
       case 'S':
         psets(P_DISPLAYHEX, yesno(P_DISPLAYHEX[0] == 'N'));
@@ -1096,6 +1101,8 @@ static void do_menu_screen(void)
         psets(P_ADDCARRIAGERETURN, yesno(P_ADDCARRIAGERETURN[0] == 'N'));
         mc_wlocate(w, mbswidth(add_carriagereturn) + 1, 11);
         mc_wprintf(w, "%s", _(P_ADDCARRIAGERETURN));
+        addcr = strcasecmp(P_ADDCARRIAGERETURN, "yes") == 0;
+	set_addcr(addcr);
         break;
       case 'U':
         {

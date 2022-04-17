@@ -874,7 +874,7 @@ static void helpthem(void)
     "Report bugs to <minicom-devel@lists.alioth.debian.org>.\n"), CONFDIR);
 }
 
-static void set_addlf(int val)
+void set_addlf(int val)
 {
   vt_set(val, -1, -1, -1, -1, -1, -1, -1, -1);
 }
@@ -886,7 +886,7 @@ void toggle_addlf(void)
   set_addlf(addlf);
 }
 
-static void set_addcr(int val)
+void set_addcr(int val)
 {
   vt_set(-1, -1, -1, -1, -1, -1, -1, -1, val);
 }
@@ -898,7 +898,7 @@ void toggle_addcr(void)
   set_addcr(addcr);
 }
 
-static void set_local_echo(int val)
+void set_local_echo(int val)
 {
   vt_set(-1, -1, -1, -1, val, -1 ,-1, -1, -1);
 }
