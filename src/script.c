@@ -167,7 +167,7 @@ void myclock(int dummy)
 static char *buffer; /* The buffer is only growing and never freed... */
 static unsigned buffersize;
 
-static void buf_wr(unsigned idx, char val)
+static void buf_wr(unsigned idx, unsigned char val)
 {
   if (idx >= buffersize)
     {
