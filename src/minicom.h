@@ -85,7 +85,6 @@ EXTERN int wrapln;	/* Linewrap default */
 EXTERN int display_hex; /* Display in hex */
 EXTERN int tempst;	/* Status line is temporary */
 EXTERN int escape;	/* Escape code. */
-EXTERN int option_T_used; /* option -T has been supplied, obsolete, print warning */
 
 EXTERN char lockfile[270]; /* UUCP lock file of terminal */
 EXTERN char homedir[256];  /* Home directory of user */

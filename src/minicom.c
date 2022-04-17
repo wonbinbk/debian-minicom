@@ -1239,7 +1239,6 @@ int main(int argc, char **argv)
   line_timestamp = 0;
   wrapln = 0;
   display_hex = 0;
-  option_T_used = 0;
   local_echo = 0;
   strcpy(capname, "minicom.cap");
   lockfile[0] = 0;
@@ -1455,9 +1454,6 @@ int main(int argc, char **argv)
         case 'H': /* Display in hex */
           display_hex = 1;
           break;
-        case 'T':
-          option_T_used = 1;
-          break;
         case 'F': /* format of status line */
           set_status_line_format(optarg);
           break;
@@ -1657,9 +1653,6 @@ int main(int argc, char **argv)
 
   if (doinit)
     modeminit();
-
-  if (option_T_used)
-    mc_wprintf(us, "WARNING: Option -T ignored, use -F now\n\n");
 
   mc_wprintf(us, "\n%s %s\r\n", _("Welcome to minicom"), VERSION);
   mc_wprintf(us, "\n%s: %s\r\n", _("OPTIONS"), option_string);
