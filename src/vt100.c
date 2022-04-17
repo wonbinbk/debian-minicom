@@ -966,7 +966,8 @@ void vt_out(int ch, wchar_t wc)
                   output_s("] ");
                   break;
                 case TIMESTAMP_LINE_EXTENDED:
-                  snprintf(s, sizeof(s), ".%03ld] ", tmstmp_now.tv_usec / 1000);
+                  snprintf(s, sizeof(s), ".%03ld] ",
+		           (unsigned long)tmstmp_now.tv_usec / 1000);
                   output_s(s);
                   break;
                 case TIMESTAMP_LINE_PER_SECOND:
