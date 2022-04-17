@@ -73,19 +73,19 @@ static const char *TS, *FS, *DS;
 #endif
 
 /* Special characters */
-static char D_UL;
-static char D_HOR;
-static char D_UR;
-static char D_LL;
-static char D_VER;
-static char D_LR;
+static unsigned char D_UL;
+static unsigned char D_HOR;
+static unsigned char D_UR;
+static unsigned char D_LL;
+static unsigned char D_VER;
+static unsigned char D_LR;
 
-static char S_UL;
-static char S_HOR;
-static char S_UR;
-static char S_LL;
-static char S_VER;
-static char S_LR;
+static unsigned char S_UL;
+static unsigned char S_HOR;
+static unsigned char S_UR;
+static unsigned char S_LL;
+static unsigned char S_VER;
+static unsigned char S_LR;
 
 static char _bufstart[BUFFERSIZE];
 static char *_bufpos = _bufstart;
