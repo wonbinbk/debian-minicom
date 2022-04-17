@@ -641,6 +641,15 @@ void m_set485parms(int fd, int en, int rts_on_snd, int rts_aft_snd,
 #endif
 
   ioctl(fd, TIOCSRS485, &rs485conf);
+#else
+  (void)fd;
+  (void)en;
+  (void)rts_on_snd;
+  (void)rts_aft_snd;
+  (void)rx_dur_tx;
+  (void)term_bus;
+  (void)del_rts_bef_snd;
+  (void)del_rts_aft_snd;
 #endif
 }
 
