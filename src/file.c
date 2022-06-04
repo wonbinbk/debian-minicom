@@ -767,7 +767,7 @@ again:
       case 0:
         /* Goto directory */
         {
-          char buf[128];
+          char buf[256];
           char *s;
           strncpy(buf, down_loading? P_DOWNDIR : P_UPDIR, sizeof(buf));
           s = input(_("Goto directory:"), buf, sizeof(buf));
