@@ -428,10 +428,13 @@ void updown(int what, int nr)
   timer_update();
 
   /* If we got interrupted, status != 0 */
-  if (win && (status & 0xFF00) == 0) {
+  if (win && ((status & 0xFF00) == 0 || status == 1)) {
 #if VC_MUSIC
     if (P_SOUND[0] == 'Y') {
-      mc_wprintf(win, _("\n READY: press any key to continue..."));
+      if (status == 1)
+        mc_wprintf(win, _("\n Failure executing protocol. Press any key to continue..."));
+      else
+        mc_wprintf(win, _("\n READY: press any key to continue..."));
       music();
     } else
       sleep(1);
