@@ -1551,6 +1551,8 @@ int main(int argc, char **argv)
     P_PORT[sizeof(P_PORT) - 1] = 0;
   }
 
+  vt_ch_delay = atoi(P_MSG_CH_DELAY);
+
   stdwin = NULL; /* It better be! */
 
   /* Reset colors if we don't use 'em. */

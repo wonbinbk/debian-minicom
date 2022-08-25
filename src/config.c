@@ -1395,12 +1395,14 @@ int dotermmenu(void)
         pgets(w, strlen(msg_answerback) + 1, 5, P_ANSWERBACK, 50, 50, 0);
         break;
       case 'F':
-        sprintf(buf, "%d", vt_ch_delay);
         mc_wlocate(w, mbswidth(msg_ch_delay) + 1, 6);
-        mc_wgets(w, buf, 5, 5);
-        vt_ch_delay = atoi(buf);
+        mc_wgets(w, P_MSG_CH_DELAY, 5, 5);
+        vt_ch_delay = atoi(P_MSG_CH_DELAY);
         mc_wlocate(w, mbswidth(msg_ch_delay) + 1, 6);
         mc_wprintf(w, "%-4d", vt_ch_delay);
+        // Rewrite P_MSG_CH_DELAY in case of invalid input
+        sprintf(buf, "%d", vt_ch_delay);
+        psets(P_MSG_CH_DELAY, buf);
         break;
       default:
         break;
