@@ -178,8 +178,9 @@ enum config_type {
 #define P_LINE_TIMESTAMP        mpars[100].value /* line_timestamp */
 
 #define P_MSG_CH_DELAY          mpars[101].value /* msg_ch_delay */
+#define P_MSG_NL_DELAY          mpars[102].value /* msg_nl_delay */
 
-#define MPARS_MAX 102
+#define MPARS_MAX 103
 
 extern struct pars mpars[MPARS_MAX + 1]; // + 1 is for end-marker
 

@@ -199,6 +199,7 @@ struct pars mpars[MPARS_MAX + 1] = {
 
   { "0",		0,    "line_timestamp" },
   { "0",		0,    "msg_ch_delay" },
+  { "0",		0,    "msg_nl_delay" },
 
   /* That's all folks */
   { "",                 0,         NULL },

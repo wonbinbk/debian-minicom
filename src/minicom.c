@@ -1552,6 +1552,7 @@ int main(int argc, char **argv)
   }
 
   vt_ch_delay = atoi(P_MSG_CH_DELAY);
+  vt_nl_delay = atoi(P_MSG_NL_DELAY);
 
   stdwin = NULL; /* It better be! */
 

@@ -1384,12 +1384,14 @@ int dotermmenu(void)
         mc_wprintf(w, "%s ", _(P_STATLINE));
         break;
       case 'D':
-        sprintf(buf, "%d", vt_nl_delay);
         mc_wlocate(w, mbswidth(msg_nl_delay) + 1, 4);
-        mc_wgets(w, buf, 5, 5);
-        vt_nl_delay = atoi(buf);
+        mc_wgets(w, P_MSG_NL_DELAY, 5, 5);
+        vt_nl_delay = atoi(P_MSG_NL_DELAY);
         mc_wlocate(w, mbswidth(msg_nl_delay) + 1, 4);
         mc_wprintf(w, "%-4d", vt_nl_delay);
+        // Rewrite P_MSG_NL_DELAY in case of invalid input
+        sprintf(buf, "%d", vt_nl_delay);
+        psets(P_MSG_NL_DELAY, buf);
         break;
       case 'E':
         pgets(w, strlen(msg_answerback) + 1, 5, P_ANSWERBACK, 50, 50, 0);
