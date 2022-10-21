@@ -1299,7 +1299,7 @@ int main(int argc, char **argv)
     bufp = args_buffer;
     while (isspace(*bufp))
       bufp++;
-    while (*bufp && argk < (int)sizeof(args) - 1) {
+    while (*bufp && argk < (int)ARRAY_SIZE(args) - 1) {
       for (s = bufp; !isspace(*bufp) && *bufp; bufp++)
         ;
       args[argk++] = s;
@@ -1310,7 +1310,7 @@ int main(int argc, char **argv)
   env_args = argk;
 
   /* Add command - line options */
-  for(c = 1; c < argc && argk < (int)sizeof(args) - 1; c++)
+  for(c = 1; c < argc && argk < (int)ARRAY_SIZE(args) - 1; c++)
     args[argk++] = argv[c];
   args[argk] = NULL;
 
