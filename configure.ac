@@ -6,7 +6,7 @@ dnl
 AC_INIT([minicom],[2.9-rc1],[minicom-devel@lists.alioth.debian.org])
 AC_CONFIG_SRCDIR([src/minicom.c])
 AC_CONFIG_HEADERS([config.h])
-AC_PREREQ([2.69])
+AC_PREREQ([2.71])
 
 AM_INIT_AUTOMAKE([1.7])
 
