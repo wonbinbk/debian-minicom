@@ -28,14 +28,6 @@ AC_PROG_RANLIB
 AC_SEARCH_LIBS([strerror],[cposix])
 AM_ICONV_LINK
 
-AC_ARG_ENABLE([music],
-	AS_HELP_STRING([--enable-music],
-	               [Enable music for certain events (def: DISABLED)]),
-	[], [enable_music="no"])
-if test "x$enable_music" = xyes; then
-	AC_DEFINE(VC_MUSIC, [1], [Music support is enabled])
-fi
-
 PKG_PROG_PKG_CONFIG
 
 AC_ARG_ENABLE([lockdev],

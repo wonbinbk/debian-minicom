@@ -178,9 +178,6 @@ size_t one_wctomb (char *s, wchar_t wchar);
 size_t mbswidth(const char *s);
 
 /* Prototypes from file: dial.c */
-#if VC_MUSIC
-void music(void);
-#endif
 void mputs(const char *s , int how);
 void modeminit(void);
 void modemreset(void);
