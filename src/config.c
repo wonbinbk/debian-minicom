@@ -1127,7 +1127,6 @@ static void do_menu_keyboard_and_misc(void)
   FILE *fp;
   const char *command_key           = _(" A - Command key is         :");
   const char *backspace_key         = _(" B - Backspace key sends    :");
-  const char *alarm_sound           = _(" D - Alarm sound            :");
   const char *history_buffer_size   = _(" K - History Buffer Size    :");
   const char *macros_file           = _(" L - Macros file            :");
   const char *macros_enabled        = _(" N - Macros enabled         :");
@@ -1140,7 +1139,6 @@ static void do_menu_keyboard_and_misc(void)
 
   mc_wprintf(w, "%s %s\n", command_key, P_ESCAPE);
   mc_wprintf(w, "%s %s\n", backspace_key, P_BACKSPACE);
-  mc_wprintf(w, "%s %s\n", alarm_sound, _(P_SOUND));
   mc_wprintf(w, "%s %s\n", history_buffer_size, P_HISTSIZE);
   mc_wprintf(w, "%s %s\n", macros_file, P_MACROS);
   mc_wprintf(w, _(" M - Edit Macros\n"));
@@ -1236,13 +1234,8 @@ static void do_menu_keyboard_and_misc(void)
         mc_wprintf(w, "%s ", P_BACKSPACE);
         keyboard(KSETBS, P_BACKSPACE[0] == 'B' ? 8 : 127);
         break;
-      case 'D':
-        psets(P_SOUND, yesno(P_SOUND[0] == 'N'));
-        mc_wlocate(w, mbswidth(alarm_sound) + 1, 2);
-        mc_wprintf(w, "%s", _(P_SOUND));
-        break;
       case 'K': /* MARK updated 02/17/95 - Config history size */
-        pgets(w, mbswidth(history_buffer_size) + 1, 3,
+        pgets(w, mbswidth(history_buffer_size) + 1, 2,
               P_HISTSIZE, 6, 6, 0);
 
         /* In case gibberish or a value was out of bounds, */
@@ -1254,11 +1247,11 @@ static void do_menu_keyboard_and_misc(void)
         else if (atoi(P_HISTSIZE) >= 5000)
           strcpy(P_HISTSIZE,"5000");
 
-        mc_wlocate(w, mbswidth(history_buffer_size) + 1, 3);
+        mc_wlocate(w, mbswidth(history_buffer_size) + 1, 2);
         mc_wprintf(w, "%s     ", P_HISTSIZE);
         break;
       case 'L': /* fmg - get local macros storage file */
-        pgets(w, mbswidth(macros_file) + 1, 4, P_MACROS, 64, 64, 1);
+        pgets(w, mbswidth(macros_file) + 1, 3, P_MACROS, 64, 64, 1);
 
         /* Try to open the file to read it in. */
         fp = fopen(pfix_home(P_MACROS), "r+");
@@ -1286,12 +1279,12 @@ static void do_menu_keyboard_and_misc(void)
         break;
       case 'N':
         psets(P_MACENAB, yesno(P_MACENAB[0] == 'N'));
-        mc_wlocate(w, mbswidth(macros_enabled) + 1, 6);
+        mc_wlocate(w, mbswidth(macros_enabled) + 1, 5);
         mc_wprintf(w, "%s", _(P_MACENAB));
         break;
       case 'O': /* Character conversions - jl / 04.09.97 */
         doconv();
-        mc_wlocate(w, mbswidth(character_conversion) + 1, 7);
+        mc_wlocate(w, mbswidth(character_conversion) + 1, 6);
         mc_wprintf(w, "%-16.16s", _(P_CONVF));
         break;
      }

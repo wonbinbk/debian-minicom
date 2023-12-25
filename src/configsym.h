@@ -142,7 +142,7 @@ enum config_type {
 #define P_MACCHG        mpars[75].value  /* macros changed flag */
 #define P_MACENAB	mpars[76].value	 /* macros enabled flag */
 
-#define P_SOUND		mpars[77].value
+#define P_SOUND		mpars[77].value  /* Unused */
 #define P_HISTSIZE      mpars[78].value  /* History buffer size */
 
 #define P_CONVF		mpars[79].value  /* Char.conversion table */
