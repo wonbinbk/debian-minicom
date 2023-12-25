@@ -30,10 +30,7 @@
  *    er 18-Apr-99 - the P_MULTILINE option
  *    jl 11.02.2000 - the P_STOPB option
  */
-#ifdef HAVE_CONFIG_H
 #include <config.h>
-#endif
-
 #include <limits.h>
 
 #include "port.h"

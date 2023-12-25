@@ -24,10 +24,7 @@
  *
  * 27.10.98 jl  converted do_log to use stdarg
  */
-#ifdef HAVE_CONFIG_H
 #include <config.h>
-#endif
-
 #include <limits.h>
 
 #include "port.h"

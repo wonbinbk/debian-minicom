@@ -18,10 +18,7 @@
  * 01.01.98 dickey@clark.net: fix for a history window closing bug
  * fmg 8/20/97: Added support for Search of History Buffer
  */
-#ifdef HAVE_CONFIG_H
 #include <config.h>
-#endif
-
 #include <limits.h>
 #include <stdarg.h>
 #include <wchar.h>

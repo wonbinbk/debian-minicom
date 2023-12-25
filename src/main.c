@@ -19,9 +19,7 @@
  * jl  14.06.99 moved lockfile creation to before serial port opening
  *
  */
-#ifdef HAVE_CONFIG_H
 #include <config.h>
-#endif
 
 #include "port.h"
 #include "minicom.h"

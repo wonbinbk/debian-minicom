@@ -27,11 +27,7 @@
  * 10.09.2013 ts Support sending the null character
  * 10.10.2013 ts Add the pipedshell command
  */
-
-#ifdef HAVE_CONFIG_H
 #include <config.h>
-#endif
-
 #include <sys/wait.h>
 #include <stdarg.h>
 

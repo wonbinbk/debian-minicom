@@ -34,9 +34,7 @@
  *    er  18-Apr-99 - added P_MULTILINE for "multiline"
  *    jl  10.02.2000 - added P_STOPB
  */
-#ifdef HAVE_CONFIG_H
 #include <config.h>
-#endif
 
 #include "port.h"
 #include "minicom.h"

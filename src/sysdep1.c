@@ -29,9 +29,7 @@
  *
  *   jl  23.06.97  adjustable DTR downtime
  */
-#ifdef HAVE_CONFIG_H
 #include <config.h>
-#endif
 
 #include "port.h"
 #include "sysdep.h"

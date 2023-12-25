@@ -23,12 +23,8 @@
  * js&jl 04.98	the better filename selection window
  */
 
-#include <poll.h>
-
-#ifdef HAVE_CONFIG_H
 #include <config.h>
-#endif
-
+#include <poll.h>
 #include <wchar.h>
 
 #include "port.h"

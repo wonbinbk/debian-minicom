@@ -23,10 +23,7 @@
  *    jl 06.07.98 use conversion tables with the capture file
  *    mark.einon@gmail.com 16/02/11 - Added option to timestamp terminal output
  */
-#ifdef HAVE_CONFIG_H
 #include <config.h>
-#endif
-
 #include <time.h>
 #include <stdint.h>
 #include "port.h"

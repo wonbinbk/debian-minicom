@@ -24,10 +24,7 @@
  * jl  09.07.98 added option -S to start a script at startup
  * mark.einon@gmail.com 16/02/11 - Added option to timestamp terminal output
  */
-#ifdef HAVE_CONFIG_H
 #include <config.h>
-#endif
-
 #include <getopt.h>
 #include <wchar.h>
 #include <wctype.h>

@@ -26,10 +26,7 @@
  *   jl 01.09.99  Move entry up/down in directory
  *   jl 10.02.2000 Stopbits field added
  */
-#ifdef HAVE_CONFIG_H
 #include <config.h>
-#endif
-
 #include <stdint.h>
 #include <limits.h>
 #include <arpa/inet.h>
