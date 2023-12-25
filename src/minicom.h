@@ -35,16 +35,13 @@
 
 #include <time.h>
 #include <stdbool.h>
-
-#if HAVE_LOCKDEV
-#include <ttylock.h>
-#endif
-
-#ifdef USE_SOCKET
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/un.h>
 #include <arpa/inet.h>
+
+#if HAVE_LOCKDEV
+#include <ttylock.h>
 #endif
 
 #define XA_OK_EXIST	1
@@ -109,7 +106,6 @@ EXTERN char *dial_number;   /* Number we've dialed. */
 EXTERN char *dial_user;     /* Our username there */
 EXTERN char *dial_pass;     /* Our password */
 
-#ifdef USE_SOCKET
 enum Socket_type {
   Socket_type_no_socket = 0,
   Socket_type_unix = 1,
@@ -121,14 +117,6 @@ static inline int portfd_connected(void)
 {
   return (portfd_is_socket && !portfd_is_connected) ? -1 : portfd;
 }
-#else
-#define portfd_is_socket 0
-#define portfd_is_connected 0
-static inline int portfd_connected(void)
-{
-  return portfd;
-}
-#endif /* USE_SOCKET */
 
 /*
  * fmg 8/22/97

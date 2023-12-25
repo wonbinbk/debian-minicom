@@ -32,17 +32,16 @@
 #include <stdbool.h>
 #include <assert.h>
 #include <sys/stat.h>
-
-static jmp_buf albuf;
-
-#ifdef USE_SOCKET
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netdb.h>
+
+static jmp_buf albuf;
+
 static const char SOCKET_PREFIX_UNIX[] = "unix:";
 static const char SOCKET_PREFIX_UNIX_LEGACY[] = "unix#";
 static const char SOCKET_PREFIX_TCP[] = "tcp:";
-#endif
+static const char SOCKET_PREFIX_TELNET[] = "telnet:";
 
 /* Compile SCCS ID into executable. */
 const char *Version = VERSION;
@@ -146,7 +145,6 @@ static void get_alrm(int dummy)
   longjmp(albuf, 1);
 }
 
-#ifdef USE_SOCKET
 static void term_socket_connect_unix(void)
 {
   struct sockaddr_un sa_un;
@@ -239,7 +237,6 @@ void term_socket_close(void)
   portfd_is_connected = 0;
   portfd = -1;
 }
-#endif /* USE_SOCKET */
 
 /*
  * Open the terminal.
@@ -253,11 +250,8 @@ int open_term(int doinit, int show_win_on_error, int no_msgs)
 	char bytes[128];
 	int kermit;
   } buf;
-#ifdef USE_SOCKET
   int s_errno;
-#endif /* USE_SOCKET */
 
-#ifdef USE_SOCKET
   portfd_is_socket = portfd_is_connected = 0;
   size_t ulen = strlen(SOCKET_PREFIX_UNIX);
   assert(ulen == strlen(SOCKET_PREFIX_UNIX_LEGACY));
@@ -267,7 +261,8 @@ int open_term(int doinit, int show_win_on_error, int no_msgs)
     portfd_is_socket = Socket_type_unix;
   else if (!strncmp(dial_tty, SOCKET_PREFIX_TCP, strlen(SOCKET_PREFIX_TCP)))
     portfd_is_socket = Socket_type_tcp;
-#endif /* USE_SOCKET */
+  else if (!strncmp(dial_tty, SOCKET_PREFIX_TELNET, strlen(SOCKET_PREFIX_TELNET)))
+    portfd_is_socket = Socket_type_telnet;
 
   if (portfd_is_socket)
     goto nolock;
@@ -364,11 +359,9 @@ nolock:
     portfd = -1;
     signal(SIGALRM, get_alrm);
     alarm(20);
-#ifdef USE_SOCKET
     if (portfd_is_socket) {
       term_socket_connect();
     }
-#endif /* USE_SOCKET */
     if (!portfd_is_socket) {
 #if defined(O_NDELAY) && defined(F_SETFL)
       portfd = open(dial_tty, O_RDWR|O_NDELAY|O_NOCTTY);
@@ -388,12 +381,9 @@ nolock:
       port_init();
     }
   }
-#ifdef USE_SOCKET
   s_errno = errno;
-#endif /* USE_SOCKET */
   alarm(0);
   signal(SIGALRM, SIG_IGN);
-#ifdef USE_SOCKET
   if (portfd < 0 && portfd_is_socket == Socket_type_no_socket) {
     if (!no_msgs) {
       if (doinit > 0) {
@@ -412,9 +402,6 @@ nolock:
     lockfile_remove();
     return -1;
   }
-#else
-  (void)show_win_on_error;
-#endif /* USE_SOCKET */
 
   /* Set CLOCAL mode */
   m_nohang(portfd);
@@ -608,13 +595,11 @@ static void show_status_fmt(const char *fmt)
               bufi += snprintf(buf + bufi, COLS - bufi, "%s", VERSION);
               break;
             case 'b':
-#ifdef USE_SOCKET
               if (portfd_is_socket == Socket_type_unix)
                 bufi += snprintf(buf + bufi, COLS - bufi, "unix-socket");
 	      else if (portfd_is_socket == Socket_type_tcp)
                 bufi += snprintf(buf + bufi, COLS - bufi, "TCP");
               else
-#endif /* USE_SOCKET */
                 {
                   if (P_SHOWSPD[0] == 'l')
                     bufi += snprintf(buf + bufi, COLS - bufi, "%6ld", linespd);

@@ -27,20 +27,17 @@
 #include "sysdep.h"
 #include "minicom.h"
 
-#ifdef USE_SOCKET
 enum Socket_type portfd_is_socket;
 int portfd_is_connected;
-#endif
 
 /*
  * Flush the buffers
  */
 void m_flush(int fd)
 {
-#ifdef USE_SOCKET
   if (portfd_is_socket)
     return;
-#endif
+
 /* Should I Posixify this, or not? */
 #ifdef TCFLSH
   ioctl(fd, TCFLSH, 2);

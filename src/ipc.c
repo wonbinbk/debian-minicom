@@ -32,12 +32,10 @@ int read_buf(int fd, char *buf, int bufsize)
 {
   int i = read(fd, buf, bufsize - 1);
 
-#ifdef USE_SOCKET
   if (i < 1 && portfd_is_socket && portfd == fd) {
     term_socket_close();
     i = 0;
   }
-#endif /* USE_SOCKET */
 
   buf[i > 0 ? i : 0] = 0;
 

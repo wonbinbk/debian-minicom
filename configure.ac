@@ -36,14 +36,6 @@ if test "x$enable_music" = xyes; then
 	AC_DEFINE(VC_MUSIC, [1], [Music support is enabled])
 fi
 
-AC_ARG_ENABLE([socket],
-	AS_HELP_STRING([--disable-socket],
-	               [Disable socket support (def: enabled)]),
-	[], [enable_socket="yes"])
-if test "x$enable_socket" = xyes; then
-	AC_DEFINE(USE_SOCKET, [1], [Socket support is enabled])
-fi
-
 PKG_PROG_PKG_CONFIG
 
 AC_ARG_ENABLE([lockdev],

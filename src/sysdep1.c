@@ -104,10 +104,8 @@ void m_sethwf(int fd, int on)
   struct termios tty;
 #endif
 
-#ifdef USE_SOCKET
   if (portfd_is_socket)
 	return;
-#endif
 
 #ifdef POSIX_TERMIOS
   tcgetattr(fd, &tty);
@@ -123,10 +121,9 @@ void m_sethwf(int fd, int on)
 /* Set RTS line. Sometimes dropped. Linux specific? */
 static void m_setrts(int fd)
 {
-#ifdef USE_SOCKET
   if (portfd_is_socket)
     return;
-#endif
+
 #if defined(TIOCM_RTS) && defined(TIOCMODG)
   {
     int mcs=0;
@@ -143,10 +140,9 @@ static void m_setrts(int fd)
  */
 void m_dtrtoggle(int fd, int sec)
 {
-#ifdef USE_SOCKET
   if (portfd_is_socket)
     return;
-#endif
+
   {
 #ifdef TIOCSDTR
     /* Use the ioctls meant for this type of thing. */
@@ -198,10 +194,9 @@ void m_dtrtoggle(int fd, int sec)
  */
 void m_break(int fd)
 {
-#ifdef USE_SOCKET
   if (portfd_is_socket)
     return;
-#endif
+
 #ifdef POSIX_TERMIOS
   tcsendbreak(fd, 0);
 #else
@@ -232,7 +227,6 @@ void m_break(int fd)
  */
 int m_getdcd(int fd)
 {
-#ifdef USE_SOCKET
   if (portfd_is_socket) {
     if (portfd_is_connected)
       return 1;
@@ -240,7 +234,7 @@ int m_getdcd(int fd)
     term_socket_connect();
     return portfd_is_connected;
   }
-#endif
+
 #ifdef TIOCMODG
   {
     int mcs = 0;
@@ -273,10 +267,9 @@ static int m_word;
  */
 void m_savestate(int fd)
 {
-#ifdef USE_SOCKET
   if (portfd_is_socket)
     return;
-#endif
+
 #ifdef POSIX_TERMIOS
   tcgetattr(fd, &savetty);
 #else
@@ -298,10 +291,9 @@ void m_savestate(int fd)
  */
 void m_restorestate(int fd)
 {
-#ifdef USE_SOCKET
   if (portfd_is_socket)
     return;
-#endif
+
 #ifdef POSIX_TERMIOS
   tcsetattr(fd, TCSANOW, &savetty);
   set_speed_apple(fd, &savetty);
@@ -326,10 +318,9 @@ void m_restorestate(int fd)
 /*ARGSUSED*/
 void m_nohang(int fd)
 {
-#ifdef USE_SOCKET
   if (portfd_is_socket)
     return;
-#endif
+
   {
 #ifdef POSIX_TERMIOS
     struct termios sgg;
@@ -355,10 +346,9 @@ void m_nohang(int fd)
  */
 void m_hupcl(int fd, int on)
 {
-#ifdef USE_SOCKET
   if (portfd_is_socket)
     return;
-#endif
+
   /* Eh, I don't know how to do this under BSD (yet..) */
 #ifdef POSIX_TERMIOS
   {
@@ -468,10 +458,8 @@ void m_setparms(int fd, char *baudr, char *par, char *bits, char *stopb,
   struct sgttyb tty;
 #endif /* POSIX_TERMIOS */
 
-#ifdef USE_SOCKET
   if (portfd_is_socket)
     return;
-#endif
 
 #ifdef POSIX_TERMIOS
   tcgetattr(fd, &tty);
