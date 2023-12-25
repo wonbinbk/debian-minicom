@@ -35,11 +35,6 @@
 #include <assert.h>
 #include <sys/stat.h>
 
-#ifdef SVR4_LOCKS
-#include <sys/types.h>
-#include <sys/stat.h>
-#endif /* SVR4_LOCKS */
-
 static jmp_buf albuf;
 
 #ifdef USE_SOCKET
@@ -54,7 +49,6 @@ static const char SOCKET_PREFIX_TCP[] = "tcp:";
 /* Compile SCCS ID into executable. */
 const char *Version = VERSION;
 
-#ifndef SVR4_LOCKS
 /*
  * Find out name to use for lockfile when locking tty.
  */
@@ -81,7 +75,6 @@ static char *mdevlockname(char *s, char *res, int reslen)
 
   return res;
 }
-#endif
 
 static char *shortened_devpath(char *buf, int buflen, char *devpath)
 {
@@ -287,18 +280,10 @@ int open_term(int doinit, int show_win_on_error, int no_msgs)
   /* First see if the lock file directory is present. */
   if (P_LOCK[0] && stat(P_LOCK, &stt) == 0) {
 
-#ifdef SVR4_LOCKS
-    stat(dial_tty, &stt);
-    sprintf(lockfile, "%s/LK.%03d.%03d.%03d",
-                      P_LOCK, major(stt.st_dev),
-                      major(stt.st_rdev), minor(stt.st_rdev));
-
-#else /* SVR4_LOCKS */
     snprintf(lockfile, sizeof(lockfile),
                        "%s/LCK..%s",
                        P_LOCK, mdevlockname(dial_tty, buf.bytes,
                                             sizeof(buf.bytes)));
-#endif /* SVR4_LOCKS */
 
   }
   else
