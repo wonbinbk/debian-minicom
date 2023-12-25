@@ -27,9 +27,7 @@
 #include "minicom.h"
 #include "intl.h"
 #include "sysdep.h"
-#ifdef HAVE_ERRNO_H
 #include <errno.h>
-#endif
 
 #include <stdbool.h>
 #include <assert.h>
@@ -256,9 +254,7 @@ int open_term(int doinit, int show_win_on_error, int no_msgs)
 	int kermit;
   } buf;
 #ifdef USE_SOCKET
-#ifdef HAVE_ERRNO_H
   int s_errno;
-#endif
 #endif /* USE_SOCKET */
 
 #ifdef USE_SOCKET
@@ -393,9 +389,7 @@ nolock:
     }
   }
 #ifdef USE_SOCKET
-#ifdef HAVE_ERRNO_H
   s_errno = errno;
-#endif
 #endif /* USE_SOCKET */
   alarm(0);
   signal(SIGALRM, SIG_IGN);
@@ -405,12 +399,8 @@ nolock:
       if (doinit > 0) {
 	if (stdwin)
 	  mc_wclose(stdwin, 1);
-#ifdef HAVE_ERRNO_H
 	fprintf(stderr, _("minicom: cannot open %s: %s\n"),
 			dial_tty, strerror(s_errno));
-#else
-	fprintf(stderr, _("minicom: cannot open %s. Sorry.\n"), dial_tty);
-#endif
         lockfile_remove();
         return -1;
       }

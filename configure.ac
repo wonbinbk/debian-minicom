@@ -194,7 +194,7 @@ if test $ac_cv_sys_posix_termios = yes; then
 fi
 
 AC_CHECK_HEADERS(stdarg.h varargs.h termio.h termios.h \
-	setjmp.h errno.h pwd.h signal.h fcntl.h sgtty.h locale.h \
+	setjmp.h pwd.h signal.h fcntl.h sgtty.h locale.h \
 	sys/stat.h sys/file.h sys/ioctl.h sys/time.h \
 	sys/ttold.h sys/param.h unistd.h posix1_lim.h sgtty.h features.h)
 
