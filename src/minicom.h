@@ -83,6 +83,15 @@ EXTERN int display_hex; /* Display in hex */
 EXTERN int tempst;	/* Status line is temporary */
 EXTERN int escape;	/* Escape code. */
 
+enum Lockfile_mode
+{
+  Lockfile_mode_unset   = 0,
+  Lockfile_mode_uucp    = 1,
+  Lockfile_mode_flock   = 2,
+  Lockfile_mode_ttylock = 3,
+  Lockfile_mode_max     = 4,
+};
+EXTERN enum Lockfile_mode lockfile_mode;
 EXTERN char lockfile[270]; /* UUCP lock file of terminal */
 EXTERN char homedir[256];  /* Home directory of user */
 EXTERN char logfname[PARS_VAL_LEN]; /* Name of the logfile */
@@ -298,8 +307,9 @@ extern int io_pending, pendingkeys;
 /* Prototypes from file: config.c */
 void domacros(void);
 
+void device_close(void);
 
-int lockfile_create(int no_msgs);
+int lockfile_create(void);
 void lockfile_remove(void);
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))

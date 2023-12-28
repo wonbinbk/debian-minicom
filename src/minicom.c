@@ -1241,7 +1241,7 @@ int main(int argc, char **argv)
   display_hex = 0;
   local_echo = 0;
   strcpy(capname, "minicom.cap");
-  lockfile[0] = 0;
+  lockfile_mode = Lockfile_mode_unset;
   tempst = 0;
   st = NULL;
   us = NULL;
@@ -1676,7 +1676,9 @@ int main(int argc, char **argv)
             port_date[sizeof(port_date) - 1] = 0;
           }
       }
-    mc_wprintf(us, "%s %s%s\r\n", _("Port"), P_PORT, port_date);
+    const char lfm_s[Lockfile_mode_max] = { '?', 'U', 'F', 'T' };
+    mc_wprintf(us, "%s %s%s [%c]\r\n", _("Port"), P_PORT, port_date,
+	       lfm_s[lockfile_mode]);
   }
 
   if (using_iconv())
@@ -1885,8 +1887,7 @@ dirty_goto:
   mc_wclose(st, 0);
   mc_wclose(stdwin, 1);
   keyboard(KUNINSTALL, 0);
-  lockfile_remove();
-  close(portfd);
+  device_close();
 
   if (quit != NORESET && P_CALLIN[0])
     fastsystem(P_CALLIN, NULL, NULL, NULL);

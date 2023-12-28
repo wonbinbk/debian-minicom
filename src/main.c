@@ -54,7 +54,7 @@ static char *mdevlockname(char *s, char *res, int reslen)
   if (strncmp(s, "/dev/", 5) == 0) {
     /* In /dev */
     strncpy(res, s + 5, reslen - 1);
-    res[reslen-1] = 0;
+    res[reslen - 1] = 0;
     for (p = res; *p; p++)
       if (*p == '/')
         *p = '_';
@@ -65,7 +65,7 @@ static char *mdevlockname(char *s, char *res, int reslen)
     else
       p++;
     strncpy(res, p, reslen - 1);
-    res[reslen-1] = 0;
+    res[reslen - 1] = 0;
   }
 
   return res;
@@ -106,11 +106,11 @@ void leave(const char *s)
 {
   if (stdwin)
     mc_wclose(stdwin, 1);
-  if (portfd > 0) {
+  if (portfd > 0)
     m_restorestate(portfd);
-    close(portfd);
-  }
-  lockfile_remove();
+
+  device_close();
+
   if (P_CALLIN[0])
     fastsystem(P_CALLIN, NULL, NULL, NULL);
   fprintf(stderr, "%s", s);
@@ -236,49 +236,34 @@ void term_socket_close(void)
   portfd = -1;
 }
 
-/*
- * Open the terminal.
- *
- * \return -1 on error, 0 on success
- */
-int open_term(int doinit, int show_win_on_error, int no_msgs)
+static void lockfile_init()
 {
+#if HAVE_LOCKDEV
+  lockfile_mode = Lockfile_mode_ttylock;
+#else
   struct stat stt;
-  union {
-	char bytes[128];
-	int kermit;
-  } buf;
-  int s_errno;
+  char buf[128];
 
-  portfd_is_socket = portfd_is_connected = 0;
-  size_t ulen = strlen(SOCKET_PREFIX_UNIX);
-  assert(ulen == strlen(SOCKET_PREFIX_UNIX_LEGACY));
-  if (!strncmp(dial_tty, SOCKET_PREFIX_UNIX, ulen))
-    portfd_is_socket = Socket_type_unix;
-  else if (!strncmp(dial_tty, SOCKET_PREFIX_UNIX_LEGACY, ulen))
-    portfd_is_socket = Socket_type_unix;
-  else if (!strncmp(dial_tty, SOCKET_PREFIX_TCP, strlen(SOCKET_PREFIX_TCP)))
-    portfd_is_socket = Socket_type_tcp;
-  else if (!strncmp(dial_tty, SOCKET_PREFIX_TELNET, strlen(SOCKET_PREFIX_TELNET)))
-    portfd_is_socket = Socket_type_telnet;
-
-  if (portfd_is_socket)
-    goto nolock;
-
-#if !HAVE_LOCKDEV
-  /* First see if the lock file directory is present. */
   if (P_LOCK[0] && stat(P_LOCK, &stt) == 0) {
-
+    // Whether we can actually write the directory will be known on
+    // lockfile-create time, then we switch to Lockfile_mode_flock
+    lockfile_mode = Lockfile_mode_uucp;
     snprintf(lockfile, sizeof(lockfile),
                        "%s/LCK..%s",
-                       P_LOCK, mdevlockname(dial_tty, buf.bytes,
-                                            sizeof(buf.bytes)));
+                       P_LOCK, mdevlockname(dial_tty, buf, sizeof(buf)));
 
   }
   else
-    lockfile[0] = 0;
+    lockfile_mode = Lockfile_mode_flock;
+#endif
+}
 
-  if (doinit > 0 && lockfile[0]) {
+static bool check_lockfile(void)
+{
+#if HAVE_LOCKDEV
+  return true;
+#else
+  if (lockfile_mode == Lockfile_mode_uucp) {
     struct stat statbuf;
     int r = stat(lockfile, &statbuf);
     if (r < 0 && errno != ENOENT) {
@@ -286,7 +271,7 @@ int open_term(int doinit, int show_win_on_error, int no_msgs)
         mc_wclose(stdwin, 1);
       fprintf(stderr, _("Lockfile %s cannot be queried (%d).\n"),
               lockfile, errno);
-      return -1;
+      return false;
     }
 
     if (r == 0 && statbuf.st_uid != getuid()) {
@@ -294,7 +279,7 @@ int open_term(int doinit, int show_win_on_error, int no_msgs)
         mc_wclose(stdwin, 1);
       fprintf(stderr, _("Lockfile %s owned by someone else (uid=%d).\n"),
               lockfile, statbuf.st_uid);
-      return -1;
+      return false;
     }
 
     int fd = open(lockfile, O_RDONLY);
@@ -304,9 +289,15 @@ int open_term(int doinit, int show_win_on_error, int no_msgs)
           mc_wclose(stdwin, 1);
         fprintf(stderr, _("Device %s is locked by someone else.\n"),
                 dial_tty);
-        return -1;
+        return false;
       }
     } else {
+
+      union {
+	char bytes[128];
+	int kermit;
+      } buf;
+
       int n = read(fd, buf.bytes, 127);
       close(fd);
       if (n > 0) {
@@ -331,13 +322,71 @@ int open_term(int doinit, int show_win_on_error, int no_msgs)
         if (stdwin)
           mc_wclose(stdwin, 1);
         fprintf(stderr, _("Device %s is locked.\n"), dial_tty);
-        return -1;
+        return false;
       }
     }
   }
+
+  return true;
+#endif
+}
+
+static int device_open()
+{
+#if defined(O_NDELAY) && defined(F_SETFL)
+  portfd = open(dial_tty, O_RDWR | O_NDELAY | O_NOCTTY);
+  if (portfd < 0)
+    return -1;
+
+  /* Cancel the O_NDELAY flag. */
+  int n = fcntl(portfd, F_GETFL, 0);
+  fcntl(portfd, F_SETFL, n & ~O_NDELAY);
+#else
+  portfd = open(dial_tty, O_RDWR | O_NOCTTY);
+  if (portfd < 0)
+    return -1;
 #endif
 
-  if (doinit > 0 && lockfile_create(no_msgs) != 0)
+  // create after opening the dial_tty as we need a valid portfd
+  return lockfile_create();
+}
+
+void device_close()
+{
+  lockfile_remove();
+  if (portfd > 0)
+    close(portfd);
+  portfd = -1;
+}
+
+
+/*
+ * Open the terminal.
+ *
+ * \return -1 on error, 0 on success
+ */
+int open_term(int doinit, int show_win_on_error, int no_msgs)
+{
+  int s_errno;
+
+  portfd_is_socket = portfd_is_connected = 0;
+  size_t ulen = strlen(SOCKET_PREFIX_UNIX);
+  assert(ulen == strlen(SOCKET_PREFIX_UNIX_LEGACY));
+  if (!strncmp(dial_tty, SOCKET_PREFIX_UNIX, ulen))
+    portfd_is_socket = Socket_type_unix;
+  else if (!strncmp(dial_tty, SOCKET_PREFIX_UNIX_LEGACY, ulen))
+    portfd_is_socket = Socket_type_unix;
+  else if (!strncmp(dial_tty, SOCKET_PREFIX_TCP, strlen(SOCKET_PREFIX_TCP)))
+    portfd_is_socket = Socket_type_tcp;
+  else if (!strncmp(dial_tty, SOCKET_PREFIX_TELNET, strlen(SOCKET_PREFIX_TELNET)))
+    portfd_is_socket = Socket_type_telnet;
+
+  if (portfd_is_socket)
+    goto nolock;
+
+  lockfile_init();
+
+  if (doinit > 0 && check_lockfile() == false)
     return -1;
 
 nolock:
@@ -357,22 +406,14 @@ nolock:
     portfd = -1;
     signal(SIGALRM, get_alrm);
     alarm(20);
-    if (portfd_is_socket) {
+    if (portfd_is_socket)
       term_socket_connect();
-    }
-    if (!portfd_is_socket) {
-#if defined(O_NDELAY) && defined(F_SETFL)
-      portfd = open(dial_tty, O_RDWR|O_NDELAY|O_NOCTTY);
-      if (portfd >= 0) {
-        /* Cancel the O_NDELAY flag. */
-        int n = fcntl(portfd, F_GETFL, 0);
-        fcntl(portfd, F_SETFL, n & ~O_NDELAY);
+    else
+      {
+        if (device_open())
+	  return -1;
       }
-#else
-      if (portfd < 0)
-        portfd = open(dial_tty, O_RDWR|O_NOCTTY);
-#endif
-    }
+
     if (portfd >= 0) {
       if (doinit > 0)
         m_savestate(portfd);
@@ -873,9 +914,8 @@ dirty_goto:
        * need to free the FD so that a replug can get the same device
        * filename, open it again and be back */
       int reopen = portfd == -1;
-      close(portfd);
-      lockfile_remove();
-      portfd = -1;
+
+      device_close();
       if (open_term(reopen, reopen, 1) < 0) {
         if (!error_on_open_window)
           error_on_open_window = mc_tell(_("Cannot open %s!"), dial_tty);
