@@ -39,7 +39,6 @@ static jmp_buf albuf;
 static const char SOCKET_PREFIX_UNIX[] = "unix:";
 static const char SOCKET_PREFIX_UNIX_LEGACY[] = "unix#";
 static const char SOCKET_PREFIX_TCP[] = "tcp:";
-static const char SOCKET_PREFIX_TELNET[] = "telnet:";
 
 /* Compile SCCS ID into executable. */
 const char *Version = VERSION;
@@ -378,8 +377,6 @@ int open_term(int doinit, int show_win_on_error, int no_msgs)
     portfd_is_socket = Socket_type_unix;
   else if (!strncmp(dial_tty, SOCKET_PREFIX_TCP, strlen(SOCKET_PREFIX_TCP)))
     portfd_is_socket = Socket_type_tcp;
-  else if (!strncmp(dial_tty, SOCKET_PREFIX_TELNET, strlen(SOCKET_PREFIX_TELNET)))
-    portfd_is_socket = Socket_type_telnet;
 
   if (portfd_is_socket)
     goto nolock;

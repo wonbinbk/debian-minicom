@@ -1232,7 +1232,6 @@ int main(int argc, char **argv)
   capbuf = _IONBF;
   online = -1;
   linespd = 0;
-  stdattr = XA_NORMAL;
   us = NULL;
   addlf = 0;
   addcr = 0;
@@ -1246,11 +1245,11 @@ int main(int argc, char **argv)
   st = NULL;
   us = NULL;
   bogus_dcd = 0;
-  usecolor = 0;
+  usecolor = 1;
   screen_ibmpc = screen_iso = 1;
   useattr = 1;
   strncpy(termtype, getenv("TERM") ? getenv("TERM") : "dumb", sizeof(termtype));
-  stdattr = XA_NORMAL;
+  stdattr = XA_BOLD;
   use_port = "dfl";
   alt_override = 0;
   scr_name[0] = 0;
