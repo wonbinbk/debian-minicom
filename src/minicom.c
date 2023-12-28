@@ -72,6 +72,9 @@ static const char *c7[] = { N_("   Yes  "), N_("   No   "), NULL };
 /* Initialize modem port. */
 void port_init(void)
 {
+  if (portfd_is_socket)
+    return;
+
   m_setparms(portfd, P_BAUDRATE, P_PARITY, P_BITS, P_STOPB,
              P_HASRTS[0] == 'Y', P_HASXON[0] == 'Y', P_RS485_EN[0] == 'Y');
   m_set485parms(portfd, P_RS485_EN[0] == 'Y',
