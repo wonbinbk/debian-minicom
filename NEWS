@@ -7,6 +7,7 @@ New for version 2.9+:
  - Add third locking method if file-based lock does not work.
    https://salsa.debian.org/minicom-team/minicom/-/issues/9
  - Make colors enabled the default.
+ - ESC-] (OSC) sequences are recognized and discarded.
  - Code cleanups.
 
 New for version 2.9:
