@@ -41,6 +41,7 @@
  * 5 - ESC )
  * 6 - ESC #
  * 7 - ESC P
+ * 8 - ESC ]
  */
 static int esc_s = 0;
 
@@ -306,6 +307,9 @@ static void state1(int c)
       return;
     case 'P': /* ESC P (DCS, Device Control String) */
       esc_s = 7;
+      return;
+    case ']': /* ESC ] (OSC, Operating System Command) */
+      esc_s = 8;
       return;
     case 'D': /* Cursor down */
     case 'M': /* Cursor up */
@@ -914,6 +918,39 @@ static void state7(int c)
   buf[pos++] = c;
 }
 
+/*
+ * ESC ] Seen.
+ */
+static void state8(int c)
+{
+  /*
+   * Operating system commands.
+   * No support is currently implemented, they are simply thrown away.
+   * The sequences end with '\a' (BEL, terminal bell) or ESC-\ (ST).
+   */
+  static int state = 0;
+  switch (c) {
+    case 7:
+      /* Got BEL - done */
+      state = 0;
+      esc_s = 0;
+      return;
+    case ESC:
+      /* Possibly start of ST */
+      state = 1;
+      return;
+    case '\\':
+      /* Possibly end of ST */
+      if (state == 1) {
+	state = 0;
+	esc_s = 0;
+	return;
+      }
+      break;
+  };
+  state = 0;
+}
+
 static void output_s(const char *s)
 {
   mc_wputs(vt_win, s);
@@ -1054,10 +1091,15 @@ void vt_out(int ch, wchar_t wc)
       if(vt_addcr)
         mc_wputc(vt_win, '\r');
       output_c(c);
-	  break;
+      break;
     case '\b':
+      output_c(c); /* Backspace */
+      break;
     case 7: /* Bell */
-      output_c(c);
+      if (esc_s == 8)
+        go_on = 1;
+      else
+        output_c(c);
       break;
     default:
       go_on = 1;
@@ -1105,6 +1147,9 @@ void vt_out(int ch, wchar_t wc)
       break;
     case 7:
       state7(c);
+      break;
+    case 8:
+      state8(c);
       break;
   }
 }
