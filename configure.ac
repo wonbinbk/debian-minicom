@@ -143,10 +143,8 @@ else
 fi
 
 
-# Some GNU/Linux systems (e.g., SuSE 4.3, 1996) don't have curses, but
-# rather ncurses.  So we check for it.
 TERMLIBS=
-for termlib in tinfo ncurses curses termcap terminfo termlib ; do
+for termlib in tinfow tinfo curses termcap terminfo termlib ; do
    AC_CHECK_LIB(${termlib}, tputs,
      [TERMLIBS="${TERMLIBS} -l${termlib}"; break])
 done
@@ -155,7 +153,7 @@ LIBS="$LIBS $TERMLIBS"
 
 dnl Checks for header files.
 dnl Do not use <ncurses/termcap.h> unless we're linking with ncurses.
-if test "x$termlib" = xncurses; then
+if test "x$termlib" = xncurses -o "x$termlib" = xncursesw ; then
   dnl Use AC_CHECK_HEADERS so the HAVE_*_H symbol gets defined.
   AC_CHECK_HEADERS(ncurses/termcap.h, [found_termcap_h=1])
 fi
