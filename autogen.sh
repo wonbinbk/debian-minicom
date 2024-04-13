@@ -11,3 +11,6 @@ aclocal-$AUTOMAKEVER
 autoheader || exit 1
 automake-$AUTOMAKEVER -c --add-missing --force --gnu || exit 1
 autoconf || exit 1
+
+# remove once it comes via config.sub directly
+perl -p -i -e 's/(\| hcos\* )/$1| l4re* /' config.sub
