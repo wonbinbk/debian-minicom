@@ -622,50 +622,50 @@ static void show_status_fmt(const char *fmt)
           switch (func)
             {
             case '%':
-              bufi += snprintf(buf + bufi, COLS - bufi, "%%");
+              bufi += scnprintf(buf + bufi, COLS - bufi, "%%");
               break;
             case 'H':
-              bufi += snprintf(buf + bufi, COLS - bufi, "%sZ", esc_key());
+              bufi += scnprintf(buf + bufi, COLS - bufi, "%sZ", esc_key());
               break;
             case 'V':
-              bufi += snprintf(buf + bufi, COLS - bufi, "%s", VERSION);
+              bufi += scnprintf(buf + bufi, COLS - bufi, "%s", VERSION);
               break;
             case 'b':
               if (portfd_is_socket == Socket_type_unix)
-                bufi += snprintf(buf + bufi, COLS - bufi, "unix-socket");
+                bufi += scnprintf(buf + bufi, COLS - bufi, "unix-socket");
 	      else if (portfd_is_socket == Socket_type_tcp)
-                bufi += snprintf(buf + bufi, COLS - bufi, "TCP");
+                bufi += scnprintf(buf + bufi, COLS - bufi, "TCP");
               else
                 {
                   if (P_SHOWSPD[0] == 'l')
-                    bufi += snprintf(buf + bufi, COLS - bufi, "%6ld", linespd);
+                    bufi += scnprintf(buf + bufi, COLS - bufi, "%6ld", linespd);
                   else
-                    bufi += snprintf(buf + bufi, COLS - bufi, "%s", P_BAUDRATE);
-                  bufi += snprintf(buf + bufi, COLS - bufi, " %s%s%s",  P_BITS, P_PARITY, P_STOPB);
+                    bufi += scnprintf(buf + bufi, COLS - bufi, "%s", P_BAUDRATE);
+                  bufi += scnprintf(buf + bufi, COLS - bufi, " %s%s%s",  P_BITS, P_PARITY, P_STOPB);
                 }
               break;
             case 'T':
               switch (terminal)
                 {
                 case VT100:
-                  bufi += snprintf(buf + bufi, COLS - bufi, "VT102");
+                  bufi += scnprintf(buf + bufi, COLS - bufi, "VT102");
                   break;
                 case ANSI:
-                  bufi += snprintf(buf + bufi, COLS - bufi, "ANSI");
+                  bufi += scnprintf(buf + bufi, COLS - bufi, "ANSI");
                   break;
                 }
 
               break;
             case 'C':
-              bufi += snprintf(buf + bufi, COLS - bufi, cursormode == NORMAL ? "NOR" : "APP");
+              bufi += scnprintf(buf + bufi, COLS - bufi, cursormode == NORMAL ? "NOR" : "APP");
               break;
 
 	    case 't':
               if (online < 0)
-                bufi += snprintf(buf + bufi, COLS - bufi, "%s",
+                bufi += scnprintf(buf + bufi, COLS - bufi, "%s",
                                  P_HASDCD[0] == 'Y' ? _("Offline") : _("OFFLINE"));
               else
-                bufi += snprintf(buf + bufi, COLS - bufi, "%s %ld:%ld",
+                bufi += scnprintf(buf + bufi, COLS - bufi, "%s %ld:%ld",
                                  P_HASDCD[0] == 'Y' ? _("Online") : _("ONLINE"),
                                  online / 3600, (online / 60) % 60);
               break;
@@ -673,17 +673,17 @@ static void show_status_fmt(const char *fmt)
             case 'D':
                 {
                   char b[COLS - bufi];
-                  bufi += snprintf(buf + bufi, COLS - bufi, "%s",
+                  bufi += scnprintf(buf + bufi, COLS - bufi, "%s",
                                    shortened_devpath(b, sizeof(b), dial_tty));
                 }
               break;
 
             case '$':
-              bufi += snprintf(buf + bufi, COLS - bufi, "%s", status_message);
+              bufi += scnprintf(buf + bufi, COLS - bufi, "%s", status_message);
               break;
 
             default:
-              bufi += snprintf(buf + bufi, COLS - bufi, "?%c", func);
+              bufi += scnprintf(buf + bufi, COLS - bufi, "?%c", func);
               break;
             }
         }

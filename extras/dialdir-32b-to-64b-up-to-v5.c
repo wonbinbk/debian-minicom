@@ -77,7 +77,7 @@ main(int argc, char *argv[])
     return 1;
   }
 
-  ret = snprintf(dialdir_bak_name, sizeof(dialdir_bak_name), "%s.i386",
+  ret = scnprintf(dialdir_bak_name, sizeof(dialdir_bak_name), "%s.i386",
     argv[1]);
   if (ret != strlen(argv[1]) + strlen(".i386")) {
     printf("overflow when trying to back up %s to %s.i386.",
