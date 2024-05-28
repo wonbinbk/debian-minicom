@@ -94,7 +94,6 @@ unsigned char vt_outmap[256] = {
 #include "defmap.h"
 };
 
-#if TRANSLATE
 /* Taken from the Linux kernel source: linux/drivers/char/console.c */
 static char * vt_map[] = {
 /* 8-bit Latin-1 mapped to the PC character set: '.' means non-printable */
@@ -129,7 +128,6 @@ static char * vt_map[] = {
 };
 static char *vt_trans[2];
 static int vt_charset;          /* Character set. */
-#endif
 
 static int vt_echo;		/* Local echo on/off. */
 int vt_nl_delay;		/* Delay after CR key */
@@ -163,10 +161,8 @@ static short newy2 = 23;
 /* Saved color and positions */
 static short savex, savey, saveattr = XA_NORMAL, savecol = 112;
 
-#if TRANSLATE
 static short savecharset;
 static char *savetrans[2];
-#endif
 
 /*
  * Initialize the emulator once.
@@ -224,11 +220,9 @@ void vt_init(int type, int fg, int bg, int wrap, int add_lf, int add_cr)
   vt_tabs[2] =
   vt_tabs[3] =
   vt_tabs[4] = 0x01010101;
-#if TRANSLATE
   vt_charset = 0;
   vt_trans[0] = savetrans[0] = vt_map[0];
   vt_trans[1] = savetrans[1] = vt_map[1];
-#endif
   ptr = 0;
   memset(escparms, 0, sizeof(escparms));
   esc_s = 0;
@@ -338,19 +332,15 @@ static void state1(int c)
       savey = vt_win->cury;
       saveattr = vt_win->attr;
       savecol = vt_win->color;
-#if TRANSLATE
       savecharset = vt_charset;
       savetrans[0] = vt_trans[0];
       savetrans[1] = vt_trans[1];
-#endif
       break;
     case '8': /* Restore them */
     case 'u':
-#if TRANSLATE
       vt_charset = savecharset;
       vt_trans[0] = savetrans[0];
       vt_trans[1] = savetrans[1];
-#endif
       vt_win->color = savecol; /* HACK should use mc_wsetfgcol etc */
       mc_wsetattr(vt_win, saveattr);
       mc_wlocate(vt_win, savex, savey);
@@ -541,18 +531,14 @@ static void state2(int c)
       savey = vt_win->cury;
       saveattr = vt_win->attr;
       savecol = vt_win->color;
-#if TRANSLATE
       savecharset = vt_charset;
       savetrans[0] = vt_trans[0];
       savetrans[1] = vt_trans[1];
-#endif
       break;
     case 'u': /* Restore them */
-#if TRANSLATE
       vt_charset = savecharset;
       vt_trans[0] = savetrans[0];
       vt_trans[1] = savetrans[1];
-#endif
       vt_win->color = savecol; /* HACK should use mc_wsetfgcol etc */
       mc_wsetattr(vt_win, saveattr);
       mc_wlocate(vt_win, savex, savey);
@@ -801,10 +787,6 @@ static void state3(int c)
 static void state4(int c)
 {
   /* Switch Character Sets. */
-#if !TRANSLATE
-  /* IGNORED */
-  (void)c;
-#else
   switch (c) {
     case 'A':
     case 'B':
@@ -815,7 +797,6 @@ static void state4(int c)
       vt_trans[0] = vt_map[1];
       break;
   }
-#endif
   esc_s = 0;
 }
 
@@ -825,10 +806,6 @@ static void state4(int c)
 static void state5(int c)
 {
   /* Switch Character Sets. */
-#if !TRANSLATE
-  /* IGNORED */
-  (void)c;
-#else
   switch (c) {
     case 'A':
     case 'B':
@@ -839,7 +816,6 @@ static void state5(int c)
       vt_trans[1] = vt_map[1];
       break;
   }
-#endif
   esc_s = 0;
 }
 
@@ -1065,18 +1041,12 @@ void vt_out(int ch, wchar_t wc)
       mc_winclr(vt_win);
       mc_wlocate(vt_win, 0, 0);
       break;
-#if !TRANSLATE
-    case 14:
-    case 15:  /* Change character set. Not supported. */
-      break;
-#else
     case 14:
       vt_charset = 1;
       break;
     case 15:
       vt_charset = 0;
       break;
-#endif
     case 24:
     case 26:  /* Cancel escape sequence. */
       esc_s = 0;
@@ -1115,10 +1085,8 @@ void vt_out(int ch, wchar_t wc)
         fputc(P_CONVCAP[0] == 'Y' ? vt_inmap[c] : c, capfp);
       if (!using_iconv()) {
         c = vt_inmap[c];    /* conversion 04.09.97 / jl */
-#if TRANSLATE
         if (vt_type == VT100 && vt_trans[vt_charset] && vt_asis == 0)
           c = vt_trans[vt_charset][c];
-#endif
       }
       if (wc == 0)
         one_mbtowc (&wc, (char *)&c, 1); /* returns 1 */

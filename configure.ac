@@ -325,13 +325,6 @@ AH_BOTTOM([
 #if defined (__linux__)
 #  define KEY_KLUDGE 1
 #endif
-
-/* And this for the translation tables (vt100 -> ASCII) */
-#if __STDC__
-#  define TRANSLATE 1
-#else
-#  define TRANSLATE 0
-#endif
 ])
 
 dnl --------------------------------------------------------------
