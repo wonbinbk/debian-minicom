@@ -340,3 +340,9 @@ enum {
 int toggle_line_timestamp(void);
 const char *line_timestamp_description(void);
 const char *timestamp_option_idstring(const int o);
+
+
+/* Enhanced snprintf function -- as from Linux */
+int vscnprintf(char *buf, size_t size, const char *fmt, va_list args);
+int scnprintf(char *buf, size_t size, const char *fmt, ...)
+    __attribute__((format(printf, 3, 4)));
