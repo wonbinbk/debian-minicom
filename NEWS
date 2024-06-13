@@ -9,6 +9,7 @@ New for version 2.9+:
  - Make colors enabled the default.
  - ESC-] (OSC) sequences are recognized and discarded.
  - Code cleanups.
+ - Updates translations: nb
 
 New for version 2.9:
  - Change Hardware Flow Control Default to No.
