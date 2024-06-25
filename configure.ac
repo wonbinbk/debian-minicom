@@ -207,13 +207,8 @@ AC_MSG_CHECKING(for com line lock directory)
 
 if test "x$UUCPLOCK" != x
 then
-	if test -d $UUCPLOCK
-	then
-		AC_MSG_RESULT($UUCPLOCK)
-		AC_DEFINE_UNQUOTED(UUCPLOCK, "$UUCPLOCK", [Lock directory])
-	else
-		UUCPLOCK=""
-	fi
+	AC_MSG_RESULT($UUCPLOCK)
+	AC_DEFINE_UNQUOTED(UUCPLOCK, "$UUCPLOCK", [Lock directory])
 fi
 
 if test "x$UUCPLOCK" = x
